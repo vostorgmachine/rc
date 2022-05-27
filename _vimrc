@@ -36,3 +36,9 @@ let g:jedi#auto_initialization = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "left"
 
+                   __                  
+ _   ______  _____/ /_____  _________ _
+| | / / __ \/ ___/ __/ __ \/ ___/ __ `/
+| |/ / /_/ (__  ) /_/ /_/ / /  / /_/ / 
+|___/\____/____/\__/\____/_/   \__, /  
+                              /____/   
