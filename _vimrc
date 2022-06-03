@@ -1,44 +1,50 @@
-"Vim-plug section
+"  _    __           __                                       _____      
+" | |  / /___  _____/ /_____  _________ _   _________  ____  / __(_)___ _
+" | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
+" | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ / 
+" |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /  
+"                               /____/                          /____/   
+
+"Plugin section begin
 call plug#begin()
 
-Plug 'ervandew/supertab'
-Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-commentary'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
 
 call plug#end()
+"Plugin section end
 
-"Powerline section
+"String numbering
+set number
+set relativenumber
+
+
+"Poweline section
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
+set laststatus=2
 
-" Numbering
-set relativenumber
-set number
-syntax on
+"status line disabling
+set noshowmode
+
+"gruvbox colorscheme
+colorscheme gruvbox
+set bg=dark
+
+"transperent background
+hi Normal guibg=NONE ctermbg=NONE
+
+"nerdtree shortcuts
+nnoremap <C-n> :NERDTree<CR>
 
 " cyrilic work section
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
-
-" Color settings
-colorscheme gruvbox
-set bg=dark
-hi Normal guibg=NONE ctermbg=NONE
-set laststatus=2
-
-"Nuber interpretation
-set nrformats=
-
-" Jedi-vim settings
-let g:jedi#auto_initialization = 0
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#use_splits_not_buffers = "left"
-
-                   __                  
- _   ______  _____/ /_____  _________ _
-| | / / __ \/ ___/ __/ __ \/ ___/ __ `/
-| |/ / /_/ (__  ) /_/ /_/ / /  / /_/ / 
-|___/\____/____/\__/\____/_/   \__, /  
-                              /____/   
+" fast brackets
+ inoremap (<CR>      (<CR>)<Esc>O
+ inoremap (          ()<Left>
+ inoremap ((         (
+ inoremap ()         () 
