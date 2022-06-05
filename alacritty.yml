@@ -1,0 +1,59 @@
+ # _    __           __                                       _____      
+# | |  / /___  _____/ /_____  _________ _   _________  ____  / __(_)___ _
+# | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
+# | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ / 
+# |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /  
+#                               /____/                          /____/   
+
+#(win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
+
+shell:
+        program: ubuntu
+window:
+        opacity: 0.90
+        startup_mode: Fullscreen
+
+font:
+        normal:
+                family: mononoki NF
+        bold:
+                family: mononoki NF
+                
+                size: 20.0
+               
+# Mod+Shift+N to create new alacritty instance
+
+key_bindings:
+          - { key: N, mods: Command|Shift, action: SpawnNewInstance }
+
+
+# Colors (Gruvbox dark)
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
+
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
