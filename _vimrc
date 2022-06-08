@@ -41,13 +41,14 @@ hi Normal guibg=NONE ctermbg=NONE
 nnoremap <C-n> :NERDTree<CR>
 
 " cyrilic work section
- " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 " cyrilic work section v.2.0
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+" Press Ctrl+^ for change the language
+" set keymap=russian-jcukenwin
+" set iminsert=0
+" set imsearch=0
+" highlight lCursor guifg=NONE guibg=Cyan
 
 " fast brackets
  inoremap (<CR>      (<CR>)<Esc>O
@@ -60,6 +61,4 @@ highlight lCursor guifg=NONE guibg=Cyan
 set tabpagemax=20
 set showtabline=2
 
-" Ctrl+q for quiting
-nnoremap <C-q> :q<CR>
 
