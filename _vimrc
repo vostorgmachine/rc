@@ -1,18 +1,17 @@
-"  _    __           __                                       _____      
-" | |  / /___  _____/ /_____  _________ _   _________  ____  / __(_)___ _
-" | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
-" | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ / 
-" |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /  
-"                               /____/                          /____/   
+"  _    __           __                      ______            _____      
+" | |  / /___  _____/ /_____  _________ _   / ____/___  ____  / __(_)___ _
+" | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / /   / __ \/ __ \/ /_/ / __ `/
+" | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /___/ /_/ / / / / __/ / /_/ / 
+" |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
+"                               /____/                           /____/   
 
 "Plugin section begin
 call plug#begin()
-
 Plug 'tpope/vim-commentary'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 "Plugin section end
 
@@ -20,15 +19,21 @@ call plug#end()
 set number
 set relativenumber
 
-
-"Poweline section
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set laststatus=2
-
 "status line disabling
-set noshowmode
+ set noshowmode
+
+" airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 "gruvbox colorscheme
 colorscheme gruvbox
@@ -40,8 +45,6 @@ hi Normal guibg=NONE ctermbg=NONE
 "nerdtree shortcuts
 nnoremap <C-n> :NERDTree<CR>
 
-" cyrilic work section
- set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 " cyrilic work section v.2.0
 " Press Ctrl+^ for change the language
@@ -57,8 +60,11 @@ nnoremap <C-n> :NERDTree<CR>
  inoremap ()         () 
 
 " tabs settings
-
-set tabpagemax=20
+" set tabpagemax=20
 set showtabline=2
 
+set encoding=utf-8
+  
 
+" cyrilic work section
+ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
