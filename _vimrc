@@ -5,6 +5,10 @@
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
 
+" vim-plug install
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
 "Plugin section begin
 call plug#begin()
 Plug 'tpope/vim-commentary'
@@ -26,14 +30,14 @@ set relativenumber
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
+let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_right_alt_sep = ''
 
 "gruvbox colorscheme
 colorscheme gruvbox
