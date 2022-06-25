@@ -42,14 +42,20 @@ map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>
 map <leader>sk /  x
 map <leader>hat d3}ggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
+map <leader>te dap/Выдержки<CR>P/Выдержки<CR>j
+map <leader>vi dap/Факты<CR>P/Факты<CR>j
+map <leader>fa dap/---<CR>P/---<CR>j
+map <leader>tag /Теги<CR>A
 
 " buffers
 map <leader>bb :buffers<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 map <leader>bk :bd<CR> 
+
 " file references
 map <leader>rc :tabnew ~/_vimrc<CR>
+
 "String numbering
 set number relativenumber
 
