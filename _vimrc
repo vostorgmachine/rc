@@ -39,13 +39,14 @@ map <leader>tk :tabclose<CR>
 " outwrite special
 map <leader>ds /\.<CR>
 map <leader>cs /\,<CR>
-map <leader>n yy}p<C-a>
+map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
-map <leader>hat d3}ggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
-map <leader>te dap/Выдержки<CR>P/Выдержки<CR>j
-map <leader>vi dap/Факты<CR>P/Факты<CR>j
-map <leader>fa dap/---<CR>P/---<CR>j
-map <leader>tag /Теги<CR>A
+map <leader>hat v/2022<CR>$dggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
+map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
+map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
+map <leader>vi dap/Факты<CR>P/---<CR>jjzz
+map <leader>fa dap/---<CR>P/---<CR>jjzz
+map <leader>tag /Теги<CR>zzA 
 
 " buffers
 map <leader>bb :buffers<CR>
@@ -65,6 +66,7 @@ set number relativenumber
 "transperent background
 hi Normal guibg=NONE ctermbg=NONE
 
+set noswapfile
 " press F8 to turn the search results highlight off
 noremap <F8> :nohl<CR>
 inoremap <F8> <Esc>:nohl<CR>a
@@ -74,24 +76,24 @@ set showtabline=2
 set encoding=utf-8
 
 " fast brackets
-inoremap (<CR>      (<CR>)<Esc>O
-inoremap (          ()<Left>
-inoremap ((         (
-inoremap ()         () 
+" inoremap (<CR>      (<CR>)<Esc>O
+" inoremap (          ()<Left>
+" inoremap ((         (
+" inoremap ()         () 
 
-inoremap "<CR>      "<CR>"<Esc>O
-inoremap "          ""<Left>
-inoremap ""         "
+" inoremap "<CR>      "<CR>"<Esc>O
+" inoremap "          ""<Left>
+" inoremap ""         "
 
-inoremap [<CR>      [<CR>]<Esc>O
-inoremap [          []<Left>
-inoremap [[         [
-inoremap []         [] 
+" inoremap [<CR>      [<CR>]<Esc>O
+" inoremap [          []<Left>
+" inoremap [[         [
+" inoremap []         [] 
 
-inoremap <<CR>      <<CR>><Esc>O
-inoremap <          <><Left>
-inoremap <<         <
-inoremap <>         <> 
+" inoremap <<CR>      <<CR>><Esc>O
+" inoremap <          <><Left>
+" inoremap <<         <
+" inoremap <>         <> 
 
 
 " Removes pipes | that act as seperators on splits
