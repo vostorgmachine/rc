@@ -19,7 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 " PLUGIN SECTION END--------------------------------
-"
+
 " GRUVBOX COLORSCHEME-------------------------------
 colorscheme gruvbox
 set bg=dark
@@ -50,8 +50,8 @@ map <leader>tag /Теги<CR>zzA
 
 " buffers
 map <leader>bb :buffers<CR>
-map <leader>bn :bn<CR>
-map <leader>bp :bp<CR>
+map <leader>bn :bn!<CR>
+map <leader>bp :bp!<CR>
 map <leader>bk :bd<CR> 
 
 " file references
@@ -70,11 +70,10 @@ set noswapfile
 " press F8 to turn the search results highlight off
 
 " hightlighting
-set hlsearch		
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " toggle hightlighting 
-noremap <F4> :set hlsearch! hlsearch?<CR>
+noremap <F8> :set hlsearch! hlsearch?<CR>
 
 set showtabline=2
 set encoding=utf-8
