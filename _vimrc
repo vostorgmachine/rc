@@ -5,12 +5,12 @@
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
 
-" vim-plug install----------------------------------
+" VIM-PLUG INSTALL----------------------------------
 
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-" plugin section begin------------------------------
+" PLUGIN SECTION BEGIN------------------------------
 call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
@@ -18,18 +18,18 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-" plugin section end--------------------------------
+" PLUGIN SECTION END--------------------------------
 "
-" gruvbox colorscheme-------------------------------
+" GRUVBOX COLORSCHEME-------------------------------
 colorscheme gruvbox
 set bg=dark
 
-" macros section------------------------------------
+" MACROS SECTION------------------------------------
 
 "dot search
 let @d = '/\.'
 
-" main settings-------------------------------------
+" MAIN SETTINGS-------------------------------------
 
 let mapleader = ' '
 " tabs
@@ -68,10 +68,14 @@ hi Normal guibg=NONE ctermbg=NONE
 
 set noswapfile
 " press F8 to turn the search results highlight off
-noremap <F8> :nohl<CR>
-inoremap <F8> <Esc>:nohl<CR>a
 
-" set hlsearch		
+" hightlighting
+set hlsearch		
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+" toggle hightlighting 
+noremap <F4> :set hlsearch! hlsearch?<CR>
+
 set showtabline=2
 set encoding=utf-8
 
@@ -99,7 +103,7 @@ set encoding=utf-8
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\   
 
-" airline settings----------------------------------
+" AIRLINE SETTINGS----------------------------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#left_sep = ''
@@ -111,14 +115,14 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
-" nerdtree settings---------------------------------
+" NERDTREE SETTINGS---------------------------------
 nnoremap <C-n> :NERDTree<CR>
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 
-" cyrilic work section------------------------------
+" CYRILIC WORK SECTION------------------------------
  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 " other method
@@ -128,4 +132,15 @@ let g:NERDTreeWinSize=28
 " set imsearch=0
 " highlight lCursor guifg=NONE guibg=Cyan
 
-" experimental section------------------------------
+" CURSOR BLINKING FUNCTION--------------------------
+nnoremap <silent>n n:call HLNext(0.4)<cr>
+nnoremap <silent>N N:call HLNext(0.4)<cr>
+function! HLNext (blinktime)
+	set invcursorline
+	redraw
+	exec 'sleep ' . float2nr(a:blinktime * 200) . 'm'
+	set invcursorline
+	redraw
+endfunction
+
+" EXPERIMENTAL SECTION------------------------------
