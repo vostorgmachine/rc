@@ -33,11 +33,20 @@ let @d = '/\.'
 
 " MAIN SETTINGS-------------------------------------
 
+" display all matches when tab complete
+set wildmenu
+
+" copy/paste between vim and other programs
+set clipboard=unnamedplus
+
 let mapleader = ' '
 
 "quitting, saving, etc
-map <leader>q :q<CR>
+map <leader>qu :q<CR>
 map <leader>qq :q!<CR>
+map <leader>qa :qa<CR>
+map <leader>qqa :qa!<CR>
+
 map <leader>w :w<CR>
 map <leader>ww :w!<CR>
 
@@ -53,7 +62,6 @@ map <leader>ds /\.<CR>
 map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
-" map <leader>hat v/2022<CR>$dggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
 map <leader>hat 13jv3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
 map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
 map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
@@ -70,6 +78,17 @@ map <leader>bk :bd<CR>
 " file references
 map <leader>rc :tabnew ~/_vimrc<CR>
 
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+
+tnoremap <C-H> <C-W><C-H>
+tnoremap <C-J> <C-W><C-J>
+tnoremap <C-K> <C-W><C-K>
+tnoremap <C-L> <C-W><C-L>
+
 "String numbering
 set number relativenumber
 
@@ -79,8 +98,8 @@ set number relativenumber
 "transperent background
 hi Normal guibg=NONE ctermbg=NONE
 
+" disable swapping
 set noswapfile
-" press F8 to turn the search results highlight off
 
 " hightlighting
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
@@ -90,6 +109,7 @@ noremap <F8> :set hlsearch! hlsearch?<CR>
 
 set showtabline=2
 set encoding=utf-8
+
 
 " fast brackets
 " inoremap (<CR>      (<CR>)<Esc>O
