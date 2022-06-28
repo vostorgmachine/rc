@@ -44,14 +44,21 @@ let mapleader = ' '
 "quitting, saving, etc
 map <leader>qu :q<CR>
 map <leader>qq :q!<CR>
-map <leader>qa :qa<CR>
-map <leader>qqa :qa!<CR>
-
+map <leader>qaa :qa<CR>
+map <leader>qal :qa!<CR>
 map <leader>w :w<CR>
 map <leader>ww :w!<CR>
+map <leader>wa :wa<CR>
+map <leader>wal :wa!<CR>
 
 " shell call
 map <leader>sh :sh<CR>
+
+" terminal in new window
+map <leader>tt :term<CR>
+
+" terminal size
+set termwinsize=12x0 
 
 " tabs
 map <leader>tn :tabnew<CR>
@@ -78,24 +85,11 @@ map <leader>bk :bd<CR>
 " file references
 map <leader>rc :tabnew ~/_vimrc<CR>
 
-" Remap splits navigation to just CTRL + hjkl
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-
-tnoremap <C-H> <C-W><C-H>
-tnoremap <C-J> <C-W><C-J>
-tnoremap <C-K> <C-W><C-K>
-tnoremap <C-L> <C-W><C-L>
-
-"String numbering
-set number relativenumber
-
 "status line disabling
  set noshowmode
 
 "transperent background
+map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
 hi Normal guibg=NONE ctermbg=NONE
 
 " disable swapping
@@ -107,9 +101,11 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " toggle hightlighting 
 noremap <F8> :set hlsearch! hlsearch?<CR>
 
+" each split window goes down
+set splitbelow
+
 set showtabline=2
 set encoding=utf-8
-
 
 " fast brackets
 " inoremap (<CR>      (<CR>)<Esc>O
