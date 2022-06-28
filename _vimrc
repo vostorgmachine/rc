@@ -12,11 +12,13 @@
 
 " PLUGIN SECTION BEGIN------------------------------
 call plug#begin()
+Plug 'ervandew/supertab'
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ervandew/supertab'
 call plug#end()
 " PLUGIN SECTION END--------------------------------
 
@@ -32,6 +34,16 @@ let @d = '/\.'
 " MAIN SETTINGS-------------------------------------
 
 let mapleader = ' '
+
+"quitting, saving, etc
+map <leader>q :q<CR>
+map <leader>qq :q!<CR>
+map <leader>w :w<CR>
+map <leader>ww :w!<CR>
+
+" shell call
+map <leader>sh :sh<CR>
+
 " tabs
 map <leader>tn :tabnew<CR>
 map <leader>tk :tabclose<CR>
@@ -41,7 +53,8 @@ map <leader>ds /\.<CR>
 map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
-map <leader>hat v/2022<CR>$dggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
+" map <leader>hat v/2022<CR>$dggP/Тема<CR>O<ESC>ggy}/Тема<CR>pkJgqap
+map <leader>hat 13jv3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
 map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
 map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
 map <leader>vi dap/Факты<CR>P/---<CR>jjzz
