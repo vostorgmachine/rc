@@ -33,6 +33,10 @@ let @d = '/\.'
 
 " MAIN SETTINGS-------------------------------------
 
+" custom commands
+:command Ra !ranger
+:command W w
+
 " display all matches when tab complete
 set wildmenu
 
@@ -44,12 +48,9 @@ let mapleader = ' '
 "quitting, saving, etc
 map <leader>qu :q<CR>
 map <leader>qq :q!<CR>
-map <leader>qaa :qa<CR>
 map <leader>qal :qa!<CR>
-map <leader>w :w<CR>
 map <leader>ww :w!<CR>
 map <leader>wa :wa<CR>
-map <leader>wal :wa!<CR>
 
 " shell call
 map <leader>sh :sh<CR>
@@ -69,24 +70,39 @@ map <leader>ds /\.<CR>
 map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
-map <leader>hat 13jv3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
+map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
 map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
-map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
+" map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
 map <leader>vi dap/Факты<CR>P/---<CR>jjzz
 map <leader>fa dap/---<CR>P/---<CR>jjzz
 map <leader>tag /Теги<CR>zzA 
+map <leader>re /Резюме<CR>zzA 
 
 " buffers
 map <leader>bb :buffers<CR>
 map <leader>bn :bn!<CR>
 map <leader>bp :bp!<CR>
 map <leader>bk :bd<CR> 
+map <leader>bf :bf!<CR>
+map <leader>bl :bl!<CR>
 
 " file references
+map <leader>co :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/_vimrc<CR>
 
+" Tab navigation by numbering
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+
 "status line disabling
- set noshowmode
+set noshowmode
 
 "transperent background
 map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
@@ -95,7 +111,7 @@ hi Normal guibg=NONE ctermbg=NONE
 " disable swapping
 set noswapfile
 
-" hightlighting
+" hightlighting (may cause a arrow-bug)
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " toggle hightlighting 
@@ -106,6 +122,7 @@ set splitbelow
 
 set showtabline=2
 set encoding=utf-8
+set number relativenumber
 
 " fast brackets
 " inoremap (<CR>      (<CR>)<Esc>O
@@ -172,3 +189,6 @@ function! HLNext (blinktime)
 endfunction
 
 " EXPERIMENTAL SECTION------------------------------
+
+
+
