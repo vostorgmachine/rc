@@ -89,6 +89,8 @@ map <leader>bl :bl!<CR>
 " file references
 map <leader>co :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/_vimrc<CR>
+map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
+
 
 " Tab navigation by numbering
 noremap <leader>1 1gt
@@ -100,6 +102,10 @@ noremap <leader>6 6gt
 noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
+
+" NERDTree bookmark shortcuts
+map <leader>ou :OpenBookmark ou<CR>
+map <leader>con :OpenBookmark con<CR>
 
 "status line disabling
 set noshowmode
@@ -123,6 +129,14 @@ set splitbelow
 set showtabline=2
 set encoding=utf-8
 set number relativenumber
+
+" auto mkview + loadview (for folds)
+
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 " fast brackets
 " inoremap (<CR>      (<CR>)<Esc>O
@@ -189,6 +203,3 @@ function! HLNext (blinktime)
 endfunction
 
 " EXPERIMENTAL SECTION------------------------------
-
-
-
