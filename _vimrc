@@ -28,9 +28,6 @@ set bg=dark
 
 " MACROS SECTION------------------------------------
 
-"dot search
-let @d = '/\.'
-
 " MAIN SETTINGS-------------------------------------
 
 " custom commands
@@ -46,9 +43,8 @@ set clipboard=unnamedplus
 let mapleader = ' '
 
 "quitting, saving, etc
-map <leader>qu :q<CR>
 map <leader>qq :q!<CR>
-map <leader>qal :qa!<CR>
+map <leader>qa :qa!<CR>
 map <leader>ww :w!<CR>
 map <leader>wa :wa<CR>
 
@@ -72,7 +68,6 @@ map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
 map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
-" map <leader>re dap/Тезисы<CR>P/---<CR>jjzz
 map <leader>vi dap/Факты<CR>P/---<CR>jjzz
 map <leader>fa dap/---<CR>P/---<CR>jjzz
 map <leader>tag /Теги<CR>zzA 
@@ -87,8 +82,10 @@ map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
 
 " file references
-map <leader>co :tabnew ~/code.py<CR>
+map <leader>goals :tabnew ~/goals.txt<CR>
+map <leader>code :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/_vimrc<CR>
+map <leader>brc :tabnew ~/.bashrc<CR>
 map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
 
 
