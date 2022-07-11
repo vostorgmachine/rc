@@ -12,13 +12,16 @@
 
 " PLUGIN SECTION BEGIN------------------------------
 call plug#begin()
-Plug 'ervandew/supertab'
+
+" Plug 'davidhalter/jedi'
+" Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
+
 call plug#end()
 " PLUGIN SECTION END--------------------------------
 
@@ -30,17 +33,17 @@ set bg=dark
 
 " MAIN SETTINGS-------------------------------------
 
-" custom commands
+" CUSTOM COMMANDS-----------------------------------
 :command Ra !ranger
 :command W w
 
-" display all matches when tab complete
-set wildmenu
-
-" copy/paste between vim and other programs
-set clipboard=unnamedplus
 
 let mapleader = ' '
+
+" shell & terminal call
+map <leader>sh :sh<CR>    
+map <leader>tt :term<CR>  
+set termwinsize=12x0      
 
 "quitting, saving, etc
 map <leader>qq :q!<CR>
@@ -48,30 +51,9 @@ map <leader>qa :qa!<CR>
 map <leader>ww :w!<CR>
 map <leader>wa :wa<CR>
 
-" shell call
-map <leader>sh :sh<CR>
-
-" terminal in new window
-map <leader>tt :term<CR>
-
-" terminal size
-set termwinsize=12x0 
-
 " tabs
 map <leader>tn :tabnew<CR>
 map <leader>tk :tabclose<CR>
-
-" outwrite special
-map <leader>ds /\.<CR>
-map <leader>cs /\,<CR>
-map <leader>n yy}p<C-a>zz
-map <leader>sk /  x
-map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
-map <leader>te dap/Выдержки<CR>P/---<CR>jjzz
-map <leader>vi dap/Факты<CR>P/---<CR>jjzz
-map <leader>fa dap/---<CR>P/---<CR>jjzz
-map <leader>tag /Теги<CR>zzA 
-map <leader>re /Резюме<CR>zzA 
 
 " buffers
 map <leader>bb :buffers<CR>
@@ -82,12 +64,11 @@ map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
 
 " file references
-map <leader>goals :tabnew ~/goals.txt<CR>
-map <leader>code :tabnew ~/code.py<CR>
+map <leader>go :tabnew ~/goals.txt<CR>
+map <leader>cod :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/_vimrc<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
 map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
-
 
 " Tab navigation by numbering
 noremap <leader>1 1gt
@@ -104,15 +85,27 @@ noremap <leader>9 9gt
 map <leader>ou :OpenBookmark ou<CR>
 map <leader>con :OpenBookmark con<CR>
 
-"status line disabling
-set noshowmode
+"Split navigation
+nnoremap <leader>hh <C-W><C-H>
+nnoremap <leader>jj <C-W><C-J>
+nnoremap <leader>kk <C-W><C-K>
+nnoremap <leader>ll <C-W><C-L>
+
+" outwrite special
+map <leader>ds /\.<CR>
+map <leader>cs /\,<CR>
+map <leader>n yy}p<C-a>zz
+map <leader>sk /  x
+map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
+map <leader>te dap/Выдержки\ :<CR>P/---<CR>jjzz
+map <leader>vi dap/Факты\ :<CR>P/---<CR>jjzz
+map <leader>fa dap/---<CR>P/---<CR>jjzz
+map <leader>tag /Теги\ :<CR>zzA 
+map <leader>re /Резюме\ :<CR>zzA 
 
 "transperent background
 map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
 hi Normal guibg=NONE ctermbg=NONE
-
-" disable swapping
-set noswapfile
 
 " hightlighting (may cause a arrow-bug)
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
@@ -120,15 +113,20 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " toggle hightlighting 
 noremap <F8> :set hlsearch! hlsearch?<CR>
 
-" each split window goes down
-set splitbelow
-
+set wildmenu     	    " display all matches when tab complete
+set clipboard=unnamedplus   " copy/paste between vim and other programs
+set noshowmode		    " status line disabling
+set splitbelow		    " each split window goes down
+set fillchars+=vert:\       " removes pipes | that act as seperators on splits
+set textwidth=79
+set formatoptions+=t
+set noswapfile
+set scrolloff=10
 set showtabline=2
 set encoding=utf-8
 set number relativenumber
 
 " auto mkview + loadview (for folds)
-
 augroup remember_folds
   autocmd!
   autocmd BufWinLeave * mkview
@@ -136,28 +134,24 @@ augroup remember_folds
 augroup END
 
 " fast brackets
-" inoremap (<CR>      (<CR>)<Esc>O
-" inoremap (          ()<Left>
-" inoremap ((         (
-" inoremap ()         () 
+inoremap (<CR>      (<CR>)<Esc>O
+inoremap (          ()<Left>
+inoremap ((         (
+inoremap ()         () 
 
-" inoremap "<CR>      "<CR>"<Esc>O
-" inoremap "          ""<Left>
-" inoremap ""         "
+inoremap "<CR>      "<CR>"<Esc>O
+inoremap "          ""<Left>
+inoremap ""         "
 
-" inoremap [<CR>      [<CR>]<Esc>O
-" inoremap [          []<Left>
-" inoremap [[         [
-" inoremap []         [] 
+inoremap [<CR>      [<CR>]<Esc>O
+inoremap [          []<Left>
+inoremap [[         [
+inoremap []         [] 
 
-" inoremap <<CR>      <<CR>><Esc>O
-" inoremap <          <><Left>
-" inoremap <<         <
-" inoremap <>         <> 
-
-
-" Removes pipes | that act as seperators on splits
-set fillchars+=vert:\   
+inoremap <<CR>      <<CR>><Esc>O
+inoremap <          <><Left>
+inoremap <<         <
+inoremap <>         <> 
 
 " AIRLINE SETTINGS----------------------------------
 let g:airline#extensions#tabline#enabled = 1
@@ -180,13 +174,6 @@ let g:NERDTreeWinSize=28
 
 " CYRILIC WORK SECTION------------------------------
  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-
-" other method
-" Press Ctrl+^ for change the language
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
-" highlight lCursor guifg=NONE guibg=Cyan
 
 " CURSOR BLINKING FUNCTION--------------------------
 nnoremap <silent>n n:call HLNext(0.4)<cr>

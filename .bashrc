@@ -7,8 +7,10 @@
 # --------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------
-# DOOM Emacs section
+# PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.emacs.d/bin/:$PATH"
+export PATH="$HOME/.bin/:$PATH"
+export PATH="/bin/vostorg-progs/:$PATH"
 
 # powerline-----------------------------------------------------------------------
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
@@ -39,11 +41,14 @@ alias q='exit'
 
 # vim references------------------------------------------------------------------
 alias termrc='vim ~/.config/alacritty/alacritty.yml'
+alias goals='vim ~/goals.txt'
 alias qtilerc='vim ~/.config/qtile/config.py'
 alias tmuxrc='vim ~/.tmux.conf'
 alias bashrc='vim ~/.bashrc'
 alias code='vim ~/code.py'
 alias vimrc='vim ~/_vimrc'
+
+#
 
 # program shortcuts---------------------------------------------------------------
 alias calc='calcurse'
@@ -57,6 +62,8 @@ alias cls='clear && figlet -f slant Vostorg machine | lolcat && date'
 alias claer='clear'
 alias c='clear'
 
+# folder references---------------------------------------------------------------
+alias ou='cd ~/outwrite/'
 
 # export--------------------------------------------------------------------------
 export EDITOR='vim'
