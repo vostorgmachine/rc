@@ -14,7 +14,7 @@
 call plug#begin()
 
 " Plug 'davidhalter/jedi'
-" Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
@@ -36,7 +36,6 @@ set bg=dark
 " CUSTOM COMMANDS-----------------------------------
 :command Ra !ranger
 :command W w
-
 
 let mapleader = ' '
 
@@ -97,9 +96,9 @@ map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
-map <leader>te dap/Выдержки\ :<CR>P/---<CR>jjzz
-map <leader>vi dap/Факты\ :<CR>P/---<CR>jjzz
-map <leader>fa dap/---<CR>P/---<CR>jjzz
+map <leader>fa dap/Выдержки\ :<CR>P/---<CR>jjzz
+map <leader>te dap/Факты\ :<CR>P/---<CR>jjzz
+map <leader>vi dap/---<CR>P/---<CR>jjzz
 map <leader>tag /Теги\ :<CR>zzA 
 map <leader>re /Резюме\ :<CR>zzA 
 
@@ -142,6 +141,10 @@ inoremap ()         ()
 inoremap "<CR>      "<CR>"<Esc>O
 inoremap "          ""<Left>
 inoremap ""         "
+
+inoremap '<CR>      '<CR>'<Esc>O
+inoremap '          ''<Left>
+inoremap ''         '
 
 inoremap [<CR>      [<CR>]<Esc>O
 inoremap [          []<Left>
