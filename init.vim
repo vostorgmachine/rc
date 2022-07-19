@@ -6,40 +6,41 @@
 "                               /____/                           /____/   
 
 " VIM-PLUG INSTALL----------------------------------
-"
+
 " VIM
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   
 " NVIM
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 "      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 " PLUGIN SECTION BEGIN------------------------------
-call plug#begin()
+ call plug#begin()
 
-" Plug 'davidhalter/jedi'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'tpope/vim-commentary'
-Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ervandew/supertab'
+ " Plug 'davidhalter/jedi'
+ " Plug 'ycm-core/YouCompleteMe'
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'ThePrimeagen/harpoon'
+ Plug 'tpope/vim-commentary'
+ Plug 'morhetz/gruvbox'
+ Plug 'preservim/nerdtree'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'ervandew/supertab'
 
-call plug#end()
+ call plug#end()
 " PLUGIN SECTION END--------------------------------
 
 " GRUVBOX COLORSCHEME-------------------------------
-colorscheme gruvbox
-set bg=dark
+ colorscheme gruvbox
+ set bg=dark
 
 " MACROS SECTION------------------------------------
 
 " MAIN SETTINGS-------------------------------------
 
 " CUSTOM COMMANDS-----------------------------------
-:command Ra !ranger
+" :command Ra !ranger
 :command W w
 
 let mapleader = ' '
@@ -70,7 +71,7 @@ map <leader>bl :bl!<CR>
 " file references
 map <leader>go :tabnew ~/goals.txt<CR>
 map <leader>co :tabnew ~/code.py<CR>
-map <leader>rc :tabnew ~/_vimrc<CR>
+map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
 map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
 
