@@ -19,7 +19,10 @@
 
  " Plug 'davidhalter/jedi'
  " Plug 'ycm-core/YouCompleteMe'
+ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
  Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-commentary'
  Plug 'morhetz/gruvbox'
@@ -129,11 +132,14 @@ set encoding=utf-8
 set number relativenumber
 
 " auto mkview + loadview (for folds)
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+"
+"(may cause a problem with plugins on nvim)
+"
+" augroup remember_folds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent! loadview
+" augroup END
 
 " fast brackets
 inoremap (<CR>      (<CR>)<Esc>O
@@ -193,3 +199,15 @@ function! HLNext (blinktime)
 endfunction
 
 " EXPERIMENTAL SECTION------------------------------
+
+"Harpoon settings
+
+ map <leader>hm :lua require("harpoon.mark").add_file()<cr>
+ map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<cr>  
+ " map <leader>he :lua require("harpoon.ui").nav_file(3) - "command for file
+" number 3 (for example)
+
+" Telescope settings
+" nnoremap <leader>ff :Telescope find_files<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+
