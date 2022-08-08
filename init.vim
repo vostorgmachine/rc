@@ -16,9 +16,12 @@
 
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
-
- " Plug 'davidhalter/jedi'
- " Plug 'ycm-core/YouCompleteMe'
+ " Plug 'sheerun/vim-polyglot'
+ Plug 'vim-python/python-syntax'
+ Plug 'tpope/vim-repeat'
+ Plug 'tpope/vim-surround'
+ Plug 'davidhalter/jedi'
+ Plug 'ycm-core/YouCompleteMe'
  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -38,6 +41,29 @@
  colorscheme gruvbox
  set bg=dark
 
+" ENABLING PYTHON HIGHTLIGHTING PLUG-IN
+let g:python_highlight_space_error = 0
+let g:python_highlight_string_templates = 0
+
+let g:python_highlight_builtins = 1	
+let g:python_highlight_builtin_objs= 1
+let g:python_highlight_builtin_types= 1
+let g:python_highlight_builtin_funcs= 1
+let g:python_highlight_builtin_funcs_kwarg= 1
+let g:python_highlight_exceptions= 1
+
+let g:python_highlight_string_formatting= 1
+let g:python_highlight_string_format = 1
+let g:python_highlight_string_templates= 1
+
+let g:python_highlight_indent_errors = 1
+let g:python_highlight_space_errors = 0 
+let g:python_highlight_doctests = 1
+let g:python_highlight_func_calls = 1
+let g:python_highlight_class_vars = 1
+let g:python_highlight_operators = 1
+let g:python_highlight_file_headers_as_comments  = 1
+
 " MACROS SECTION------------------------------------
 
 " MAIN SETTINGS-------------------------------------
@@ -45,6 +71,7 @@
 " CUSTOM COMMANDS-----------------------------------
 " :command Ra !ranger
 :command W w
+:command Bdall %bdelete|edit #|normal `""
 
 let mapleader = ' '
 
@@ -53,11 +80,18 @@ let mapleader = ' '
 " map <leader>tt :term<CR>  
 " set termwinsize=12x0      
 
+"vim-surround
+" s( to make (-quotes and delete spaces
+map <leader>s( ysiw(lxwhxbb 
+
 "quitting, saving, etc
 map <leader>qq :q!<CR>
 map <leader>qa :qa!<CR>
-map <leader>ww :w!<CR>
-map <leader>wa :wa<CR>
+" map <leader>ww :w!<CR>
+" map <leader>wa :wa<CR>
+
+" go to the file directory
+map <leader>fd :e %:h<CR>
 
 " tabs
 map <leader>tn :tabnew<CR>
@@ -130,6 +164,7 @@ set scrolloff=10
 set showtabline=2
 set encoding=utf-8
 set number relativenumber
+set nohls
 
 " auto mkview + loadview (for folds)
 "
@@ -160,10 +195,10 @@ inoremap [          []<Left>
 inoremap [[         [
 inoremap []         [] 
 
-inoremap <<CR>      <<CR>><Esc>O
-inoremap <          <><Left>
-inoremap <<         <
-inoremap <>         <> 
+" inoremap <<CR>      <<CR>><Esc>O
+" inoremap <          <><Left>
+" inoremap <<         <
+" inoremap <>         <> 
 
 " AIRLINE SETTINGS----------------------------------
 let g:airline#extensions#tabline#enabled = 1
@@ -184,6 +219,13 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 
+"HARPOON SETTINGS-----------------------------------
+ map <leader>hm :lua require("harpoon.mark").add_file()<cr>
+ map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<cr>  
+
+" TELESCOPE SETTINGS--------------------------------
+nnoremap <leader>ff :Telescope find_files hidden=true<cr>
+
 " CYRILIC WORK SECTION------------------------------
  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
@@ -199,15 +241,5 @@ function! HLNext (blinktime)
 endfunction
 
 " EXPERIMENTAL SECTION------------------------------
-
-"Harpoon settings
-
- map <leader>hm :lua require("harpoon.mark").add_file()<cr>
- map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<cr>  
- " map <leader>he :lua require("harpoon.ui").nav_file(3) - "command for file
-" number 3 (for example)
-
-" Telescope settings
-" nnoremap <leader>ff :Telescope find_files<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+silent! call repeat#set("\<Plug>surround.vim", v:count)
 
