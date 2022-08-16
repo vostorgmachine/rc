@@ -71,14 +71,18 @@ let g:python_highlight_file_headers_as_comments  = 1
 " CUSTOM COMMANDS-----------------------------------
 " :command Ra !ranger
 :command W w
-:command Bdall %bdelete|edit #|normal `""
+:command Bdall %bd|e#|bd#
+:command Reloadconfig source ~/.config/nvim/init.vim
+:command Qrc :tabnew ~/.config/qtile/config.py
+:command Brc :tabnew ~/.bashrc
+:command Ou :cd ~/outwrite
 
 let mapleader = ' '
 
 " shell & terminal call
 " map <leader>sh :sh<CR>    
-" map <leader>tt :term<CR>  
-" set termwinsize=12x0      
+map <leader>tt :term<CR>  
+" set termwinsize=12x0      " work in Vim only 
 
 "vim-surround
 " s( to make (-quotes and delete spaces
@@ -87,8 +91,8 @@ map <leader>s( ysiw(lxwhxbb
 "quitting, saving, etc
 map <leader>qq :q!<CR>
 map <leader>qa :qa!<CR>
-" map <leader>ww :w!<CR>
-" map <leader>wa :wa<CR>
+map <leader>ww :w!<CR>
+map <leader>wa :wa<CR>
 
 " go to the file directory
 map <leader>fd :e %:h<CR>
