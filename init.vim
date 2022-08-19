@@ -4,12 +4,16 @@
 " | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /___/ /_/ / / / / __/ / /_/ / 
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
+" Some comments : 
+"
+" vim-table plugin uses his own shortcut <leader>tm. This enables plugin
 
 " VIM-PLUG INSTALL----------------------------------
 
 " VIM
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  
 " NVIM
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 "      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -17,6 +21,8 @@
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
  " Plug 'sheerun/vim-polyglot'
+ Plug  'dhruvasagar/vim-table-mode'
+ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
  Plug 'vim-python/python-syntax'
  Plug 'tpope/vim-repeat'
  Plug 'tpope/vim-surround'
@@ -76,16 +82,20 @@ let g:python_highlight_file_headers_as_comments  = 1
 :command Qrc :tabnew ~/.config/qtile/config.py
 :command Brc :tabnew ~/.bashrc
 :command Ou :cd ~/outwrite
+:command Line :50i-
 
 let mapleader = ' '
 
+map <leader>tt :term<CR>
+
+" work in Vim only 
+" VVV
+"
 " shell & terminal call
 " map <leader>sh :sh<CR>    
-map <leader>tt :term<CR>  
-" set termwinsize=12x0      " work in Vim only 
+" set termwinsize=12x0      
 
 "vim-surround
-" s( to make (-quotes and delete spaces
 map <leader>s( ysiw(lxwhxbb 
 
 "quitting, saving, etc
@@ -147,7 +157,13 @@ map <leader>fa dap/Выдержки\ :<CR>P/---<CR>jjzz
 map <leader>te dap/Факты\ :<CR>P/---<CR>jjzz
 map <leader>vi dap/---<CR>P/---<CR>jjzz
 map <leader>tag /Теги\ :<CR>zzA 
-map <leader>re /Резюме\ :<CR>zzA 
+" map <leader>re /Резюме\ :<CR>zzA 
+map <leader>re /Резюме\ :<CR>o<ESC>o
+
+
+"other stuff
+map <leader>li 80i-<ESC>o<ESC>
+
 
 "transperent background
 map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
@@ -244,6 +260,8 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
-" EXPERIMENTAL SECTION------------------------------
+" VIM-SURROUND SEETTINGS
 silent! call repeat#set("\<Plug>surround.vim", v:count)
+
+" EXPERIMENTAL SECTION------------------------------
 

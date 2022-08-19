@@ -20,37 +20,48 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
   source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
+
+# outwrite special----------------------------------------------------------------
+current_date=`date +%d.%m.%y`
+alias zipcd="zip $current_date.zip *"
+alias ou='cd ~/outwrite'
+alias oum="cd ~/outwrite/$current_date/"
+alias out="cd ~/outwrite/$current_date/txt"
+alias oue="cd ~/outwrite/$current_date/end"
+alias ous="cd ~/outwrite/$current_date/source"
+alias dtt="catdoc *.doc >> txt/0.txt"
+
 # system etc.---------------------------------------------------------------------
-alias v='vim '
-alias se='sudoedit'
+alias k='killall'
 alias quit!="shutdown now"
 alias first='bash ~/scripts/first.sh'
-alias logout='sudo pkill -u vostorg'
 alias ls='ls -lah --color=auto'
 alias rbash='source ~/.bashrc'
-alias bqconf='cp ~/.config/qtile/config.py ~/.config/qtile/config.py-bak'
-alias pandoc-to-txt='bash ~/scripts/pandoc.sh'
-alias upd='sudo pacman -Syy'
-alias viu="~/.cargo/bin/viu "
-alias t='python3 ~/code.py'
+alias t='clear && python3 ~/code.py'
+alias t2='clear && python3 ~/code2.py'
 alias i='sudo pacman -S '
+alias upd='sudo pacman -Syy'
 alias ..='cd ..'
+alias 2..='cd ../..'
 alias l='ls -CF'
 alias :q='exit'
 alias q='exit'
 
 # vim references------------------------------------------------------------------
-alias termrc='vim ~/.config/alacritty/alacritty.yml'
-alias goals='vim ~/goals.txt'
-alias qtilerc='vim ~/.config/qtile/config.py'
-alias tmuxrc='vim ~/.tmux.conf'
-alias bashrc='vim ~/.bashrc'
-alias code='vim ~/code.py'
-alias vimrc='vim ~/_vimrc'
-
-#
+alias se='sudoedit'
+alias v='nvim '
+alias termrc='nvim ~/.config/alacritty/alacritty.yml'
+alias goals='nvim ~/goals.txt'
+alias qtilerc='nvim ~/.config/qtile/config.py'
+alias tmuxrc='nvim ~/.tmux.conf'
+alias bashrc='nvim ~/.bashrc'
+alias code='nvim ~/code.py'
+alias vimrc='nvim ~/.config/nvim/init.vim'
 
 # program shortcuts---------------------------------------------------------------
+alias b='bri'
+alias tsf='telegram-send --file '
+alias ts='telegram-send '
 alias calc='calcurse'
 alias m='cmatrix -u9'
 alias clock='tty-clock -cs'
@@ -63,11 +74,15 @@ alias claer='clear'
 alias c='clear'
 
 # folder references---------------------------------------------------------------
-alias ou='cd ~/outwrite/'
+alias flash='cd /run/media/vostorg/950E-3C18'
+alias ita='cd ~/italian'
+alias dw='cd ~/Downloads'
+alias dwv='cd ~/Downloads/vhs'
+alias dwt='cd ~/Downloads/Telegram\ Desktop'
 
 # export--------------------------------------------------------------------------
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
@@ -138,3 +153,5 @@ shopt -s expand_aliases # expand aliases
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
 neofetch
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
