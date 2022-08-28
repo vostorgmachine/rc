@@ -7,6 +7,10 @@
 # --------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------
+
+# this command enables vim mode in bash
+set -o vi
+
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.emacs.d/bin/:$PATH"
 export PATH="$HOME/.bin/:$PATH"
@@ -32,10 +36,12 @@ alias ous="cd ~/outwrite/$current_date/source"
 alias dtt="catdoc *.doc >> txt/0.txt"
 
 # system etc.---------------------------------------------------------------------
+alias cat='bat ' 
 alias k='killall'
 alias quit!="shutdown now"
 alias first='bash ~/scripts/first.sh'
-alias ls='ls -lah --color=auto'
+alias ls='exa -lah --color=auto'
+alias l='exa -a'
 alias rbash='source ~/.bashrc'
 alias t='clear && python3 ~/code.py'
 alias t2='clear && python3 ~/code2.py'
@@ -43,7 +49,6 @@ alias i='sudo pacman -S '
 alias upd='sudo pacman -Syy'
 alias ..='cd ..'
 alias 2..='cd ../..'
-alias l='ls -CF'
 alias :q='exit'
 alias q='exit'
 
