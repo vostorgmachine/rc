@@ -20,7 +20,8 @@
 
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
- " Plug 'sheerun/vim-polyglot'
+ Plug 'junegunn/fzf.vim'
+ Plug 'jremmen/vim-ripgrep'
  Plug  'dhruvasagar/vim-table-mode'
  Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
  Plug 'vim-python/python-syntax'
@@ -46,6 +47,9 @@
 " GRUVBOX COLORSCHEME-------------------------------
  colorscheme gruvbox
  set bg=dark
+
+" VIM-TABLE-MODE SETTINGS
+let g:table_mode_corner_corner='+'
 
 " ENABLING PYTHON HIGHTLIGHTING PLUG-IN
 let g:python_highlight_space_error = 0
@@ -81,27 +85,49 @@ let g:python_highlight_file_headers_as_comments  = 1
 :command Reloadconfig source ~/.config/nvim/init.vim
 :command Qrc :tabnew ~/.config/qtile/config.py
 :command Brc :tabnew ~/.bashrc
-:command Ou :cd ~/outwrite
-:command Line :50i-
+:command Line :50i=
+
+" ab`s
+ab итд И т.д
+ab arw --->
+
+" spec-characters
+imap `e è
+imap 'e é
+imap `a à
+imap `u ù
+imap `i ì
+imap `o ò
 
 let mapleader = ' '
 
 map <leader>tt :term<CR>
 
-" work in Vim only 
-" VVV
-"
+" work in Vim only :
 " shell & terminal call
+"
 " map <leader>sh :sh<CR>    
 " set termwinsize=12x0      
 
+"this changes directory to the currently open file
+map <leader>cdc :cd %:p:h<CR>
+" this changes directory to the currently open file (but only for this file)
+map <leader>cdl :lcd %:p:h<CR>
+
+map <leader>cdh :cd ~/<CR>
+
 "vim-surround
 map <leader>s( ysiw(lxwhxbb 
+
+" fzf-vim section
+map <leader>ff :Files<cr>
+map <leader>bb :Buffers<cr>
 
 "quitting, saving, etc
 map <leader>qq :q!<CR>
 map <leader>qa :qa!<CR>
 map <leader>ww :w!<CR>
+map <leader>цц :w!<CR>
 map <leader>wa :wa<CR>
 
 " go to the file directory
@@ -112,7 +138,6 @@ map <leader>tn :tabnew<CR>
 map <leader>tk :tabclose<CR>
 
 " buffers
-map <leader>bb :buffers<CR>
 map <leader>bn :bn!<CR>
 map <leader>bp :bp!<CR>
 map <leader>bk :bd<CR> 
@@ -126,21 +151,6 @@ map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
 map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
 
-" Tab navigation by numbering
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-
-" NERDTree bookmark shortcuts
-" map <leader>ou :OpenBookmark ou<CR>
-" map <leader>con :OpenBookmark con<CR>
-
 "Split navigation
 nnoremap <leader>hh <C-W><C-H>
 nnoremap <leader>jj <C-W><C-J>
@@ -148,7 +158,7 @@ nnoremap <leader>kk <C-W><C-K>
 nnoremap <leader>ll <C-W><C-L>
 
 " outwrite special
-map <leader>ds /\.<CR>
+" map <leader>ds /\.<CR> "Use ( and ) to find dot!
 map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
@@ -162,7 +172,7 @@ map <leader>re /Резюме\ :<CR>o<ESC>o
 
 
 "other stuff
-map <leader>li 80i-<ESC>o<ESC>
+map <leader>li o<ESC>49i=<ESC>I!<ESC>j<ESC>
 
 
 "transperent background
@@ -180,14 +190,14 @@ set fillchars+=vert:\       " removes pipes | that act as seperators on splits
 set textwidth=79
 set formatoptions+=t
 set noswapfile
-set scrolloff=10
+" set scrolloff=25
+set scrolloff=50
 set showtabline=2
 set encoding=utf-8
 set number relativenumber
 set nohls
 
 " auto mkview + loadview (for folds)
-"
 "(may cause a problem with plugins on nvim)
 "
 " augroup remember_folds
@@ -197,23 +207,23 @@ set nohls
 " augroup END
 
 " fast brackets
-inoremap (<CR>      (<CR>)<Esc>O
-inoremap (          ()<Left>
-inoremap ((         (
-inoremap ()         () 
+" inoremap (<CR>      (<CR>)<Esc>O
+" inoremap (          ()<Left>
+" inoremap ((         (
+" inoremap ()         () 
 
-inoremap "<CR>      "<CR>"<Esc>O
-inoremap "          ""<Left>
-inoremap ""         "
+" inoremap "<CR>      "<CR>"<Esc>O
+" inoremap "          ""<Left>
+" inoremap ""         "
 
-inoremap '<CR>      '<CR>'<Esc>O
-inoremap '          ''<Left>
-inoremap ''         '
+" inoremap '<CR>      '<CR>'<Esc>O
+" inoremap '          ''<Left>
+" inoremap ''         '
 
-inoremap [<CR>      [<CR>]<Esc>O
-inoremap [          []<Left>
-inoremap [[         [
-inoremap []         [] 
+" inoremap [<CR>      [<CR>]<Esc>O
+" inoremap [          []<Left>
+" inoremap [[         [
+" inoremap []         [] 
 
 " inoremap <<CR>      <<CR>><Esc>O
 " inoremap <          <><Left>
@@ -244,7 +254,7 @@ let g:NERDTreeWinSize=28
  map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<cr>  
 
 " TELESCOPE SETTINGS--------------------------------
-nnoremap <leader>ff :Telescope find_files hidden=true<cr>
+" nnoremap <leader>ff :Telescope find_files hidden=true<cr>
 
 " CYRILIC WORK SECTION------------------------------
  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -265,3 +275,31 @@ silent! call repeat#set("\<Plug>surround.vim", v:count)
 
 " EXPERIMENTAL SECTION------------------------------
 
+
+" tag_base
+map <leader>nm I$_name_<esc>jI<esc>
+map <leader>gm I$_geo_<esc>jI<esc>
+map <leader>na I$_nation_<esc>jI<esc>
+map <leader>id I$_ideology_<esc>jI<esc>
+map <leader>cor I$_corporation_<esc>jI<esc>
+map <leader>ev I$_event_<esc>jI<esc>
+map <leader>hi I$_history_<esc>jI<esc>
+map <leader>it I$_item_<esc>jI<esc>
+map <leader>ab I$_abbriveation_<esc>jI<esc>
+map <leader>sp I$_sphere_<esc>jI<esc>
+map <leader>st I$_structure_<esc>jI<esc>
+map <leader>ph I$_phenomen_<esc>jI<esc>
+map <leader>en I$_energy_<esc>jI<esc>
+map <leader>pr I$_profession_<esc>jI<esc>
+map <leader>po I$_politic_<esc>jI<esc>
+map <leader>ec I$_economy_<esc>jI<esc>
+map <leader>go I$_goverment_<esc>jI<esc>
+map <leader>lo I$_location_<esc>jI<esc>
+map <leader>me I$_med_<esc>jI<esc>
+map <leader>so I$_social_<esc>jI<esc>
+map <leader>in I$_it_<esc>jI<esc>
+map <leader>wa I$_war_<esc>jI<esc>
+map <leader>rn I$_religion_<esc>jI<esc>
+
+" comment
+map <leader>com o<esc>o#()<left>
