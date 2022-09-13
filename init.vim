@@ -20,20 +20,12 @@
 
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
+ Plug 'vimwiki/vimwiki'
  Plug 'junegunn/fzf.vim'
- Plug 'jremmen/vim-ripgrep'
  Plug  'dhruvasagar/vim-table-mode'
- Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
  Plug 'vim-python/python-syntax'
  Plug 'tpope/vim-repeat'
- Plug 'tpope/vim-surround'
- Plug 'davidhalter/jedi'
- Plug 'ycm-core/YouCompleteMe'
- Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
  Plug 'nvim-lua/plenary.nvim'
- Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
- Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-commentary'
  Plug 'morhetz/gruvbox'
  Plug 'preservim/nerdtree'
@@ -74,22 +66,21 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_operators = 1
 let g:python_highlight_file_headers_as_comments  = 1
 
-" MACROS SECTION------------------------------------
-
 " MAIN SETTINGS-------------------------------------
 
 " CUSTOM COMMANDS-----------------------------------
-" :command Ra !ranger
 :command W w
 :command Bdall %bd|e#|bd#
 :command Reloadconfig source ~/.config/nvim/init.vim
 :command Qrc :tabnew ~/.config/qtile/config.py
 :command Brc :tabnew ~/.bashrc
-:command Line :50i=
+:command Home :cd ~/
 
-" ab`s
+" abs
 ab итд И т.д
 ab arw --->
+ab etc etc...
+ab рпс + разброс по странам
 
 " spec-characters
 imap `e è
@@ -99,15 +90,13 @@ imap `u ù
 imap `i ì
 imap `o ò
 
+" esc alternative
+imap lkj <esc>
+imap дло <esc>
+
 let mapleader = ' '
 
 map <leader>tt :term<CR>
-
-" work in Vim only :
-" shell & terminal call
-"
-" map <leader>sh :sh<CR>    
-" set termwinsize=12x0      
 
 "this changes directory to the currently open file
 map <leader>cdc :cd %:p:h<CR>
@@ -145,7 +134,7 @@ map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
 
 " file references
-map <leader>go :tabnew ~/goals.txt<CR>
+map <leader>go :tabnew ~/goals.md<CR>
 map <leader>co :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
@@ -158,21 +147,19 @@ nnoremap <leader>kk <C-W><C-K>
 nnoremap <leader>ll <C-W><C-L>
 
 " outwrite special
-" map <leader>ds /\.<CR> "Use ( and ) to find dot!
 map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
-map <leader>hat v3}dggP/Тема<CR><ESC>ggy}/Тема<CR>pkJgqap
-map <leader>fa dap/Выдержки\ :<CR>P/---<CR>jjzz
-map <leader>te dap/Факты\ :<CR>P/---<CR>jjzz
-map <leader>vi dap/---<CR>P/---<CR>jjzz
+map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
+map <leader>fa dap/Выдержки\ :<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
+map <leader>te dap/Факты\ :<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
+map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
 map <leader>tag /Теги\ :<CR>zzA 
-" map <leader>re /Резюме\ :<CR>zzA 
 map <leader>re /Резюме\ :<CR>o<ESC>o
-
+map <leader>th /Тема\ :<CR>zzA
 
 "other stuff
-map <leader>li o<ESC>49i=<ESC>I!<ESC>j<ESC>
+map <leader>lv :loadview<CR>
 
 
 "transperent background
@@ -190,45 +177,19 @@ set fillchars+=vert:\       " removes pipes | that act as seperators on splits
 set textwidth=79
 set formatoptions+=t
 set noswapfile
-" set scrolloff=25
-set scrolloff=50
+set scrolloff=25
 set showtabline=2
 set encoding=utf-8
 set number relativenumber
 set nohls
 
-" auto mkview + loadview (for folds)
-"(may cause a problem with plugins on nvim)
+" VIMWIKI SETTINGS:
 "
-" augroup remember_folds
-"   autocmd!
-"   autocmd BufWinLeave * mkview
-"   autocmd BufWinEnter * silent! loadview
-" augroup END
+"set-up main folder & set-up default .md syntax (instead of vimwiki own) :
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/', 'syntax':'markdown', 'ext': '.md'}]
 
-" fast brackets
-" inoremap (<CR>      (<CR>)<Esc>O
-" inoremap (          ()<Left>
-" inoremap ((         (
-" inoremap ()         () 
+nmap <leader>vw <Plug>VimwikiIndex
 
-" inoremap "<CR>      "<CR>"<Esc>O
-" inoremap "          ""<Left>
-" inoremap ""         "
-
-" inoremap '<CR>      '<CR>'<Esc>O
-" inoremap '          ''<Left>
-" inoremap ''         '
-
-" inoremap [<CR>      [<CR>]<Esc>O
-" inoremap [          []<Left>
-" inoremap [[         [
-" inoremap []         [] 
-
-" inoremap <<CR>      <<CR>><Esc>O
-" inoremap <          <><Left>
-" inoremap <<         <
-" inoremap <>         <> 
 
 " AIRLINE SETTINGS----------------------------------
 let g:airline#extensions#tabline#enabled = 1
@@ -249,12 +210,24 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 
-"HARPOON SETTINGS-----------------------------------
- map <leader>hm :lua require("harpoon.mark").add_file()<cr>
- map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<cr>  
+"this func allows to sync opened file with NERDTree
+"" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+	  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+" Call NERDTreeFind iff NERDTree is active, current window contains a
+" modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+	if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+		NERDTreeFind
+		wincmd p
+	endif
+endfunction
 
-" TELESCOPE SETTINGS--------------------------------
-" nnoremap <leader>ff :Telescope find_files hidden=true<cr>
+" Highlight currently open buffer in NERDTree
+autocmd BufRead * call SyncTree()
+map <leader>sd :call SyncTree()<CR>
 
 " CYRILIC WORK SECTION------------------------------
  set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -270,36 +243,93 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
-" VIM-SURROUND SEETTINGS
-silent! call repeat#set("\<Plug>surround.vim", v:count)
+" options for vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+
 
 " EXPERIMENTAL SECTION------------------------------
 
+" tag_base (old version see down below)
+map <leader>en  I$_energy_<esc>jI<esc>
+map <leader>so  I$_social_<esc>jI<esc>
+map <leader>na  I$_nation_<esc>jI<esc>
+map <leader>nm  I$_name_<esc>jI<esc>
+map <leader>wa  I$_war_<esc>jI<esc>
+map <leader>id  I$_ideology_<esc>jI<esc>
+map <leader>ia  I$_imperialism<esc>jI<esc>
+map <leader>gf  I$_goverment_fight<esc>jI<esc>
+map <leader>bt  I$_burjuasic_theory<esc>jI<esc>
+map <leader>ep  I$_european_process<esc>jI<esc>
+map <leader>in  I$_institution<esc>jI<esc>
+map <leader>wo  I$_world_organisation<esc>jI<esc>
+map <leader>pe  I$_politic_event<esc>jI<esc>
+map <leader>wo  I$_workers<esc>jI<esc>
+" map <leader>tec I$_technology_<esc>jI<esc>
+map <leader>tp  I$_trade_pact_<esc>jI<esc>
 
-" tag_base
-map <leader>nm I$_name_<esc>jI<esc>
-map <leader>gm I$_geo_<esc>jI<esc>
-map <leader>na I$_nation_<esc>jI<esc>
-map <leader>id I$_ideology_<esc>jI<esc>
-map <leader>cor I$_corporation_<esc>jI<esc>
-map <leader>ev I$_event_<esc>jI<esc>
-map <leader>hi I$_history_<esc>jI<esc>
-map <leader>it I$_item_<esc>jI<esc>
-map <leader>ab I$_abbriveation_<esc>jI<esc>
-map <leader>sp I$_sphere_<esc>jI<esc>
-map <leader>st I$_structure_<esc>jI<esc>
-map <leader>ph I$_phenomen_<esc>jI<esc>
-map <leader>en I$_energy_<esc>jI<esc>
-map <leader>pr I$_profession_<esc>jI<esc>
-map <leader>po I$_politic_<esc>jI<esc>
-map <leader>ec I$_economy_<esc>jI<esc>
-map <leader>go I$_goverment_<esc>jI<esc>
-map <leader>lo I$_location_<esc>jI<esc>
-map <leader>me I$_med_<esc>jI<esc>
-map <leader>so I$_social_<esc>jI<esc>
-map <leader>in I$_it_<esc>jI<esc>
-map <leader>wa I$_war_<esc>jI<esc>
-map <leader>rn I$_religion_<esc>jI<esc>
+map <leader>cap I%_captured_<esc>jI<esc>
+map <leader>add I^_added_<esc>jI<esc>
 
 " comment
 map <leader>com o<esc>o#()<left>
+
+" tag scripts
+function! Set_var_down()
+	g/$_nam/m$
+	normal o
+        g/$_geo/m$
+	normal o
+        g/$_nat/m$
+	normal o
+        g/$_ide/m$
+	normal o
+        g/$_cor/m$
+	normal o
+        g/$_eve/m$
+	normal o
+        g/$_his/m$
+	normal o
+        g/$_ite/m$
+	normal o
+        g/$_abb/m$
+	normal o
+        g/$_sph/m$
+	normal o
+        g/$_str/m$
+	normal o
+        g/$_phe/m$
+	normal o
+        g/$_ene/m$
+	normal o
+        g/$_pro/m$
+	normal o
+        g/$_pol/m$
+	normal o
+        g/$_eco/m$
+	normal o
+        g/$_gov/m$
+	normal o
+        g/$_loc/m$
+	normal o
+        g/$_med/m$
+	normal o
+        g/$_soc/m$
+	normal o
+        g/$_it_/m$
+	normal o
+        g/$_war/m$
+	normal o
+        g/$_rel/m$
+	normal o
+        g/$_unk/m$
+endfunction
+
+function! Remove_goyal_mark()
+	%s/tags:"=//g
+	%s/or//g
+	%s/"/,/g
+	normal wi
+endfunction
+
