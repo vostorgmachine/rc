@@ -45,9 +45,9 @@ set bg=dark
 let mapleader = ' '
 
 " shell & terminal call
-" map <leader>sh :sh<CR>    
-" map <leader>tt :term<CR>  
-" set termwinsize=12x0      
+map <leader>sh :sh<CR>    
+map <leader>tt :term<CR>  
+set termwinsize=12x0      
 
 "quitting, saving, etc
 map <leader>qq :q!<CR>
@@ -128,11 +128,11 @@ set encoding=utf-8
 set number relativenumber
 
 " auto mkview + loadview (for folds)
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+" augroup remember_folds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent! loadview
+" augroup END
 
 " fast brackets
 inoremap (<CR>      (<CR>)<Esc>O
