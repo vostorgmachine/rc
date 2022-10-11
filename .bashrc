@@ -8,11 +8,13 @@
 
 # --------------------------------------------------------------------------------
 
+# Starship prompt enabling
+eval "$(starship init bash)"
+
 # this command enables vim mode in bash
 set -o vi
 
 # PATH adds-----------------------------------------------------------------------
-export PATH="$HOME/.emacs.d/bin/:$PATH"
 export PATH="$HOME/.bin/:$PATH"
 export PATH="/bin/vostorg-progs/:$PATH"
 
@@ -26,8 +28,9 @@ fi
 
 
 # outwrite special----------------------------------------------------------------
+date_folder=`pwd | grep -Eo '[+-]?[0-9]+([.][0-9]+)?+([.][0-9]+)'`
 current_date=`date +%d.%m.%y`
-alias zipcd="zip $current_date.zip *"
+alias zipdf="zip $date_folder.zip *"
 alias ou='cd ~/outwrite'
 alias oum="cd ~/outwrite/$current_date/"
 alias out="cd ~/outwrite/$current_date/txt"
@@ -36,16 +39,16 @@ alias ous="cd ~/outwrite/$current_date/source"
 alias dtt="catdoc *.doc >> txt/0.txt"
 
 # system etc.---------------------------------------------------------------------
+alias rnix='sudo nixos-rebuild switch'
 alias cat='bat ' 
-alias k='killall'
+alias k='pkill'
 alias quit!="shutdown now"
 alias first='bash ~/scripts/first.sh'
 alias l='exa -lah --color=auto'
 alias rbash='source ~/.bashrc'
 alias t='clear && python3 ~/code.py'
 alias t2='clear && python3 ~/code2.py'
-alias i='sudo pacman -S '
-alias upd='sudo pacman -Syy'
+alias i='nix-env -i'
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias :q='exit'
@@ -54,6 +57,7 @@ alias q='exit'
 # vim references------------------------------------------------------------------
 alias se='sudoedit'
 alias v='nvim '
+alias nixrc='sudoedit /etc/nixos/configuration.nix'
 alias termrc='nvim ~/.config/alacritty/alacritty.yml'
 alias goals='nvim ~/Documents/vimwiki/goals.md'
 alias qtilerc='nvim ~/.config/qtile/config.py'
@@ -63,6 +67,9 @@ alias code='nvim ~/code.py'
 alias vimrc='nvim ~/.config/nvim/init.vim'
 
 # program shortcuts---------------------------------------------------------------
+alias myip='ifconfig | rg wlp -A1'
+alias docx='~/scripts/docx'
+alias bgen='~/scripts/bgen'
 alias rf='rm -rf -i'
 alias b='bri'
 alias tsf='telegram-send --file '
@@ -79,8 +86,9 @@ alias claer='clear'
 alias c='clear'
 
 # folder references---------------------------------------------------------------
-alias vw='cd ~/Documents/vimwiki/'
-alias flash='cd /run/media/vostorg/950E-3C18'
+alias zs='cd ~/Zotero/storage/'
+alias vw='nvim ~/Documents/vimwiki/index.md'
+alias mf='cd /run/media/vostorg/'
 alias ita='cd ~/italian'
 alias dw='cd ~/Downloads'
 alias dwv='cd ~/Downloads/vhs'
@@ -161,3 +169,10 @@ shopt -s expand_aliases # expand aliases
 neofetch
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# fzf shortcuts enabling
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+  source "$(fzf-share)/completion.bash"
+fi

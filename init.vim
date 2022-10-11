@@ -20,9 +20,13 @@
 
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
  Plug 'vimwiki/vimwiki'
+ Plug 'LnL7/vim-nix'
  Plug 'junegunn/fzf.vim'
- Plug  'dhruvasagar/vim-table-mode'
+ Plug 'junegunn/vim-easy-align'
+ Plug 'junegunn/fzf'
+ Plug 'dhruvasagar/vim-table-mode'
  Plug 'vim-python/python-syntax'
  Plug 'tpope/vim-repeat'
  Plug 'nvim-lua/plenary.nvim'
@@ -81,6 +85,7 @@ ab итд И т.д
 ab arw --->
 ab etc etc...
 ab рпс + разброс по странам
+ab [. [...]
 
 " spec-characters
 imap `e è
@@ -109,7 +114,8 @@ map <leader>cdh :cd ~/<CR>
 map <leader>s( ysiw(lxwhxbb 
 
 " fzf-vim section
-map <leader>ff :Files<cr>
+" map <leader>ff :Files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 map <leader>bb :Buffers<cr>
 
 "quitting, saving, etc
@@ -151,9 +157,9 @@ map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
-map <leader>fa dap/Выдержки\ :<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
-map <leader>te dap/Факты\ :<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
-map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>/---<CR>jjzz
+map <leader>fa dap/Выдержки\ :<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+map <leader>te dap/Факты\ :<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги\ :<CR>zzA 
 map <leader>re /Резюме\ :<CR>o<ESC>o
 map <leader>th /Тема\ :<CR>zzA
@@ -251,29 +257,29 @@ syntax on
 
 " EXPERIMENTAL SECTION------------------------------
 
-" tag_base (old version see down below)
-map <leader>en  I$_energy_<esc>jI<esc>
-map <leader>so  I$_social_<esc>jI<esc>
-map <leader>na  I$_nation_<esc>jI<esc>
-map <leader>nm  I$_name_<esc>jI<esc>
-map <leader>wa  I$_war_<esc>jI<esc>
-map <leader>id  I$_ideology_<esc>jI<esc>
-map <leader>ia  I$_imperialism<esc>jI<esc>
-map <leader>gf  I$_goverment_fight<esc>jI<esc>
-map <leader>bt  I$_burjuasic_theory<esc>jI<esc>
-map <leader>ep  I$_european_process<esc>jI<esc>
-map <leader>in  I$_institution<esc>jI<esc>
-map <leader>wo  I$_world_organisation<esc>jI<esc>
-map <leader>pe  I$_politic_event<esc>jI<esc>
-map <leader>wo  I$_workers<esc>jI<esc>
-" map <leader>tec I$_technology_<esc>jI<esc>
-map <leader>tp  I$_trade_pact_<esc>jI<esc>
+" " tag_base (old version see down below)
+" map <leader>en  I$_energy_<esc>jI<esc>
+" map <leader>so  I$_social_<esc>jI<esc>
+" map <leader>na  I$_nation_<esc>jI<esc>
+" map <leader>nm  I$_name_<esc>jI<esc>
+" map <leader>wa  I$_war_<esc>jI<esc>
+" map <leader>id  I$_ideology_<esc>jI<esc>
+" map <leader>ia  I$_imperialism<esc>jI<esc>
+" map <leader>gf  I$_goverment_fight<esc>jI<esc>
+" map <leader>bt  I$_burjuasic_theory<esc>jI<esc>
+" map <leader>ep  I$_european_process<esc>jI<esc>
+" map <leader>in  I$_institution<esc>jI<esc>
+" map <leader>wo  I$_world_organisation<esc>jI<esc>
+" map <leader>pe  I$_politic_event<esc>jI<esc>
+" map <leader>wo  I$_workers<esc>jI<esc>
+" " map <leader>tec I$_technology_<esc>jI<esc>
+" map <leader>tp  I$_trade_pact_<esc>jI<esc>
 
-map <leader>cap I%_captured_<esc>jI<esc>
-map <leader>add I^_added_<esc>jI<esc>
+" map <leader>cap I%_captured_<esc>jI<esc>
+" map <leader>add I^_added_<esc>jI<esc>
 
-" comment
-map <leader>com o<esc>o#()<left>
+" " comment
+" map <leader>com o<esc>o#()<left>
 
 " tag scripts
 function! Set_var_down()
@@ -333,3 +339,5 @@ function! Remove_goyal_mark()
 	normal wi
 endfunction
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
