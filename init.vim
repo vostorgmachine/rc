@@ -20,7 +20,6 @@
 
 " PLUGIN SECTION BEGIN------------------------------
  call plug#begin()
- Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
  Plug 'vimwiki/vimwiki'
  Plug 'LnL7/vim-nix'
  Plug 'junegunn/fzf.vim'
@@ -43,6 +42,11 @@
 " GRUVBOX COLORSCHEME-------------------------------
  colorscheme gruvbox
  set bg=dark
+
+"TRANSPERENT BACKGROUND
+map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
+hi Normal guibg=NONE ctermbg=NONE
+
 
 " VIM-TABLE-MODE SETTINGS
 let g:table_mode_corner_corner='+'
@@ -80,14 +84,14 @@ let g:python_highlight_file_headers_as_comments  = 1
 :command Brc :tabnew ~/.bashrc
 :command Home :cd ~/
 
-" abs
+" ABS
 ab итд И т.д
 ab arw --->
 ab etc etc...
 ab рпс + разброс по странам
 ab [. [...]
 
-" spec-characters
+" SPEC-CHARACTERS
 imap `e è
 imap 'e é
 imap `a à
@@ -95,19 +99,17 @@ imap `u ù
 imap `i ì
 imap `o ò
 
-" esc alternative
+" ESC ALTERNATIVE
 imap lkj <esc>
 imap дло <esc>
 
+" LEADER SECTION
 let mapleader = ' '
-
 map <leader>tt :term<CR>
-
 "this changes directory to the currently open file
 map <leader>cdc :cd %:p:h<CR>
 " this changes directory to the currently open file (but only for this file)
 map <leader>cdl :lcd %:p:h<CR>
-
 map <leader>cdh :cd ~/<CR>
 
 "vim-surround
@@ -164,13 +166,8 @@ map <leader>tag /Теги\ :<CR>zzA
 map <leader>re /Резюме\ :<CR>o<ESC>o
 map <leader>th /Тема\ :<CR>zzA
 
-"other stuff
-map <leader>lv :loadview<CR>
-
-
-"transperent background
-map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
-hi Normal guibg=NONE ctermbg=NONE
+" VIMWIKI REFERENCE
+nmap <leader>vw <Plug>VimwikiIndex
 
 " toggle hightlighting 
 noremap <F8> :set hlsearch! hlsearch?<CR>
@@ -193,8 +190,10 @@ set nohls
 "
 "set-up main folder & set-up default .md syntax (instead of vimwiki own) :
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki/', 'syntax':'markdown', 'ext': '.md'}]
-
-nmap <leader>vw <Plug>VimwikiIndex
+" options for vimwiki
+set nocompatible
+filetype plugin on
+syntax on
 
 
 " AIRLINE SETTINGS----------------------------------
@@ -249,87 +248,34 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
-" options for vimwiki
-set nocompatible
-filetype plugin on
-syntax on
-
-
 " EXPERIMENTAL SECTION------------------------------
-
-" " tag_base (old version see down below)
-" map <leader>en  I$_energy_<esc>jI<esc>
-" map <leader>so  I$_social_<esc>jI<esc>
-" map <leader>na  I$_nation_<esc>jI<esc>
-" map <leader>nm  I$_name_<esc>jI<esc>
-" map <leader>wa  I$_war_<esc>jI<esc>
-" map <leader>id  I$_ideology_<esc>jI<esc>
-" map <leader>ia  I$_imperialism<esc>jI<esc>
-" map <leader>gf  I$_goverment_fight<esc>jI<esc>
-" map <leader>bt  I$_burjuasic_theory<esc>jI<esc>
-" map <leader>ep  I$_european_process<esc>jI<esc>
-" map <leader>in  I$_institution<esc>jI<esc>
-" map <leader>wo  I$_world_organisation<esc>jI<esc>
-" map <leader>pe  I$_politic_event<esc>jI<esc>
-" map <leader>wo  I$_workers<esc>jI<esc>
-" " map <leader>tec I$_technology_<esc>jI<esc>
-" map <leader>tp  I$_trade_pact_<esc>jI<esc>
-
-" map <leader>cap I%_captured_<esc>jI<esc>
-" map <leader>add I^_added_<esc>jI<esc>
-
-" " comment
-" map <leader>com o<esc>o#()<left>
+"
+" tag_base 
+map <leader>en  I$_энергетика_<esc>jI<esc>
+map <leader>ey  I$_экономика_<esc>jI<esc>
+map <leader>so  I$_общество_<esc>jI<esc>
+map <leader>na  I$_нация_<esc>jI<esc>
+map <leader>nm  I$_имя_<esc>jI<esc>
+map <leader>wa  I$_война_<esc>jI<esc>
+map <leader>id  I$_идеологии_<esc>jI<esc>
+map <leader>ia  I$_анализ_империализма_<esc>jI<esc>
+map <leader>gf  I$_борьба_держав_<esc>jI<esc>
+map <leader>bt  I$_буржуазная_теория_<esc>jI<esc>
+map <leader>ep  I$_европейский_процесс_<esc>jI<esc>
+map <leader>in  I$_институты_<esc>jI<esc>
+map <leader>wo  I$_мировые_организации_<esc>jI<esc>
+map <leader>pe  I$_политическое_событие_<esc>jI<esc>
+map <leader>wo  I$_рабочие_<esc>jI<esc>
+map <leader>tec I$_технологии_<esc>jI<esc>
+map <leader>tp  I$_торговые_союзы<esc>jI<esc>
+map <leader>gr  I$_географические_регионы_<esc>jI<esc>
+map <leader>cy  I$_страны_<esc>jI<esc>
+map <leader>un  I$_unknown_<esc>jI<esc>
 
 " tag scripts
 function! Set_var_down()
 	g/$_nam/m$
 	normal o
-        g/$_geo/m$
-	normal o
-        g/$_nat/m$
-	normal o
-        g/$_ide/m$
-	normal o
-        g/$_cor/m$
-	normal o
-        g/$_eve/m$
-	normal o
-        g/$_his/m$
-	normal o
-        g/$_ite/m$
-	normal o
-        g/$_abb/m$
-	normal o
-        g/$_sph/m$
-	normal o
-        g/$_str/m$
-	normal o
-        g/$_phe/m$
-	normal o
-        g/$_ene/m$
-	normal o
-        g/$_pro/m$
-	normal o
-        g/$_pol/m$
-	normal o
-        g/$_eco/m$
-	normal o
-        g/$_gov/m$
-	normal o
-        g/$_loc/m$
-	normal o
-        g/$_med/m$
-	normal o
-        g/$_soc/m$
-	normal o
-        g/$_it_/m$
-	normal o
-        g/$_war/m$
-	normal o
-        g/$_rel/m$
-	normal o
-        g/$_unk/m$
 endfunction
 
 function! Remove_goyal_mark()
@@ -341,3 +287,4 @@ endfunction
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
+
