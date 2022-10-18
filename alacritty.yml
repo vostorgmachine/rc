@@ -7,11 +7,9 @@
 
 #(win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
 
-shell:
-        program: ubuntu
 window:
-        opacity: 0.90
-        startup_mode: Fullscreen
+        opacity: 0.85
+        # startup_mode: Fullscreen
 
 font:
         normal:
