@@ -5,11 +5,15 @@
 # |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /  
 #                               /____/                          /____/   
 
-#(win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
+# (win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
+#
+# allacritty -o font.size=18 - this command allows u to manage font
+# size. Also u can add something line -e tmux after this construction.
 
 window:
         opacity: 0.85
         # startup_mode: Fullscreen
+        startup_mode: Maximized
 
 font:
         normal:
