@@ -116,8 +116,7 @@ map <leader>cdh :cd ~/<CR>
 map <leader>s( ysiw(lxwhxbb 
 
 " fzf-vim section
-" map <leader>ff :Files<cr>
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+map <leader>ff :Files<cr>
 map <leader>bb :Buffers<cr>
 
 "quitting, saving, etc

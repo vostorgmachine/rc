@@ -24,7 +24,7 @@ export PATH="/bin/vostorg-progs/:$PATH"
 # outwrite special----------------------------------------------------------------
 date_folder=`pwd | grep -Eo '[+-]?[0-9]+([.][0-9]+)?+([.][0-9]+)'`
 current_date=`date +%d.%m.%y`
-alias zipdf="zip lo_$date_folder.zip *"
+alias zipdf="zip lo_done_$date_folder.zip *"
 alias ou='cd ~/outwrite'
 alias oum="cd ~/outwrite/$current_date/"
 alias out="cd ~/outwrite/$current_date/txt"
@@ -57,10 +57,11 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias fdl='sudo fdisk -l'
 alias lo='libreoffice --nologo '
 alias myip='ifconfig | rg wlp -A1'
 alias docx='~/scripts/docx'
-alias bgen='~/scripts/bgen'
+alias bgen='python ~/scripts/bgen'
 alias rf='rm -rf '
 alias b='bri'
 alias tsf='telegram-send --file '
