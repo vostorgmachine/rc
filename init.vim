@@ -159,12 +159,12 @@ map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
-map <leader>fa dap/Выдержки\ :<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-map <leader>te dap/Факты\ :<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-map <leader>tag /Теги\ :<CR>zzA 
-map <leader>re /Резюме\ :<CR>o<ESC>o
-map <leader>th /Тема\ :<CR>zzA
+map <leader>tag /Теги:<CR>zzA 
+map <leader>re /Резюме:<CR>o<ESC>o
+map <leader>th /Тема:<CR>zzA 
 
 " VIMWIKI REFERENCE
 nmap <leader>vw <Plug>VimwikiIndex
@@ -249,42 +249,4 @@ function! HLNext (blinktime)
 endfunction
 
 " EXPERIMENTAL SECTION------------------------------
-"
-" tag_base 
-map <leader>en  I$_энергетика_<esc>jI<esc>
-map <leader>ey  I$_экономика_<esc>jI<esc>
-map <leader>so  I$_общество_<esc>jI<esc>
-map <leader>na  I$_нация_<esc>jI<esc>
-map <leader>nm  I$_имя_<esc>jI<esc>
-map <leader>wa  I$_война_<esc>jI<esc>
-map <leader>id  I$_идеологии_<esc>jI<esc>
-map <leader>ia  I$_анализ_империализма_<esc>jI<esc>
-map <leader>gf  I$_борьба_держав_<esc>jI<esc>
-map <leader>bt  I$_буржуазная_теория_<esc>jI<esc>
-map <leader>ep  I$_европейский_процесс_<esc>jI<esc>
-map <leader>in  I$_институты_<esc>jI<esc>
-map <leader>wo  I$_мировые_организации_<esc>jI<esc>
-map <leader>pe  I$_политическое_событие_<esc>jI<esc>
-map <leader>wo  I$_рабочие_<esc>jI<esc>
-map <leader>tec I$_технологии_<esc>jI<esc>
-map <leader>tp  I$_торговые_союзы<esc>jI<esc>
-map <leader>gr  I$_географические_регионы_<esc>jI<esc>
-map <leader>cy  I$_страны_<esc>jI<esc>
-map <leader>un  I$_unknown_<esc>jI<esc>
-
-" tag scripts
-function! Set_var_down()
-	g/$_nam/m$
-	normal o
-endfunction
-
-function! Remove_goyal_mark()
-	%s/tags:"=//g
-	%s/or//g
-	%s/"/,/g
-	normal wi
-endfunction
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
 
