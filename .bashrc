@@ -30,16 +30,16 @@ alias oum="cd ~/outwrite/$current_date/"
 alias out="cd ~/outwrite/$current_date/txt"
 alias oue="cd ~/outwrite/$current_date/end"
 alias ous="cd ~/outwrite/$current_date/source"
-alias dtt="catdoc *.doc >> txt/0.txt"
+alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c normal gqGgg *"
 
 # system etc.---------------------------------------------------------------------
-alias cat='bat ' 
 alias k='pkill'
 alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
 alias rbash='source ~/.bashrc'
 alias t='clear && python3 ~/code.py'
 alias i='sudo pacman -S '
+alias upd='sudo pacman -Suy '
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias :q='exit'
