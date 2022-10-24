@@ -30,7 +30,7 @@ alias oum="cd ~/outwrite/$current_date/"
 alias out="cd ~/outwrite/$current_date/txt"
 alias oue="cd ~/outwrite/$current_date/end"
 alias ous="cd ~/outwrite/$current_date/source"
-alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c normal gqGgg *"
+alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c 'normal gqGgg' * "
 
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
