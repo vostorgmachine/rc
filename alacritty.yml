@@ -11,9 +11,9 @@
 # size. Also u can add something line -e tmux after this construction.
 
 window:
-        opacity: 0.85
+        opacity: 0.75
         # startup_mode: Fullscreen
-        startup_mode: Maximized
+        # startup_mode: Maximized
 
 font:
         normal:

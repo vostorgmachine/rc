@@ -5,6 +5,7 @@
 # |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /
 #                               /____/                          /____/
 # --------------------------------------------------------------------------------
+# here is a simple test
 
 # Powerline configuration
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
@@ -36,6 +37,7 @@ alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c 'normal gqGgg' * "
 alias k='pkill'
 alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
+alias rb='source ~/.bashrc'
 alias rbash='source ~/.bashrc'
 alias t='clear && python3 ~/code.py'
 alias i='sudo pacman -S '
@@ -46,11 +48,15 @@ alias :q='exit'
 alias q='exit'
 
 # vim references------------------------------------------------------------------
+
+alias tms='nvim ~/outwrite/materials/themes.md'
 alias se='sudoedit'
 alias v='nvim '
+alias v.='nvim .'
 alias termrc='nvim ~/.config/alacritty/alacritty.yml'
 alias goals='nvim ~/Documents/vimwiki/goals.md'
 alias tmuxrc='nvim ~/.tmux.conf'
+alias brc='nvim ~/.bashrc'
 alias bashrc='nvim ~/.bashrc'
 alias code='nvim ~/code.py'
 alias vimrc='nvim ~/.config/nvim/init.vim'
@@ -77,6 +83,9 @@ alias claer='clear'
 alias c='clear'
 
 # folder references---------------------------------------------------------------
+alias fd="cd ~ && cd \$(find * -type d | fzf)"
+alias mg='cd ~/Documents/git_projects/'
+alias nts='cd ~/Notes/'
 alias pic='cd ~/Pictures/'
 alias cfg='cd ~/.config/'
 alias vid='cd ~/Videos/'
@@ -169,3 +178,4 @@ if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
 fi
+
