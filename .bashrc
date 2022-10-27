@@ -5,7 +5,6 @@
 # |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /
 #                               /____/                          /____/
 # --------------------------------------------------------------------------------
-# here is a simple test
 
 # Powerline configuration
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
