@@ -17,6 +17,8 @@ fi
 # this command enables vim mode in bash
 set -o vi
 
+# zoxide integration
+eval "$(zoxide init bash)"
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.bin/:$PATH"
 export PATH="/bin/vostorg-progs/:$PATH"
