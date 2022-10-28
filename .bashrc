@@ -62,6 +62,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias gp="git add . && git commit -m 'nothing special here' && git push"
 alias fdl='sudo fdisk -l'
 alias lo='libreoffice --nologo '
 alias myip='ifconfig | rg wlp -A1'
