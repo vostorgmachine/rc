@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-markdown'
  Plug 'vimwiki/vimwiki'
  Plug 'LnL7/vim-nix'
@@ -102,7 +103,16 @@ function! SyncTree()
 	endif
 endfunction
 
+" nerdtree bindings
+map <leader>ob :OpenBookmark 
+
 " Highlight currently open buffer in NERDTree
 
 autocmd BufRead * call SyncTree()
 map <leader>sd :call SyncTree()<CR>
+
+
+" harpoon bindings
+map <leader>ha :lua require("harpoon.mark").add_file()<CR>
+map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
