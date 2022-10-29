@@ -64,6 +64,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias lt='cat ~/Documents/vimwiki/progress/learn_table.md | grep $current_date -C 10 | tail -11'
 alias gp="git add . && git commit -m 'nothing special here' && git push"
 alias fdl='sudo fdisk -l'
 alias lo='libreoffice --nologo '
@@ -170,7 +171,8 @@ shopt -s expand_aliases # expand aliases
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
-neofetch
+# neofetch
+figlet -f slant Vostorg machine | lolcat && date
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
