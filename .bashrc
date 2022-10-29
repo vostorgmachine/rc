@@ -84,7 +84,11 @@ alias cls='clear && figlet -f slant Vostorg machine | lolcat && date'
 alias claer='clear'
 alias c='clear'
 
+# fzf hidden files searching enabling
+export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
+
 # folder references---------------------------------------------------------------
+alias sf='nvim $(fzf --preview="bat --color=always --style=numbers {}")'
 alias fd="cd ~ && cd \$(find * -type d | fzf)"
 alias mg='cd ~/Documents/git_projects/'
 alias nts='cd ~/Notes/'
