@@ -83,39 +83,18 @@ let g:airline_right_alt_sep = ''
 
 " nerdtree bindings
 map <leader>ob :OpenBookmark 
-map <leader>sd :call SyncTree()<CR>
 map <leader>nf :NERDTreeFind<CR>
 map <leader>nn :NERDTree<CR>
+
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
-
 let NERDTreeShowLineNumbers=2
-nnoremap <C-n> :NERDTree<CR>
-map <leader>sd :call SyncTree()<CR>
-"THIS FUNC ALLOWS TO SYNC OPENED FILE WITH NERDTREE
-
-"" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-	  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-" Call NERDTreeFind iff NERDTree is active, current window contains a
-" modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-	if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-		NERDTreeFind
-		wincmd p
-	endif
-endfunction
-
 
 " Highlight currently open buffer in NERDTree
 autocmd BufRead * call SyncTree()
 
-
 " harpoon bindings
 map <leader>ha :lua require("harpoon.mark").add_file()<CR>
 map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
-
