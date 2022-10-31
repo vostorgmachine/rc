@@ -9,6 +9,7 @@
 source $HOME/.config/nvim/modules/leader_aliases.vim
 source $HOME/.config/nvim/modules/special_functions.vim
 source $HOME/.config/nvim/modules/plugins.vim
+source $HOME/.config/nvim/modules/macros.vim
 
 " MAIN SETTINGS-------------------------------------
 set wildmenu     	    " display all matches when tab complete
