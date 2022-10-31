@@ -6,7 +6,6 @@
 "                               /____/                           /____/   
 
 let mapleader = ' '
-map <leader>tt :term<CR>
 
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h<CR>
@@ -76,5 +75,23 @@ map <leader>th /Тема:<CR>zzA
 map <leader>ер /Тема:<CR>zzA 
 map <leader>re /Резюме:<CR>o<ESC>o
 
-" VIMWIKI REFERENCE
+" vimwiki reference
 nmap <leader>vw <Plug>VimwikiIndex
+
+" nerdtree bindings
+map <leader>ob :OpenBookmark 
+map <leader>nf :NERDTreeFind<CR>
+map <leader>nn :NERDTree<CR>
+
+" harpoon bindings
+map <leader>ha :lua require("harpoon.mark").add_file()<CR>
+map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
+" toggleterm
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+map <leader>st :ToggleTermSendVisualSelection<CR>

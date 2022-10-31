@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
  Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-markdown'
  Plug 'vimwiki/vimwiki'
@@ -81,11 +82,6 @@ let g:airline_right_alt_sep = ''
 
 " NERDTREE SETTINGS---------------------------------
 
-" nerdtree bindings
-map <leader>ob :OpenBookmark 
-map <leader>nf :NERDTreeFind<CR>
-map <leader>nn :NERDTree<CR>
-
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
@@ -109,9 +105,8 @@ function! SyncTree()
 	endif
 endfunction
 
-" harpoon bindings
-map <leader>ha :lua require("harpoon.mark").add_file()<CR>
-map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
-
-
-
+" set
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>

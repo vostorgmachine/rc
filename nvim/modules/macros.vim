@@ -6,4 +6,12 @@
 "                               /____/                           /____/   
 
 " outwrite separator
-let @s = 'yyGp hath/==�kb�kb---mmgg bnj'
+let @s = 'yyGp hath/==kbkb---mmgg bnj'
+
+" outwrite-opf generator
+" let @o = '
+"
+" 1) head_taking = ggwv@7y bp/le>/,kb>pJjkh bnj
+
+" 2) author_taking = 
+
