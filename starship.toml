@@ -1,0 +1,6 @@
+format = """ $directory($git_branch$git_state$git_status)
+$hostname $username 
+ ❯(bold green) """
+[line_break]
+disabled = true
+[character]
