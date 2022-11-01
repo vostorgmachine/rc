@@ -18,3 +18,22 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set laststatus=0
+	set showtabline=0
+        set noshowcmd
+	normal :AirlineToggle
+    else
+        let s:hidden_all = 0
+        set showmode
+        set laststatus=2
+	set showtabline=2
+        set showcmd
+    endif
+endfunction
+nnoremap <F10> :call ToggleHiddenAll()<CR>
