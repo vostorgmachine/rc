@@ -63,6 +63,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias ipy='ipython'
 alias lt='cat ~/Documents/vimwiki/progress/learn_table.md | grep $current_date -C 10 | tail -11'
 alias gp="git add . && git commit -m 'nothing special here' && git push"
 alias fdl='sudo fdisk -l'
