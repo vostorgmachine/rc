@@ -85,6 +85,7 @@ alias c='clear'
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
 # folder references---------------------------------------------------------------
+alias mus='cd ~/Music'
 alias sf='nvim $(fzf --preview="bat --color=always --style=numbers {}")'
 alias fd="cd ~ && cd \$(find * -type d | fzf)"
 alias mg='cd ~/Documents/git_projects/'
