@@ -44,7 +44,6 @@ alias :q='exit'
 alias q='exit'
 
 # vim references------------------------------------------------------------------
-
 alias tms='nvim ~/outwrite/materials/themes.md'
 alias se='sudoedit'
 alias v='nvim '
@@ -58,6 +57,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias scr='scrcpy --encoder OMX.Intel.hw_ve.h264 -m 800'
 alias ok='okular'
 alias ipy='ipython'
 alias lt='cat ~/Documents/vimwiki/progress/learn_table.md | grep $current_date -C 10 | tail -11'
