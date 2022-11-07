@@ -56,7 +56,7 @@ nnoremap <leader>kk <C-W><C-K>
 nnoremap <leader>ll <C-W><C-L>
 
 " markdown things
-map <leader>si dapP<C-v>}kI  <ESC>R*<ESC>gqapj
+map <leader>si {j<C-v>}kI  <ESC>r*<ESC>}
 map <leader>h1 I# <ESC> 
 map <leader>h2 I## <ESC> 
 map <leader>h3 I### <ESC> 
