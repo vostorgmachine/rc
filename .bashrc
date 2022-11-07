@@ -1,4 +1,4 @@
-#  _    __           __                                       _____
+/  _    __           __                                       _____
 # | |  / /___  _____/ /_____  _________ _   _________  ____  / __(_)___ _
 # | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
 # | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ /
@@ -57,6 +57,8 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias man='tldr'
+alias cce='calcurse'
 alias scr='scrcpy --encoder OMX.Intel.hw_ve.h264 -m 800'
 alias ok='okular'
 alias ipy='ipython'
