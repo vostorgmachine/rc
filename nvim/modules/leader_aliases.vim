@@ -17,8 +17,13 @@ map <leader>cdh :cd ~/<CR>
 "vim-surround
 map <leader>s( ysiw(lxwhxbb 
 
+" telescope
+map <leader>ff <cmd>Telescope find_files<cr>
+map <leader>fg <cmd>Telescope live_grep<cr>
+map <leader>fb <cmd>Telescope buffers<cr>
+
 " fzf-vim section
-map <leader>ff :Files<cr>
+" map <leader>ff :Files<cr>
 map <leader>bb :Buffers<cr>
 
 "quitting, saving, etc
@@ -86,6 +91,9 @@ map <leader>nn :NERDTree<CR>
 " harpoon bindings
 map <leader>ha :lua require("harpoon.mark").add_file()<CR>
 map <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+map <leader>hm :Telescope harpoon marks<CR>
+map <leader>hn :lua require("harpoon.ui").nav_next()<CR>
+map <leader>hp :lua require("harpoon.ui").nav_prev()<CR>
 
 " toggleterm
 " By applying the mappings this way you can pass a count to your

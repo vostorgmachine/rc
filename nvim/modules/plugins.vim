@@ -7,6 +7,8 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
  Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
  Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-markdown'

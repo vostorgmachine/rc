@@ -18,6 +18,7 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
+au VimEnter * call ToggleHiddenAll()
 let s:hidden_all = 0
 function! ToggleHiddenAll()
     if s:hidden_all  == 0

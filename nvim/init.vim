@@ -5,14 +5,14 @@
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
 
-" MODULE LINKS--------------------------------------
+" module links--------------------------------------
 source $HOME/.config/nvim/modules/leader_aliases.vim
 source $HOME/.config/nvim/modules/special_functions.vim
 source $HOME/.config/nvim/modules/plugins.vim
 source $HOME/.config/nvim/modules/macros.vim
 source $HOME/.config/nvim/modules/scripts.vim
 
-" MAIN SETTINGS-------------------------------------
+" main settings-------------------------------------
 set wildmenu     	    " display all matches when tab complete
 set clipboard=unnamedplus   " copy/paste between vim and other programs
 set noshowmode		    " status line disabling
@@ -27,11 +27,11 @@ set encoding=utf-8
 set number relativenumber
 set nohls
 
-" TRANSPERENT BACKGROUND----------------------------
+" transperent background----------------------------
 map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
 hi Normal guibg=NONE ctermbg=NONE
 
-" CUSTOM COMMANDS-----------------------------------
+" custom commands-----------------------------------
 :command W w
 :command Bdall %bd|e#|bd#
 :command Reloadconfig source ~/.config/nvim/init.vim
@@ -39,13 +39,13 @@ hi Normal guibg=NONE ctermbg=NONE
 :command Brc :tabnew ~/.bashrc
 :command Home :cd ~/
 
-" ABS---------------------------------------------
+" abs---------------------------------------------
 ab итд И т.д
 ab arw --->
 ab etc etc...
 ab [. [...]
 
-" SPEC-CHARACTERS---------------------------------
+" spec-characters---------------------------------
 imap `e è
 imap 'e é
 imap `a à
@@ -53,11 +53,11 @@ imap `u ù
 imap `i ì
 imap `o ò
 
-" ESC ALTERNATIVE---------------------------------
+" esc alternative---------------------------------
 imap lkj <esc>
 imap дло <esc>
 
-" TOGGLE HIGHTLIGHTING----------------------------
+" toggle hightlighting----------------------------
 noremap <F8> :set hlsearch! hlsearch?<CR>
 
 " playing with neovide
