@@ -73,7 +73,7 @@ map <leader>h2 I## <ESC>
 map <leader>h3 I### <ESC> 
 
 " outwrite special
-map <leader>cs /\,<CR>
+" map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
