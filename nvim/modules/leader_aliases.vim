@@ -26,6 +26,9 @@ map <leader>fb <cmd>Telescope buffers<cr>
 " map <leader>ff :Files<cr>
 map <leader>bb :Buffers<cr>
 
+" GFiles for fzf in git repo
+map <leader>gf :GFiles<cr>
+
 "quitting, saving, etc
 map <leader>qq :q!<CR>
 map <leader>qa :qa!<CR>
