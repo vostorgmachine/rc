@@ -7,6 +7,9 @@
 
 let mapleader = ' '
 
+" reload config
+map <leader><CR> :source ~/.config/nvim/init.vim<CR>
+
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h<CR>
 
@@ -82,6 +85,12 @@ map <leader>ефп /Теги:<CR>zzA
 map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
 map <leader>re /Резюме:<CR>o<ESC>o
+
+" visual mode
+
+vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 
 " vimwiki reference
 nmap <leader>vw <Plug>VimwikiIndex
