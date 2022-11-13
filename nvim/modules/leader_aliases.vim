@@ -15,6 +15,8 @@ map <leader>cd :cd %:p:h<CR>
 
 " this changes directory to the currently open file (but only for this file)
 map <leader>cdl :lcd %:p:h<CR>
+
+" go to home direcory
 map <leader>cdh :cd ~/<CR>
 
 "vim-surround
@@ -58,7 +60,6 @@ map <leader>go :tabnew ~/goals.md<CR>
 map <leader>co :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
-map <leader>qrc :tabnew ~/.config/qtile/config.py<CR>
 
 "Split navigation
 nnoremap <leader>hh <C-W><C-H>
@@ -71,9 +72,10 @@ map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{j
 map <leader>h1 I# <ESC> 
 map <leader>h2 I## <ESC> 
 map <leader>h3 I### <ESC> 
+map <leader>h4 I#### <ESC> 
 
 " outwrite special
-" map <leader>cs /\,<CR>
+map <leader>cs /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
@@ -87,10 +89,16 @@ map <leader>ер /Тема:<CR>zzA
 map <leader>re /Резюме:<CR>o<ESC>o
 
 " visual mode
-
 vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+
+" this allows to yank selected line(s) to he OS clipboard
+vnoremap <leader>y "+y
+
+" move selected line(s)
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " vimwiki reference
 nmap <leader>vw <Plug>VimwikiIndex
