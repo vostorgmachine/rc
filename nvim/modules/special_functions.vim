@@ -61,3 +61,7 @@ function! Quote_autocomplete()
     endif
 endfunction
 nnoremap <F11> :call Quote_autocomplete()<CR>
+
+function! Mount_formating()
+	%s/\ ноября\ 2/.11.2
+endfunction
