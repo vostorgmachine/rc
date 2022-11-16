@@ -38,35 +38,23 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
+" quotes autocomplete
 inoremap ( ()<Esc>i
+inoremap (( (<Esc>a
+
 inoremap { {}<Esc>i
+inoremap {{ {<Esc>a
 inoremap {<CR> {<CR>}<Esc>O
+
 inoremap [ []<Esc>i
+inoremap [[ [<Esc>a
 inoremap [. [...] <Esc>a
+
 inoremap < <><Esc>i
+inoremap << <<Esc>a
+
 inoremap ' ''<Esc>i
+inoremap '' '<Esc>a
+
 inoremap " ""<Esc>i
-"
-" quote-autocomplite
-" let s:enabled = 1
-" function! Quote_autocomplete()
-"     if s:enabled
-" 	inoremap ( ()<Esc>i
-" 	inoremap { {}<Esc>i
-" 	inoremap {<CR> {<CR>}<Esc>O
-" 	inoremap [ []<Esc>i
-" 	inoremap < <><Esc>i
-" 	inoremap ' ''<Esc>i
-" 	inoremap " ""<Esc>i
-"     else
-" 	inoremap ( (
-" 	inoremap { {
-" 	inoremap { {
-" 	inoremap [ [
-" 	inoremap < <
-" 	inoremap ' '
-" 	inoremap " "
-" 	let s:enabled = 1
-"     endif
-" endfunction
-" nnoremap <F11> :call Quote_autocomplete()<CR>
+inoremap "" "<Esc>a
