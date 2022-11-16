@@ -39,7 +39,7 @@ endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
 " quote-autocomplite
-let s:enabled = 0
+let s:enabled = 1
 function! Quote_autocomplete()
     if s:enabled
 	inoremap ( ()<Esc>i
