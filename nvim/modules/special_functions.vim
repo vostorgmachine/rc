@@ -38,30 +38,35 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Esc>i
+inoremap [. [...] <Esc>a
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+"
 " quote-autocomplite
-let s:enabled = 1
-function! Quote_autocomplete()
-    if s:enabled
-	inoremap ( ()<Esc>i
-	inoremap { {}<Esc>i
-	inoremap {<CR> {<CR>}<Esc>O
-	inoremap [ []<Esc>i
-	inoremap < <><Esc>i
-	inoremap ' ''<Esc>i
-	inoremap " ""<Esc>i
-    else
-	inoremap ( (
-	inoremap { {
-	inoremap { {
-	inoremap [ [
-	inoremap < <
-	inoremap ' '
-	inoremap " "
-	let s:enabled = 1
-    endif
-endfunction
-nnoremap <F11> :call Quote_autocomplete()<CR>
-
-function! Mount_formating()
-	%s/\ ноября\ 2/.11.2
-endfunction
+" let s:enabled = 1
+" function! Quote_autocomplete()
+"     if s:enabled
+" 	inoremap ( ()<Esc>i
+" 	inoremap { {}<Esc>i
+" 	inoremap {<CR> {<CR>}<Esc>O
+" 	inoremap [ []<Esc>i
+" 	inoremap < <><Esc>i
+" 	inoremap ' ''<Esc>i
+" 	inoremap " ""<Esc>i
+"     else
+" 	inoremap ( (
+" 	inoremap { {
+" 	inoremap { {
+" 	inoremap [ [
+" 	inoremap < <
+" 	inoremap ' '
+" 	inoremap " "
+" 	let s:enabled = 1
+"     endif
+" endfunction
+" nnoremap <F11> :call Quote_autocomplete()<CR>
