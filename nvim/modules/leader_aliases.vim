@@ -87,6 +87,8 @@ map <leader>ефп /Теги:<CR>zzA
 map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
 map <leader>re /Резюме:<CR>o<ESC>o
+map <leader>r/ /Резюме:<CR>o<ESC>o///<ESC>
+
 
 " visual mode
 vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
