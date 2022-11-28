@@ -67,7 +67,7 @@ if exists("g:neovide")
 	let g:transparency = 0.8
 	let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
 	let g:neovide_cursor_animation_length=0.00
-	let s:guifontsize=7
-	set guifont=Mononoki\ NF:h11
+	let s:guifontsize=12
+	set guifont=Mononoki\ NF:h22
 endif
 
