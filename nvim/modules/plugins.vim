@@ -7,6 +7,9 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'Yggdroot/indentLine'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'nvim-lua/completion-nvim'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'ryanoasis/vim-devicons'
  Plug 'francoiscabrol/ranger.vim'
@@ -90,7 +93,7 @@ let g:airline_right_alt_sep = ''
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=28
+let g:NERDTreeWinSize=35
 let NERDTreeShowLineNumbers=2
 
 " Highlight currently open buffer in NERDTree

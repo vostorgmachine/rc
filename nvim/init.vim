@@ -71,3 +71,4 @@ if exists("g:neovide")
 	set guifont=Mononoki\ NF:h22
 endif
 
+let g:python_indent = {}

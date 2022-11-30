@@ -109,6 +109,9 @@ nmap <leader>vw <Plug>VimwikiIndex
 map <leader>ob :OpenBookmark 
 map <leader>nf :NERDTreeFind<CR>
 map <leader>nn :NERDTree<CR>
+map <leader>nh :NERDTree ~/<CR>
+" map <leader>nc :NERDTree ~/.config<CR>
+
 
 " harpoon bindings
 map <leader>ha :lua require("harpoon.mark").add_file()<CR>
