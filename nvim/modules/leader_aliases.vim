@@ -108,10 +108,9 @@ nmap <leader>vw <Plug>VimwikiIndex
 " nerdtree bindings
 map <leader>ob :OpenBookmark 
 map <leader>nf :NERDTreeFind<CR>
-map <leader>nn :NERDTree<CR>
+map <leader>nn :NERDTreeToggle<CR>
+map <leader>nb :NERDTreeFromBookmark 
 map <leader>nh :NERDTree ~/<CR>
-" map <leader>nc :NERDTree ~/.config<CR>
-
 
 " harpoon bindings
 map <leader>ha :lua require("harpoon.mark").add_file()<CR>
@@ -128,3 +127,20 @@ nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 map <leader>st :ToggleTermSendVisualSelection<CR>
+
+
+" mappings for coclist------------------------------
+
+" Show all diagnostics.
+nnoremap <silent><nowait><leader><space>d  :<C-u>CocList diagnostics<cr>
+" Show commands.
+nnoremap <silent><nowait><leader><space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait><leader><space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait><leader><space>s  :<C-u>CocList -I symbols<cr>
+
+" vista---------------------------------------------
+nnoremap <silent><nowait><leader>vv :Vista!!<CR>
+nnoremap <silent><nowait><leader>vf :Vista finder<CR>
+

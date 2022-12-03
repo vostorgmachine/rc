@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'liuchengxu/vista.vim'
  Plug 'Yggdroot/indentLine'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'nvim-lua/completion-nvim'
@@ -93,7 +94,7 @@ let g:airline_right_alt_sep = ''
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=28
 let NERDTreeShowLineNumbers=2
 
 " Highlight currently open buffer in NERDTree
