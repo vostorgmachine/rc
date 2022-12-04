@@ -1,6 +1,4 @@
 cfg ~/.config
-gitrc ~/Documents/git_projects/rc
 projects ~/Documents/projects
-git ~/Documents/git_projects
 
 home~
