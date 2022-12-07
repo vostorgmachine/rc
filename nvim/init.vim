@@ -28,8 +28,10 @@ set number relativenumber
 set nohls
 
 " transperent background----------------------------
-map <leader>tr :hi Normal guibg=NONE ctermbg=NONE<CR>
 hi Normal guibg=NONE ctermbg=NONE
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 
 " custom commands-----------------------------------
 :command W w
@@ -43,7 +45,7 @@ hi Normal guibg=NONE ctermbg=NONE
 ab итд И т.д
 ab arw --->
 ab etc etc...
-ab .] [...]
+ab [. [...]
 
 " spec-characters---------------------------------
 imap `e è
@@ -67,8 +69,7 @@ if exists("g:neovide")
 	let g:transparency = 0.8
 	let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
 	let g:neovide_cursor_animation_length=0.00
-	let s:guifontsize=12
-	set guifont=Mononoki\ NF:h22
+	let s:guifontsize=7
+	set guifont=Mononoki\ NF:h11
 endif
 
-let g:python_indent = {}
