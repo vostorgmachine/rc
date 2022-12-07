@@ -58,3 +58,22 @@ inoremap '' '<Esc>a
 
 inoremap " ""<Esc>i
 inoremap "" "<Esc>a
+
+function! Mountfloat()
+	:%s/\ ноября\ 20/.11.20
+	:%s/\ декабря\ 20/.12.20
+endfunction
+
+
+" vista auto open on .py format
+augroup VistaAutoOpen
+      autocmd!
+      autocmd BufRead *.py  Vista | Vista focus
+augroup end
+
+" use tab for trigger completion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
