@@ -59,17 +59,12 @@ inoremap '' '<Esc>a
 inoremap " ""<Esc>i
 inoremap "" "<Esc>a
 
+" outwrite special:
+" mount str ---> float
 function! Mountfloat()
 	:%s/\ ноября\ 20/.11.20
 	:%s/\ декабря\ 20/.12.20
 endfunction
-
-
-" vista auto open on .py format
-augroup VistaAutoOpen
-      autocmd!
-      autocmd BufRead *.py  Vista | Vista focus
-augroup end
 
 " use tab for trigger completion
 inoremap <silent><expr> <TAB>

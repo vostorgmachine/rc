@@ -8,11 +8,11 @@
 " --------------------------------------------------
  call plug#begin()
  Plug 'liuchengxu/vista.vim'
+ Plug 'mfussenegger/nvim-dap'
  Plug 'Yggdroot/indentLine'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'nvim-lua/completion-nvim'
- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'ryanoasis/vim-devicons'
+ Plug 'nvim-treesitter/nvim-treesitter'
  Plug 'francoiscabrol/ranger.vim'
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -33,8 +33,9 @@
  Plug 'preservim/nerdtree'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
- Plug 'ervandew/supertab'
+ " Plug 'ervandew/supertab'
  call plug#end()
+
 " --------------------------------------------------
 
 " GRUVBOX COLORSCHEME-------------------------------
@@ -122,3 +123,4 @@ autocmd TermEnter term://*toggleterm#*
 
 " disable ranger default shortfut(leader + f)
 let g:ranger_map_keys = 0
+
