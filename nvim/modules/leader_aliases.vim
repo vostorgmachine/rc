@@ -132,7 +132,7 @@ map <leader>st :ToggleTermSendVisualSelection<CR>
 " mappings for coclist------------------------------
 
 " Show all diagnostics.
-nnoremap <silent><nowait><leader><space>d  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait><leader>di  :<C-u>CocList diagnostics<cr>
 " Show commands.
 nnoremap <silent><nowait><leader><space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.

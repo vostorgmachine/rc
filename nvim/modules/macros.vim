@@ -6,12 +6,10 @@
 "                               /____/                           /____/   
 
 " outwrite separator
-let @s = 'yyGp hath/==kbkb---mmgg bnj'
+let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_ bnj'
 
-" outwrite-opf generator
-" let @o = '
-"
-" 1) head_taking = ggwv@7y bp/le>/,kb>pJjkh bnj
+" author adding
+let @s = 'gg}dddd/):pkJgg_'
 
-" 2) author_taking = 
-
+" comma changer
+let @c = '/):V:#�kbs/\,/\ &�kb\&/ggg_'
