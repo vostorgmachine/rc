@@ -67,8 +67,34 @@ function! Mountfloat()
 endfunction
 
 " use tab for trigger completion
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" set specific outwrite marks like 'viderzhki', 'fakti', etc...
+function! Set_outwrite_marks()
+	/##\ Резюме:
+	:normal mr
+	/##\ Тезисы:
+	:normal mt
+	/##\ Факты:
+	:normal mf
+	/##\ Выдержки:
+	:normal mv
+	/---
+	:normal mm | gg_
+endfunction
+
+function! Outwrite_startup()
+	normal 999@l
+	call Mountfloat()
+endfunction
+
+
+function! Docx_cleaner()
+	:%s/<</"/g
+	:%s/>>/"/g
+	:%s/--/-/g
+endfunction
