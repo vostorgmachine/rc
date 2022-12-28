@@ -28,6 +28,8 @@ alias out="cd ~/outwrite/$current_date/txt"
 alias oue="cd ~/outwrite/$current_date/end"
 alias ous="cd ~/outwrite/$current_date/source"
 alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c 'normal gqGgg' * "
+alias dxt="docx2txt *docx && mv *.txt txt/0.txt && cd txt/ && nvim -c 'call Outwrite_startup()' 0.txt"
+alias make_0="cat -s 0.txt >> 0-done.txt && mv 0-done.txt 0.txt && nvim -c 'normal gqGgg | call Docx_cleaner()' * "
 
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
