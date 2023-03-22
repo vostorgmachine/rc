@@ -18,6 +18,7 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
+" CURSOR BLINKING FUNCTION--------------------------
 au VimEnter * call ToggleHiddenAll()
 let s:hidden_all = 0
 function! ToggleHiddenAll()
@@ -62,27 +63,22 @@ inoremap "" "<Esc>a
 " outwrite special:
 " mount str ---> float
 function! Mountfloat()
+	:%s/\ января\ 20/.01.20
+	:%s/\ февраля\ 20/.02.20
+	:%s/\ марта\ 20/.03.20
+	:%s/\ апреля\ 20/.04.20
+	:%s/\ мая\ 20/.05.20
+	:%s/\ июня\ 20/.06.20
+	:%s/\ июля\ 20/.07.20
+	:%s/\ августа\ 20/.08.20
+	:%s/\ сентября\ 20/.09.20
+	:%s/\ октября\ 20/.10.20
 	:%s/\ ноября\ 20/.11.20
 	:%s/\ декабря\ 20/.12.20
 endfunction
 
-" use tab for trigger completion
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1) :
-"       \ CheckBackspace() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
 " set specific outwrite marks like 'viderzhki', 'fakti', etc...
 function! Set_outwrite_marks()
-	/##\ Резюме:
-	:normal mr
-	/##\ Тезисы:
-	:normal mt
-	/##\ Факты:
-	:normal mf
-	/##\ Выдержки:
-	:normal mv
 	/---
 	:normal mm | gg_
 endfunction
@@ -90,11 +86,33 @@ endfunction
 function! Outwrite_startup()
 	normal 999@l
 	call Mountfloat()
+	call Docx_cleaner()
+	normal gg_
+	normal gqGgg
+	exit
 endfunction
-
 
 function! Docx_cleaner()
 	:%s/<</"/g
 	:%s/>>/"/g
 	:%s/--/-/g
 endfunction
+
+function! Blank_cleaner()
+	normal gg_j4ddj2dwA, 
+	normal _j5dwkJ_2j2ddjj6ddgg_
+endfunction
+
+" use tab for trigger completion
+" --------------------------------------------------
+" bug here : sometimes this function may 
+" cause a error (something about 'CheckBackspace' func or something)
+" --------------------------------------------------
+
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+"
+"

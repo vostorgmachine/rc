@@ -10,6 +10,9 @@ let mapleader = ' '
 " reload config
 map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 
+" open ranger client inside of current vim session
+map <leader>rr :Ranger<CR>
+
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h<CR>
 
@@ -18,6 +21,8 @@ map <leader>cdl :lcd %:p:h<CR>
 
 " go to home direcory
 map <leader>cdh :cd ~/<CR>
+
+map <leader>aa :args *<CR>
 
 "vim-surround
 map <leader>s( ysiw(lxwhxbb 
@@ -50,7 +55,9 @@ map <leader>tk :tabclose<CR>
 
 " buffers
 map <leader>bn :bn!<CR>
+map <leader>ит :bn!<CR>
 map <leader>bp :bp!<CR>
+map <leader>из :bp!<CR>
 map <leader>bk :bd<CR> 
 map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
@@ -67,8 +74,13 @@ nnoremap <leader>jj <C-W><C-J>
 nnoremap <leader>kk <C-W><C-K>
 nnoremap <leader>ll <C-W><C-L>
 
+"Quick split + resize
+" Also this is a example of 'gluing' two commands together using <bar>.
+nnoremap <leader>ms :split <bar> res 10 <bar> ?## <CR> 
+nnoremap <leader>ьы :split <bar> res 10 <bar> ?## <CR> 
+
 " markdown things
-map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{j
+map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
 map <leader>h1 I# <ESC> 
 map <leader>h2 I## <ESC> 
 map <leader>h3 I### <ESC> 
@@ -86,8 +98,9 @@ map <leader>tag /Теги:<CR>zzA
 map <leader>ефп /Теги:<CR>zzA 
 map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
-map <leader>re /Резюме:<CR>o<ESC>o
-map <leader>r/ /Резюме:<CR>o<ESC>o///<ESC>
+" map <leader>re /Резюме:<CR>o<ESC>o
+map <leader>re /---<CR>kkA
+map <leader>bc :call Blank_cleaner()<CR>
 
 
 " visual mode
@@ -144,3 +157,10 @@ nnoremap <silent><nowait><leader><space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait><leader>vv :Vista!!<CR>
 nnoremap <silent><nowait><leader>vf :Vista finder<CR>
 
+" sessions------------------------------------------
+ 
+" Write session with F2
+map <F2> :mksession! ~/vim_session <cr>
+ 
+" Load session with F3
+map <F3> :source ~/vim_session <cr>

@@ -6,10 +6,19 @@
 "                               /____/                           /____/   
 
 " outwrite separator
-let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_ bnj'
+let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_/---mmgg_ bnj'
 
 " author adding
-let @s = 'gg}dddd/):pkJgg_'
+let @a = 'gg}dddd/):pkJgg_'
 
 " comma changer
 let @c = '/):V:#€kbs/\,/\ &€kb\&/ggg_'
+
+" part of Outwrite_startup function
+let @l = 'oj'
+
+" folding macro
+let @f = 'Vnn{{zfj'
+
+" paragraph moving (in case if autor line is not first)
+let @p = '}jdap/---jpgg'
