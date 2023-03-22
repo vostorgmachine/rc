@@ -7,7 +7,7 @@
 # --------------------------------------------------------------------------------
 
 # starship prompt enabling
-eval "$(starship init bash)"
+# eval "$(starship init bash)" - # need to be repaired. ( make user ---> log in ---> install yay)
 
 # this command enables vim mode in bash
 set -o vi
@@ -27,9 +27,10 @@ alias oum="cd ~/outwrite/$current_date/"
 alias out="cd ~/outwrite/$current_date/txt"
 alias oue="cd ~/outwrite/$current_date/end"
 alias ous="cd ~/outwrite/$current_date/source"
-alias dtt="catdoc *.doc >> txt/0.txt && cd txt/ && nvim -c 'normal gqGgg' * "
-alias dxt="docx2txt *docx && mv *.txt txt/0.txt && cd txt/ && nvim -c 'call Outwrite_startup()' 0.txt"
-alias make_0="cat -s 0.txt >> 0-done.txt && mv 0-done.txt 0.txt && nvim -c 'normal gqGgg | call Docx_cleaner()' * "
+alias dtt="catdoc *.doc >> txt/00.txt && cd txt/ && nvim -c 'normal gqGgg' * "
+alias dxt="docx2txt *docx && mv *.txt txt/0.txt && cd txt/ \
+	&& nvim -c 'call Outwrite_startup()' 0.txt \
+	&& cat -s 0.txt >> 0-done.txt && mv 0-done.txt 0.txt && nvim 00.txt"
 
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
@@ -37,7 +38,6 @@ alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
 alias rb='source ~/.bashrc'
 alias rbash='source ~/.bashrc'
-alias t='clear && python3 main.py'
 alias i='sudo pacman -S '
 alias upd='sudo pacman -Suy '
 alias ..='cd ..'
@@ -49,8 +49,10 @@ alias q='exit'
 alias tms='nvim ~/outwrite/materials/themes.md'
 alias se='sudoedit'
 alias v='nvim '
+alias e='nvim '
 alias v.='nvim .'
-alias termrc='nvim ~/.config/alacritty/alacritty.yml'
+alias vls='nvim -c source ~/vim_session'
+alias termrc='nvim /mnt/c/Users/user/AppData/Roaming/Alacritty/alacritty.yml'
 alias goals='nvim ~/Documents/vimwiki/goals.md'
 alias tmuxrc='nvim ~/.tmux.conf'
 alias brc='nvim ~/.bashrc'
@@ -59,12 +61,16 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias vim='nvim'
+alias rhino='cd /mnt/c/Program\ Files/Rhino\ 6/System/ && ./Rhino.exe '
 alias man='tldr'
 alias cce='calcurse'
 alias scr='scrcpy --encoder OMX.Intel.hw_ve.h264 -m 800'
 alias ok='okular'
 alias ipy='ipython'
 alias lt='cat ~/Documents/vimwiki/progress/learn_table.md | grep $current_date -C 10 | tail -11'
+alias gp="git add . && git commit -m 'nothing special here' && git push"
+alias fdl='sudo fdisk -l'
 alias lo='libreoffice --nologo '
 alias myip='ifconfig | rg wlp -A1'
 alias docx='~/scripts/docx'
@@ -101,8 +107,8 @@ alias zs='cd ~/Zotero/storage/'
 alias mf='cd /run/media/vostorg/'
 alias ita='cd ~/italian'
 alias dw='cd ~/Downloads'
-alias dwv='cd ~/Downloads/vhs'
-alias dwt='cd ~/Downloads/Telegram\ Desktop'
+alias dwt='cd /mnt/c/Users/user/Downloads/Telegram\ Desktop/'
+alias windw='cd /mnt/c/Users/user/Downloads/'
 
 # export--------------------------------------------------------------------------
 export EDITOR='nvim'
@@ -146,7 +152,9 @@ ex ()
 }
 
 # --------------------------------------------------------------------------------
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
+PS1='\W > '
+
 # --------------------------------------------------------------------------------
 
 # If not running interactively, don't do anything
