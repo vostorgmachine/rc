@@ -4,5 +4,9 @@
 " | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /___/ /_/ / / / / __/ / /_/ / 
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
+"
 
-" source /root/.config/nvim/modules/Opf_maker.vim
+command InsertBlank r ~/outwrite/materials/blank.txt
+
+command SaveSession mksession! ~/vim_session
+

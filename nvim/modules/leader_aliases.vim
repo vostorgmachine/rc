@@ -76,8 +76,8 @@ nnoremap <leader>ll <C-W><C-L>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
-nnoremap <leader>ms :split <bar> res 10 <bar> ?## <CR> 
-nnoremap <leader>ьы :split <bar> res 10 <bar> ?## <CR> 
+nnoremap <leader>ms :split <bar> res 10 <bar> call Find_line()<CR>
+nnoremap <leader>ьы :split <bar> res 10 <bar> call Find_line()<CR>
 
 " markdown things
 map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
@@ -98,8 +98,11 @@ map <leader>tag /Теги:<CR>zzA
 map <leader>ефп /Теги:<CR>zzA 
 map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
-" map <leader>re /Резюме:<CR>o<ESC>o
-map <leader>re /---<CR>kkA
+
+" this constructions allows to send abzac right to the resume section
+map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
+
+map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
 
 
@@ -107,6 +110,7 @@ map <leader>bc :call Blank_cleaner()<CR>
 vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
 
 " this allows to yank selected line(s) to he OS clipboard
 vnoremap <leader>y "+y
@@ -159,8 +163,5 @@ nnoremap <silent><nowait><leader>vf :Vista finder<CR>
 
 " sessions------------------------------------------
  
-" Write session with F2
-map <F2> :mksession! ~/vim_session <cr>
- 
 " Load session with F3
-map <F3> :source ~/vim_session <cr>
+map <F6> :source ~/vim_session <cr>

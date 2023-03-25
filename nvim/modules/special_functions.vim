@@ -103,16 +103,6 @@ function! Blank_cleaner()
 	normal _j5dwkJ_2j2ddjj6ddgg_
 endfunction
 
-" use tab for trigger completion
-" --------------------------------------------------
-" bug here : sometimes this function may 
-" cause a error (something about 'CheckBackspace' func or something)
-" --------------------------------------------------
-
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1) :
-"       \ CheckBackspace() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-"
-"
+function! Find_line()
+	?---
+endfunction
