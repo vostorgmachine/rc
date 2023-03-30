@@ -99,8 +99,14 @@ function! Docx_cleaner()
 endfunction
 
 function! Blank_cleaner()
-	normal gg_j4ddj2dwA, 
-	normal _j5dwkJ_2j2ddjj6ddgg_
+	normal gg_
+	/Теги:
+	normal 2dd
+	/Серия: 
+	normal 2dwjjdw...kkA,
+	normal JJ
+	/Автор(ы):
+	normal 2ddjj6ddgg_
 endfunction
 
 function! Find_line()
