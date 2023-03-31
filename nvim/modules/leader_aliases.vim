@@ -76,8 +76,8 @@ nnoremap <leader>ll <C-W><C-L>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
-nnoremap <leader>ms :split <bar> res 10 <bar> call Find_line()<CR>
-nnoremap <leader>ьы :split <bar> res 10 <bar> call Find_line()<CR>
+nnoremap <leader>ms :split <bar> res 10 <cr> 
+nnoremap <leader>ьы :split <bar> res 10 <cr>
 
 " markdown things
 map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
@@ -87,7 +87,9 @@ map <leader>h3 I### <ESC>
 map <leader>h4 I#### <ESC> 
 
 " outwrite special
+map <leader>fl :call Find_line()<CR>
 map <leader>cs /\,<CR>
+map <leader>сы /\,<CR>
 map <leader>n yy}p<C-a>zz
 map <leader>sk /  x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
