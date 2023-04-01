@@ -13,4 +13,3 @@ command SSession mksession! ~/vim_session | echo "Session are saved!"
 command ZeroLoad source ~/vim_session | cd %:p:h | e 00.txt | lo | normal gg_
 
 command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
-
