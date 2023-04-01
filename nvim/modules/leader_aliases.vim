@@ -11,7 +11,7 @@ let mapleader = ' '
 map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 
 "remove current file
-map <leader>rm :!rm %<CR>
+map <leader>rm :!rm %<CR> :bd <CR>
 
 " open ranger client inside of current vim session
 map <leader>rr :Ranger<CR>
@@ -105,7 +105,7 @@ map <leader>th /Тема:<CR>zzA
 map <leader>ер /Тема:<CR>zzA 
 
 " send current buffer to 'done' folder 
-map <leader>bm :w done/% <CR> :!rm % <CR> :bd <CR> :bn <CR> :echo "done!"<CR>
+map <leader>bm :w done/% <CR> :!rm % <CR> :bd <CR> :bn <CR> 
 
 " this constructions allows to send abzac right to the resume section
 map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j

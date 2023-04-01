@@ -111,4 +111,6 @@ endfunction
 
 function! Find_line()
 	?---
+	normal _
+	echo ""
 endfunction
