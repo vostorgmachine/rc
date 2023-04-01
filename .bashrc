@@ -30,7 +30,7 @@ alias ous="cd ~/outwrite/$current_date/source"
 alias dtt="catdoc *.doc >> txt/00.txt && cd txt/ && nvim -c 'normal gqGgg' * "
 alias dxt="docx2txt *docx && mv *.txt txt/0.txt && cd txt/ \
 	&& nvim -c 'call Outwrite_startup()' 0.txt \
-	&& cat -s 0.txt >> 0-done.txt && mv 0-done.txt 0.txt && nvim 00.txt"
+	&& cat -s 0.txt >> 0-done.txt && mv 0-done.txt 00.txt && nvim 00.txt"
 
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
@@ -52,6 +52,7 @@ alias v='nvim '
 alias e='nvim '
 alias v.='nvim .'
 alias vls='nvim -c source ~/vim_session'
+alias vmd='nvim *.md'
 alias termrc='nvim /mnt/c/Users/user/AppData/Roaming/Alacritty/alacritty.yml'
 alias goals='nvim ~/Documents/vimwiki/goals.md'
 alias tmuxrc='nvim ~/.tmux.conf'
@@ -61,6 +62,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias pi='ping ya.ru -c 3'
 alias vim='nvim'
 alias rhino='cd /mnt/c/Program\ Files/Rhino\ 6/System/ && ./Rhino.exe '
 alias man='tldr'
