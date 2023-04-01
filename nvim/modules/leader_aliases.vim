@@ -105,8 +105,7 @@ map <leader>th /Тема:<CR>zzA
 map <leader>ер /Тема:<CR>zzA 
 
 " send current buffer to 'done' folder 
-map <leader>bm :w done/% <CR>: !rm % <CR> :echo "done!"<CR> :bd <CR> :bn <CR>
-
+map <leader>bm :w done/% <CR> :!rm % <CR> :bd <CR> :bn <CR> :echo "done!"<CR>
 
 " this constructions allows to send abzac right to the resume section
 map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
