@@ -46,7 +46,7 @@ highlight NonText ctermbg=none
 ab итд И т.д
 ab arw --->
 ab etc etc...
-ab [. [...]
+ab [. [...] 
 
 " spec-characters---------------------------------
 imap `e è
