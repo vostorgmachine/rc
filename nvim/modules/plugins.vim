@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'christoomey/vim-tmux-navigator'
  Plug 'liuchengxu/vista.vim'
  Plug 'mfussenegger/nvim-dap'
  Plug 'Yggdroot/indentLine'
