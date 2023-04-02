@@ -72,5 +72,4 @@ if exists("g:neovide")
 	let g:neovide_cursor_animation_length=0.00
 	let s:guifontsize=7
 	set guifont=Mononoki\ NF:h11
-endif
-" test
+end

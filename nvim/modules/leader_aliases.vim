@@ -71,12 +71,6 @@ map <leader>co :tabnew ~/code.py<CR>
 map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 map <leader>brc :tabnew ~/.bashrc<CR>
 
-"Split navigation
-nnoremap <leader>hh <C-W><C-H>
-nnoremap <leader>jj <C-W><C-J>
-nnoremap <leader>kk <C-W><C-K>
-nnoremap <leader>ll <C-W><C-L>
-
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
 nnoremap <leader>ms :split <bar> res 10 <cr> 
@@ -151,7 +145,6 @@ nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 map <leader>st :ToggleTermSendVisualSelection<CR>
-
 
 " mappings for coclist------------------------------
 
