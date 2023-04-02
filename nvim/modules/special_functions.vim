@@ -40,25 +40,25 @@ endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
 " quotes autocomplete
-inoremap ( ()<Esc>i
-inoremap (( (<Esc>a
+" inoremap ( ()<Esc>i
+" inoremap (( (<Esc>a
 
-inoremap { {}<Esc>i
-inoremap {{ {<Esc>a
-inoremap {<CR> {<CR>}<Esc>O
+" inoremap { {}<Esc>i
+" inoremap {{ {<Esc>a
+" inoremap {<CR> {<CR>}<Esc>O
 
-inoremap [ []<Esc>i
-inoremap [[ [<Esc>a
-inoremap [. [...] <Esc>a
+" inoremap [ []<Esc>i
+" inoremap [[ [<Esc>a
+" inoremap [. [...] <Esc>a
 
-inoremap < <><Esc>i
-inoremap << <<Esc>a
+" inoremap < <><Esc>i
+" inoremap << <<Esc>a
 
-inoremap ' ''<Esc>i
-inoremap '' '<Esc>a
+" inoremap ' ''<Esc>i
+" inoremap '' '<Esc>a
 
-inoremap " ""<Esc>i
-inoremap "" "<Esc>a
+" inoremap " ""<Esc>i
+" inoremap "" "<Esc>a
 
 " outwrite special:
 " mount str ---> float
@@ -114,3 +114,7 @@ function! Find_line()
 	normal _
 	echo ""
 endfunction
+
+" tmux tab renaming feature
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
