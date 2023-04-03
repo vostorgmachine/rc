@@ -109,6 +109,7 @@ function! Auto_split()
 	normal nn{{jmmgg_d`m
 	:winc w
 	normal GpO
+
 	normal jdapggP
 	normal gg_i## 
 	call Empty_line_trigger()
@@ -116,15 +117,16 @@ function! Auto_split()
 	call Empty_line_trigger()
 	call Empty_line_trigger()
 	/--------------------------------------------------
-	normal jjdf,
-	?Серия:
+	normal jj_df,
+	?Серия: 
 	normal A
 	normal p$x
 	/[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]
 	normal _hxdd
-	?Дата\ публикации\ статьи:
+	?Дата\ публикации\ статьи: 
 	normal $pkJgg_
 	:%s/\n\{3,}/\r\r/e
+	normal gg_
 	:bn
 	:winc w
 endfunction
