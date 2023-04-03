@@ -111,10 +111,10 @@ function! Auto_split()
 	normal GpO
 	normal jdapggP
 	normal gg_i## 
-	call Empty_line()
-	call Empty_line()
-	call Empty_line()
-	call Empty_line()
+	call Empty_line_trigger()
+	call Empty_line_trigger()
+	call Empty_line_trigger()
+	call Empty_line_trigger()
 	/--------------------------------------------------
 	normal jjdf,
 	?Серия:
@@ -122,14 +122,14 @@ function! Auto_split()
 	normal p$x
 	/[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]
 	normal _hxdd
-	?Дата\ публикации\ статьи: 
+	?Дата\ публикации\ статьи:
 	normal $pkJgg_
 	:%s/\n\{3,}/\r\r/e
 	:bn
 	:winc w
 endfunction
 
-function! Empty_line()
+function! Empty_line_trigger()
 let l2=getline(2)
     if l2 != ''
 	normal J
