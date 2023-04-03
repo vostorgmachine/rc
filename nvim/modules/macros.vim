@@ -6,7 +6,7 @@
 "                               /____/                           /____/   
 
 " outwrite separator
-let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_/---mmgg_ bnj'
+" let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_/---mmgg_ bnj'
 
 " author adding
 let @a = 'gg}dddd/):pkJgg_'

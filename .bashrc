@@ -18,15 +18,6 @@ eval "$(zoxide init bash)"
 export PATH="$HOME/.bin/:$PATH"
 export PATH="/bin/vostorg-progs/:$PATH"
 
-# outwrite special----------------------------------------------------------------
-date_folder=`pwd | grep -Eo '[+-]?[0-9]+([.][0-9]+)?+([.][0-9]+)'`
-current_date=`date +%d.%m.%y`
-alias zipdf="zip lo_done_$date_folder.zip *"
-alias ou='cd ~/outwrite'
-alias dtt="catdoc *.doc >> txt/00.txt && cd txt/ && nvim -c 'normal gqGgg' * "
-alias dxt="docx2txt *docx && mv *.txt txt/00.txt && cd txt/ \
-	&& nvim -c 'call Outwrite_startup()' 00.txt \
-	&& cat -s 00.txt >> 0_done.txt && mv 0_done.txt 00.txt && nvim 00.txt"
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
 alias quit!="shutdown now"
@@ -90,6 +81,7 @@ alias c='clear'
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
 # folder references---------------------------------------------------------------
+alias ou='cd ~/outwrite'
 alias mus='cd ~/Music'
 alias sf='nvim $(fzf --preview="bat --color=always --style=numbers {}")'
 alias fd="cd ~ && cd \$(find * -type d | fzf)"

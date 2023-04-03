@@ -61,22 +61,7 @@ nnoremap <F10> :call ToggleHiddenAll()<CR>
 " inoremap "" "<Esc>a
 
 " outwrite special:
-" mount str ---> float
-function! Mountfloat()
-	:%s/\ января\ 20/.01.20
-	:%s/\ февраля\ 20/.02.20
-	:%s/\ марта\ 20/.03.20
-	:%s/\ апреля\ 20/.04.20
-	:%s/\ мая\ 20/.05.20
-	:%s/\ июня\ 20/.06.20
-	:%s/\ июля\ 20/.07.20
-	:%s/\ августа\ 20/.08.20
-	:%s/\ сентября\ 20/.09.20
-	:%s/\ октября\ 20/.10.20
-	:%s/\ ноября\ 20/.11.20
-	:%s/\ декабря\ 20/.12.20
-endfunction
-
+ 
 " set specific outwrite marks like 'viderzhki', 'fakti', etc...
 function! Set_outwrite_marks()
 	/---
@@ -118,3 +103,23 @@ endfunction
 " tmux tab renaming feature
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
+
+function! Auto_folding()
+	normal gg_
+	/\,\ [0-9]*\.[0-9]*.[0-9]*
+	normal gg_ | 45@f
+endfunction
+
+" function that allows to zoom current pane in vim (like in tmux)
+function! ZoomWindow()
+    if winheight(0) >= (&lines - 4) && winwidth(0) >= (&columns - 2)
+        exec "resize " . g:lastwh " | vertical resize ". g:lastww
+    else
+        let g:lastwh = winheight(0)
+        let g:lastww = winwidth(0)
+        wincmd _
+        wincmd |
+    endif
+endfun
+nnoremap <silent> <leader>z  :call ZoomWindow()<cr>
+nnoremap <silent> <leader>=  <C-w>=
