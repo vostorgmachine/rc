@@ -5,12 +5,6 @@
 " |___/\____/____/\__/\____/_/   \__, /   \____/\____/_/ /_/_/ /_/\__, /  
 "                               /____/                           /____/   
 
-" outwrite separator
-" let @s = 'yyGp hat}jkdddd/:nnpkJ csxd$/:pgg_/---mmgg_ bnj'
-
-" author adding
-let @a = 'gg}dddd/):pkJgg_'
-
 " comma changer
 let @c = '/):V:#€kbs/\,/\ &€kb\&/ggg_'
 

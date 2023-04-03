@@ -87,9 +87,7 @@ function! Blank_cleaner()
 	normal gg_
 	/Теги:
 	normal 2dd
-	/Серия: 
-	normal 2dwjjdw...kkA,
-	normal JJ
+	normal JJ ormal 2dwjjdw...kkA, ndi Серия: is# 'To: 
 	/Автор(ы):
 	normal 2ddjj6ddgg_
 endfunction
@@ -104,11 +102,42 @@ endfunction
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 
-function! Auto_folding()
+function! Auto_split()
 	normal gg_
 	/\,\ [0-9]*\.[0-9]*.[0-9]*
-	normal gg_ | 45@f
+	normal gg_ 
+	normal nn{{jmmgg_d`m
+	:winc w
+	normal GpO
+	normal jdapggP
+	normal gg_i## 
+	call Empty_line()
+	call Empty_line()
+	call Empty_line()
+	call Empty_line()
+	/--------------------------------------------------
+	normal jjdf,
+	?Серия:
+	normal A
+	normal p$x
+	/[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]
+	normal _hxdd
+	?Дата\ публикации\ статьи: 
+	normal $pkJgg_
+	:%s/\n\{3,}/\r\r/e
+	:bn
+	:winc w
 endfunction
+
+function! Empty_line()
+let l2=getline(2)
+    if l2 != ''
+	normal J
+	else
+	startinsert!
+    endif
+endfunction
+
 
 " function that allows to zoom current pane in vim (like in tmux)
 function! ZoomWindow()

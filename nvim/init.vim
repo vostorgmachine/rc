@@ -73,3 +73,6 @@ if exists("g:neovide")
 	let s:guifontsize=7
 	set guifont=Mononoki\ NF:h11
 end
+
+" make .md/markdown recognisable for some functions
+autocmd BufNewFile,BufRead *.md set filetype=markdown
