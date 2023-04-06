@@ -87,9 +87,12 @@ function! Blank_cleaner()
 	normal gg_
 	/Теги:
 	normal 2dd
-	normal JJ ormal 2dwjjdw...kkA, ndi Серия: is# 'To: 
+	/Серия: 
+	normal 2dwjjdw...kkA,
+	normal JJ
 	/Автор(ы):
 	normal 2ddjj6ddgg_
+	echo ""
 endfunction
 
 function! Find_line()
