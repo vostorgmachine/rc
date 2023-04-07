@@ -13,5 +13,3 @@ command SSession mksession! ~/vim_session | echohl ModeMsg | echo "Session are s
 command ZeroLoad source ~/vim_session | cd %:p:h | e ../00.txt | lo | normal gg_
 
 command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
-
-command ChangeDirectody echohl ModeMsg | echo "Current directory is :" |cd %:p:h

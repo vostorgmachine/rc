@@ -17,7 +17,7 @@ map <leader>rm :!rm %<CR> :bd <CR>
 map <leader>rr :Ranger<CR>
 
 "this changes directory to the currently open file
-map <leader>cd :cd %:p:h<CR>
+map <leader>cd :cd %:p:h <bar> pwd <CR>
 
 " this changes directory to the currently open file (but only for this file)
 " map <leader>cdl :lcd %:p:h<CR>

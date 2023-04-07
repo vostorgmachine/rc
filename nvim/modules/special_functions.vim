@@ -154,6 +154,7 @@ function! ZoomWindow()
         wincmd _
         wincmd |
     endif
-endfun
+endfunction
 nnoremap <silent> <leader>z  :call ZoomWindow()<cr>
 nnoremap <silent> <leader>=  <C-w>=
+
