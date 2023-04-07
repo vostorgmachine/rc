@@ -20,10 +20,7 @@ map <leader>rr :Ranger<CR>
 map <leader>cd :cd %:p:h<CR>
 
 " this changes directory to the currently open file (but only for this file)
-map <leader>cdl :lcd %:p:h<CR>
-
-" go to home direcory
-map <leader>cdh :cd ~/<CR>
+" map <leader>cdl :lcd %:p:h<CR>
 
 map <leader>aa :args *<CR>
 
