@@ -138,9 +138,7 @@ function! Empty_line_trigger()
 let l2=getline(2)
     if l2 != ''
 	normal J
-	else
-	startinsert!
-    endif
+	endif
 endfunction
 
 
