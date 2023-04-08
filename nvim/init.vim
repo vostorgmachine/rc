@@ -27,6 +27,7 @@ set showtabline=2
 set encoding=utf-8
 set number relativenumber
 set nohls
+set lazyredraw
 
 " transperent background----------------------------
 hi Normal guibg=NONE ctermbg=NONE
