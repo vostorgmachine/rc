@@ -51,7 +51,8 @@ map <leader>fd :e %:h<CR>
 
 " tabs
 map <leader>tn :tabnew<CR>
-map <leader>tk :tabclose<CR>
+map <leader>th :tabn<CR>
+map <leader>tl :tabp<CR>
 
 " buffers
 map <leader>bn :bn!<CR>
@@ -92,7 +93,7 @@ map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги:<CR>zzA 
 map <leader>ефп /Теги:<CR>zzA 
-map <leader>th /Тема:<CR>zzA 
+" map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
 
 " send current buffer to 'done' folder 
