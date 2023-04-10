@@ -17,6 +17,7 @@ eval "$(zoxide init bash)"
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.bin/:$PATH"
 export PATH="/bin/vostorg-progs/:$PATH"
+export PATH="/repos/scripts/:$PATH"
 
 # system etc.---------------------------------------------------------------------
 alias k='pkill'
