@@ -17,6 +17,7 @@ eval "$(zoxide init bash)"
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.bin/:$PATH"
 export PATH="/bin/vostorg-progs/:$PATH"
+# path to my programs/scripts
 export PATH="/repos/scripts/:$PATH"
 
 # system etc.---------------------------------------------------------------------
