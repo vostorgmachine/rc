@@ -99,6 +99,10 @@ map <leader>ер /Тема:<CR>zzA
 " send current buffer to 'done' folder 
 map <leader>bm :w done/% <CR> :!rm % <CR> :bd <CR> :bn <CR> 
 
+" send current buffer to 'calibration' folder 
+map <leader>ce :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+
 " this constructions allows to send abzac right to the resume section
 map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
 
