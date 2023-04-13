@@ -141,7 +141,6 @@ let l2=getline(2)
 	endif
 endfunction
 
-
 " function that allows to zoom current pane in vim (like in tmux)
 function! ZoomWindow()
     if winheight(0) >= (&lines - 4) && winwidth(0) >= (&columns - 2)
