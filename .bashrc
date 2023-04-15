@@ -7,7 +7,7 @@
 # --------------------------------------------------------------------------------
 
 # starship prompt enabling
-# eval "$(starship init bash)" - # need to be repaired. ( make user ---> log in ---> install yay)
+eval "$(starship init bash)" 
 
 # this command enables vim mode in bash
 set -o vi
@@ -183,3 +183,6 @@ if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
 fi
+
+# source of the starship config
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
