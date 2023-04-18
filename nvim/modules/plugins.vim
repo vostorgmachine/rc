@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'junegunn/vim-easy-align'
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'liuchengxu/vista.vim'
  Plug 'mfussenegger/nvim-dap'
@@ -125,3 +126,7 @@ autocmd TermEnter term://*toggleterm#*
 " disable ranger default shortfut(leader + f)
 let g:ranger_map_keys = 0
 
+
+" easy-align binds
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
