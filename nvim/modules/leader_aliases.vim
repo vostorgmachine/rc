@@ -104,7 +104,8 @@ map <leader>ce :!mv % calibration/ <CR> :bd <CR> :bn <CR>
 map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
 
 " this constructions allows to send abzac right to the resume section
-map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
+" map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
+map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`n
 
 map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
@@ -113,7 +114,8 @@ map <leader>bc :call Blank_cleaner()<CR>
 vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
+" vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
+vnoremap <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`n
 
 " this allows to yank selected line(s) to he OS clipboard
 vnoremap <leader>y "+y
@@ -167,3 +169,5 @@ nnoremap <silent><nowait><leader>vf :Vista finder<CR>
  
 " Load session with F3
 map <F6> :source ~/vim_session <cr>
+
+
