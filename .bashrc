@@ -30,6 +30,7 @@ alias i='sudo pacman -S '
 alias upd='sudo pacman -Suy '
 alias ..='cd ..'
 alias 2..='cd ../..'
+alias 3..='cd ../../..'
 alias :q='exit'
 alias q='exit'
 
