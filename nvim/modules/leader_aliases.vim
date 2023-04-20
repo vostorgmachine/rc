@@ -115,7 +115,7 @@ vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gq
 vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 " vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
-vnoremap <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`n
+vnoremap <leader>sr dmn?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{
 
 " this allows to yank selected line(s) to he OS clipboard
 vnoremap <leader>y "+y
