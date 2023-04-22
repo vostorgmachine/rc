@@ -11,3 +11,6 @@ command InsertBlank r ~/outwrite/materials/blank.txt
 command SSession mksession! ~/vim_session | echohl ModeMsg | echo "Session are saved!"
 
 command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
+
+command SlashRemover %s/\\//g
+
