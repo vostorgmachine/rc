@@ -14,3 +14,4 @@ command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
 
 command SlashRemover %s/\\//g
 
+command AddAuthorLine normal }}

@@ -155,3 +155,20 @@ endfunction
 nnoremap <silent> <leader>z  :call ZoomWindow()<cr>
 nnoremap <silent> <leader>=  <C-w>=
 
+func! Add_Author()
+	normal gg_
+	normal }j
+	normal 2o
+	normal iАвтор(ы):
+	normal gg_
+endfunction
+
+func! Insert_Author()
+	/--------------------------------------------------
+	normal jjdd
+	?Автор(ы):
+	normal $pkJ
+	:%s/\n\{3,}/\r\r/e
+	normal gg_
+endfunction
+
