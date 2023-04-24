@@ -165,7 +165,7 @@ endfunction
 
 func! Insert_Author()
 	/--------------------------------------------------
-	normal jjdd
+	normal jjdap
 	?Автор(ы):
 	normal $pkJ
 	:%s/\n\{3,}/\r\r/e

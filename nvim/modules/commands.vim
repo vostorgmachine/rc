@@ -13,5 +13,3 @@ command SSession mksession! ~/vim_session | echohl ModeMsg | echo "Session are s
 command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
 
 command SlashRemover %s/\\//g
-
-command AddAuthorLine normal }}
