@@ -165,6 +165,7 @@ func! Add_Author()
 	normal gg_
 endfunction
 
+
 func! Insert_Author()
 	/--------------------------------------------------
 	normal jjdap
@@ -174,3 +175,18 @@ func! Insert_Author()
 	normal gg_
 endfunction
 
+func! Add_Tags()
+	normal gg_
+	normal }}}
+	:put =''
+	normal OТеги:
+	normal gg_
+endfunction
+
+func! Add_last_space()
+	normal Go 
+	:put =''
+	normal dd
+	normal xx
+	normal gg_
+endfunction
