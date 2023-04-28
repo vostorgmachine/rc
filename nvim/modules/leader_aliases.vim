@@ -74,8 +74,8 @@ map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
-nnoremap <leader>ms :split <bar> res 10 <cr> 
-nnoremap <leader>ьы :split <bar> res 10 <cr>
+nnoremap <leader>ms :split <bar> res 10 <bar> normal `r <cr> 
+nnoremap <leader>ьы :split <bar> res 10 <cr> normal `r <cr> 
 
 " markdown things
 map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j

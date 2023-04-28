@@ -66,6 +66,8 @@ nnoremap <F10> :call ToggleHiddenAll()<CR>
 function! Set_outwrite_marks()
 	/---
 	:normal mm | gg_
+	/###\ Резюме:
+	:normal mr | gg_
 endfunction
 
 function! Outwrite_startup()
