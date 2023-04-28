@@ -109,6 +109,7 @@ map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR>
 " this constructions allows to send abzac right to the resume section
 " map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
 map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{jmn
+map <leader>ык dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{jmn
 
 map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
