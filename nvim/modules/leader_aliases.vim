@@ -174,4 +174,5 @@ nnoremap <silent><nowait><leader>vf :Vista finder<CR>
 " Load session with F3
 map <F6> :source ~/vim_session <cr>
 
-
+" CocToggle 
+map <F9> :CocToggle <CR>

@@ -190,3 +190,12 @@ func! Add_last_space()
 	normal xx
 	normal gg_
 endfunction
+
+function! CocToggle()
+    if g:coc_enabled
+        CocDisable
+    else
+        CocEnable
+    endif
+endfunction
+command! CocToggle :call CocToggle()
