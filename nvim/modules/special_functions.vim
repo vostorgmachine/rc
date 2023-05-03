@@ -163,10 +163,6 @@ func! Add_Author()
 	normal 2o
 	normal iАвтор(ы):
 	normal gg_
-endfunction
-
-
-func! Insert_Author()
 	/--------------------------------------------------
 	normal jjdap
 	?Автор(ы):
@@ -174,6 +170,7 @@ func! Insert_Author()
 	:%s/\n\{3,}/\r\r/e
 	normal gg_
 endfunction
+
 
 func! Add_Tags()
 	normal gg_
@@ -198,4 +195,5 @@ function! CocToggle()
         CocEnable
     endif
 endfunction
-command! CocToggle :call CocToggle()
+ 
+
