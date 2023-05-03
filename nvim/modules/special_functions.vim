@@ -169,7 +169,10 @@ func! Add_Author()
 	normal $pkJ
 	:%s/\n\{3,}/\r\r/e
 	normal gg_
+	normal }}jvap
+	normal 
 endfunction
+
 
 
 func! Add_Tags()
