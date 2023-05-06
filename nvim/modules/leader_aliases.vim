@@ -86,6 +86,7 @@ map <leader>h4 I#### <ESC>
 
 " outwrite special
 map <leader>fl :call Find_line()<CR>
+map <leader>ад :call Find_line()<CR>
 map <leader>cs /\,<CR>
 map <leader>сы /\,<CR>
 map <leader>n yy}p<C-a>zz
@@ -108,8 +109,8 @@ map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR>
 
 " this constructions allows to send abzac right to the resume section
 " map <leader>sr dap?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
-map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`n
-map <leader>ык dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`n
+map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>gqap`n
+map <leader>ык dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>gqap`n
 
 map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
@@ -176,3 +177,10 @@ map <F6> :source ~/vim_session <cr>
 
 " CocToggle 
 map <F9> :CocToggle <CR>
+
+" python experimental things
+map <leader>sbp :normal obreakpoint()<CR>
+
+" Pyflakes на f5
+map <F5> :w\|call Pyflakes()\|!python %<cr>
+imap <F5> <Esc><F5>

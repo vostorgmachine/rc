@@ -163,17 +163,17 @@ func! Add_Author()
 	normal 2o
 	normal iАвтор(ы):
 	normal gg_
+endfunction
+
+
+func! Insert_Author()
 	/--------------------------------------------------
 	normal jjdap
 	?Автор(ы):
 	normal $pkJ
 	:%s/\n\{3,}/\r\r/e
 	normal gg_
-	normal }}jvap
-	normal 
 endfunction
-
-
 
 func! Add_Tags()
 	normal gg_
@@ -198,5 +198,14 @@ function! CocToggle()
         CocEnable
     endif
 endfunction
- 
+command! CocToggle :call CocToggle()
 
+
+" Pyflakes на f5
+command Pyflakes :call Pyflakes()
+function! Pyflakes()
+    let tmpfile = tempname()
+    execute "w" tmpfile
+    silent make
+    cw  
+endfunction

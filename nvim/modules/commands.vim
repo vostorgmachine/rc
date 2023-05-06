@@ -15,5 +15,3 @@ command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
 command RemoveBackSlashes %s/\\//g
 
 command AddLastSpace normal Go | normal xx | normal gg_
-
-command! CocToggle :call CocToggle()
