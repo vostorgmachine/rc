@@ -1,19 +1,36 @@
- # _    __           __                                       _____      
+#  _    __           __                                       _____      
 # | |  / /___  _____/ /_____  _________ _   _________  ____  / __(_)___ _
 # | | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / ___/ __ \/ __ \/ /_/ / __ `/
 # | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ / 
 # |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /  
 #                               /____/                          /____/   
 
-# (win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
-#
-# allacritty -o font.size=18 - this command allows u to manage font
-# size. Also u can add something line -e tmux after this construction.
+#(win path) Put this config in c/users/%user%/AppData/Roaming/alacritty
 
+shell:
+        # Run main arch client
+        program: C:/Users/user/Arch/Arch.exe
 window:
-        opacity: 0.75
-        # startup_mode: Fullscreen
-        # startup_mode: Maximized
+
+    opacity: 0.90
+    background_opacity: 0.85
+    startup_mode: Windowed
+
+    # disable bottom-border in windows-os
+    decorations: none
+
+    dimensions:
+        columns: 150
+        lines: 40
+    
+    position:
+      x: 50
+      y: 50
+
+    # this parametr making border inside of terminal
+    padding:
+      x: 10
+      y: 0
 
 font:
         normal:
@@ -28,13 +45,14 @@ font:
 key_bindings:
           - { key: N, mods: Command|Shift, action: SpawnNewInstance }
 
-
 # Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
     # hard contrast: background = '0x1d2021'
-    background: '0x282828'
+    # default value:
+    # background: '0x282828'
+    background: '0x202020'
     # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 
@@ -60,4 +78,8 @@ colors:
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 
-
+cursor:
+  style: 
+    shape: block
+    blinking: Always
+    blink_interval: 10
