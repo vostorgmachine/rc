@@ -40,24 +40,24 @@ endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
 " quotes autocomplete
-" inoremap ( ()<Esc>i
+inoremap (( ()<Esc>i
 " inoremap (( (<Esc>a
 
-" inoremap { {}<Esc>i
+inoremap {{ {}<Esc>i
 " inoremap {{ {<Esc>a
 " inoremap {<CR> {<CR>}<Esc>O
 
-" inoremap [ []<Esc>i
+inoremap [[ []<Esc>i
 " inoremap [[ [<Esc>a
 " inoremap [. [...] <Esc>a
 
-" inoremap < <><Esc>i
+inoremap << <><Esc>i
 " inoremap << <<Esc>a
-
-" inoremap ' ''<Esc>i
+"
+inoremap '' ''<Esc>i
 " inoremap '' '<Esc>a
 
-" inoremap " ""<Esc>i
+inoremap "" ""<Esc>i
 " inoremap "" "<Esc>a
 
 " outwrite special:
@@ -163,17 +163,16 @@ func! Add_Author()
 	normal 2o
 	normal iАвтор(ы):
 	normal gg_
-endfunction
-
-
-func! Insert_Author()
 	/--------------------------------------------------
 	normal jjdap
 	?Автор(ы):
 	normal $pkJ
 	:%s/\n\{3,}/\r\r/e
 	normal gg_
+	/Автор(ы):
+	:s/,/\ \&/g
 endfunction
+
 
 func! Add_Tags()
 	normal gg_
@@ -183,7 +182,7 @@ func! Add_Tags()
 	normal gg_
 endfunction
 
-func! Add_last_space()
+func! Insert_last_space()
 	normal Go 
 	:put =''
 	normal dd
