@@ -186,5 +186,9 @@ if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/completion.bash"
 fi
 
+# take two 
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
 # source of the starship config
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
