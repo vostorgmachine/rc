@@ -53,6 +53,7 @@ alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
 alias pi='ping ya.ru -c 3'
+alias sc='sc-im'
 alias vim='nvim'
 alias rhino='cd /mnt/c/Program\ Files/Rhino\ 6/System/ && ./Rhino.exe '
 alias man='tldr'
