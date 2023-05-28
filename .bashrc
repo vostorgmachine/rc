@@ -52,6 +52,8 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
+alias pf='pfetch'
+alias cpf='clear && pfetch'
 alias pi='ping ya.ru -c 3'
 alias sc='sc-im'
 alias vim='nvim'
