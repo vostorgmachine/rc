@@ -74,15 +74,19 @@ map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
-nnoremap <leader>ms :split <bar> res 10 <bar> normal `r <cr> 
-nnoremap <leader>ьы :split <bar> res 10 <cr> normal `r <cr> 
+nnoremap <leader>ms :split <bar> res 10 <cr>
+nnoremap <leader>ьы :split <bar> res 10 <cr>
 
 " markdown things
+
 map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
 map <leader>h1 I# <ESC> 
 map <leader>h2 I## <ESC> 
 map <leader>h3 I### <ESC> 
 map <leader>h4 I#### <ESC> 
+
+vnoremap <leader>* di*<ESC>pa*<ESC>
+vnoremap <leader>** di**<ESC>pa**<ESC>
 
 " outwrite special
 map <leader>fl :call Find_line()<CR>
@@ -90,7 +94,7 @@ map <leader>ад :call Find_line()<CR>
 map <leader>cs /\,<CR>
 map <leader>сы /\,<CR>
 map <leader>n yy}p<C-a>zz
-map <leader>sk /  x
+map <leader>sk / x
 map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
 map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
@@ -100,11 +104,10 @@ map <leader>ефп /Теги:<CR>zzA
 " map <leader>th /Тема:<CR>zzA 
 map <leader>ер /Тема:<CR>zzA 
 
-" send current buffer to 'done' folder 
-map <leader>bm :w done/% <CR> :!rm % <CR> :bd <CR> :bn <CR> 
-
 " send current buffer to 'calibration' folder 
-map <leader>ce :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+
+map <leader>ce :call Insert_last_space() <CR>:!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+
 map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
 
 " this constructions allows to send abzac right to the resume section
@@ -121,6 +124,7 @@ vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---
 vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 " vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
 vnoremap <leader>sr dmn?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{jmn
+
 
 " this allows to yank selected line(s) to he OS clipboard
 vnoremap <leader>y "+y

@@ -102,7 +102,8 @@ alias mf='cd /run/media/vostorg/'
 alias ita='cd ~/italian'
 alias dw='cd ~/Downloads'
 alias dwt='cd /mnt/c/Users/vostorg/Downloads/Telegram\ Desktop/'
-alias windw='cd /mnt/c/Users/vostorg/Downloads/'
+alias win~='cd /mnt/c/Users/vostorg'
+alias windw='cd /mnt/d/Downloads/'
 
 # export--------------------------------------------------------------------------
 export EDITOR='nvim'

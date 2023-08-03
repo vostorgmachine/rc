@@ -109,7 +109,8 @@ set title
 
 function! Auto_split()
 	normal gg_
-	/\,\ [0-9]*\.[0-9]*.[0-9]*
+	" /\,\ [0-9]*\.[0-9]*.[0-9]*
+	/\.[0-9][0-9]\.
 	normal gg_ 
 	normal nn{{jmmgg_d`m
 	:winc w
@@ -126,7 +127,7 @@ function! Auto_split()
 	?Серия: 
 	normal A
 	normal p$x
-	/[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]
+	/[0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]
 	normal _hxdd
 	?Дата\ публикации\ статьи: 
 	normal $pkJgg_
