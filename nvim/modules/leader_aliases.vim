@@ -85,6 +85,12 @@ map <leader>h2 I## <ESC>
 map <leader>h3 I### <ESC> 
 map <leader>h4 I#### <ESC> 
 
+map <leader>ыш {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
+map <leader>р1 I# <ESC> 
+map <leader>р2 I## <ESC> 
+map <leader>р3 I### <ESC> 
+map <leader>р4 I#### <ESC> 
+
 vnoremap <leader>* di*<ESC>pa*<ESC>
 vnoremap <leader>** di**<ESC>pa**<ESC>
 
