@@ -103,6 +103,8 @@ alias ita='cd ~/italian'
 alias dw='cd ~/Downloads'
 alias dwt='cd /mnt/c/Users/vostorg/Downloads/Telegram\ Desktop/'
 alias win~='cd /mnt/c/Users/vostorg'
+alias winc='cd /mnt/c/'
+alias wind='cd /mnt/d/'
 alias windw='cd /mnt/d/Downloads/'
 
 # export--------------------------------------------------------------------------
