@@ -10,6 +10,8 @@ source $HOME/.config/nvim/modules/plugins.vim
 source $HOME/.config/nvim/modules/macros.vim
 source $HOME/.config/nvim/modules/scripts.vim
 source $HOME/.config/nvim/modules/commands.vim
+source $HOME/.config/nvim/nc.vim
+
 
 " main settings-------------------------------------
 set wildmenu     	    " display all matches when tab complete

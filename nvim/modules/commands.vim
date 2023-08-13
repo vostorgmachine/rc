@@ -13,3 +13,5 @@ command SSession mksession! ~/vim_session | echohl ModeMsg | echo "Session are s
 command OFinder /\,\ [0-9]*\.[0-9]*.[0-9]*
 
 command RemoveBackSlashes %s/\\//g
+
+command Open0 vsplit ../../source/00.txt

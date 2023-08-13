@@ -61,7 +61,7 @@ inoremap "" ""<Esc>i
 " inoremap "" "<Esc>a
 
 " outwrite special:
- 
+
 " set specific outwrite marks like 'viderzhki', 'fakti', etc...
 function! Set_outwrite_marks()
 	/---
