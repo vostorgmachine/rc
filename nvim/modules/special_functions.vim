@@ -40,16 +40,18 @@ endfunction
 nnoremap <F10> :call ToggleHiddenAll()<CR>
 
 " quotes autocomplete
-inoremap (( ()<Esc>i
-" inoremap (( (<Esc>a
+inoremap (( (<Esc>a
+inoremap ( ()<Esc>i
 
-inoremap {{ {}<Esc>i
-" inoremap {{ {<Esc>a
-" inoremap {<CR> {<CR>}<Esc>O
+" inoremap {{ {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{ {<Esc>a
 
-inoremap [[ []<Esc>i
-" inoremap [[ [<Esc>a
-" inoremap [. [...] <Esc>a
+
+" inoremap [[ []<Esc>i
+inoremap [ []<Esc>i
+inoremap [[ [<Esc>a
+
 
 inoremap << <><Esc>i
 " inoremap << <<Esc>a
@@ -57,8 +59,11 @@ inoremap << <><Esc>i
 inoremap '' ''<Esc>i
 " inoremap '' '<Esc>a
 
-inoremap "" ""<Esc>i
-" inoremap "" "<Esc>a
+inoremap ' ''<Esc>i
+inoremap '' '<Esc>a
+
+inoremap " ""<Esc>i
+inoremap "" "<Esc>a
 
 " outwrite special:
 
