@@ -80,3 +80,4 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Автоматическое выравнивание сплитов
 autocmd VimResized * wincmd =
+

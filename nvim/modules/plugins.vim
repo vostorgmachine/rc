@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'mhinz/vim-startify'
  Plug 'junegunn/vim-easy-align'
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'liuchengxu/vista.vim'
@@ -130,3 +131,22 @@ let g:ranger_map_keys = 0
 " easy-align binds
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" startify settings
+" let g:startify_custom_header = ["   Vostorg machine"]
+
+let g:startify_custom_header = [
+\ ' _    __           __                      __  ___           __    _          ',
+\ '| |  / /___  _____/ /_____  _________ _   /  |/  /___ ______/ /_  (_)___  ___ ',
+\ '| | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / /|_/ / __ `/ ___/ __ \/ / __ \/ _ \',
+\ '| |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /  / / /_/ / /__/ / / / / / / /  __/',
+\ '|___/\____/____/\__/\____/_/   \__, /  /_/  /_/\__,_/\___/_/ /_/_/_/ /_/\___/ ',
+\ '                              /____/                                          ',
+\ ]
+
+let g:startify_bookmarks = [ 
+			\{ 'brc': '~/.bashrc'} ,
+			\{ 'vrc': '~/.config/nvim/init.vim'} ,
+			\]
+
+
