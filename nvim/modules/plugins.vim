@@ -147,6 +147,13 @@ let g:startify_custom_header = [
 let g:startify_bookmarks = [ 
 			\{ 'brc': '~/.bashrc'} ,
 			\{ 'vrc': '~/.config/nvim/init.vim'} ,
+			\{ 'mdls': '~/.config/nvim/modules'} ,
 			\]
 
-
+ 
+let g:startify_lists = [
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ ]
