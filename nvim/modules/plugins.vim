@@ -147,7 +147,9 @@ let g:startify_custom_header = [
 let g:startify_bookmarks = [ 
 			\{ 'brc': '~/.bashrc'} ,
 			\{ 'vrc': '~/.config/nvim/init.vim'} ,
-			\{ 'mdls': '~/.config/nvim/modules'} ,
+			\{ 'mdl': '~/.config/nvim/modules'} ,
+			\{ 'opf': '~/sandbox/python/opf_meta_parser/main.py'} ,
+			\{ 'vwi': '~/Documents/vimwiki/index.md'} ,
 			\]
 
  

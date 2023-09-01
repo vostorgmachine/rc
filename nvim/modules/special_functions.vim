@@ -47,7 +47,6 @@ inoremap ( ()<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {<Esc>a
 
-
 " inoremap [[ []<Esc>i
 inoremap [ []<Esc>i
 inoremap [[ [<Esc>a
@@ -59,11 +58,11 @@ inoremap << <><Esc>i
 " inoremap '' ''<Esc>i
 " inoremap '' '<Esc>a
 
-" inoremap ' ''<Esc>i
-" inoremap '' '<Esc>a
+inoremap ' ''<Esc>i
+inoremap '' '<Esc>a
 
-" inoremap " ""<Esc>i
-" inoremap "" "<Esc>a
+inoremap " ""<Esc>i
+inoremap "" "<Esc>a
 
 " outwrite special:
 

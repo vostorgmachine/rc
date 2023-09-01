@@ -194,3 +194,7 @@ map <leader>sbp :normal obreakpoint()<CR>
 " Pyflakes на f5
 map <F5> :w\|call Pyflakes()\|!python %<cr>
 imap <F5> <Esc><F5>
+
+" Startify
+map <leader>ss :Startify<cr>
+
