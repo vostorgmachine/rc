@@ -19,6 +19,7 @@ function! HLNext (blinktime)
 endfunction
 
 " CURSOR BLINKING FUNCTION--------------------------
+
 au VimEnter * call ToggleHiddenAll()
 let s:hidden_all = 0
 function! ToggleHiddenAll()

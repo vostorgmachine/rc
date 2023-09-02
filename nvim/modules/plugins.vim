@@ -159,3 +159,12 @@ let g:startify_lists = [
           \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ ]
+
+function! s:sy_add_bookmark(bookmark)
+  if !exists('g:startify_bookmarks')
+    let g:startify_bookmarks = []
+  endif
+  let g:startify_bookmarks += [ a:bookmark ]
+endfunction
+
+command! -nargs=1 StartifyAddBookmark call <sid>sy_add_bookmark(<q-args>)
