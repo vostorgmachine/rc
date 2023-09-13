@@ -23,7 +23,7 @@
  Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-markdown'
  Plug 'vimwiki/vimwiki'
- Plug 'LnL7/vim-nix'
+ " Plug 'LnL7/vim-nix'
  Plug 'junegunn/fzf.vim'
  Plug 'junegunn/vim-easy-align'
  Plug 'junegunn/fzf'
@@ -36,7 +36,6 @@
  Plug 'preservim/nerdtree'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
- " Plug 'ervandew/supertab'
  call plug#end()
 
 " --------------------------------------------------
@@ -167,4 +166,16 @@ function! s:sy_add_bookmark(bookmark)
   let g:startify_bookmarks += [ a:bookmark ]
 endfunction
 
+
 command! -nargs=1 StartifyAddBookmark call <sid>sy_add_bookmark(<q-args>)
+
+" vista things
+ 
+" disable icons
+let g:vista#renderer#enable_icon = 0
+" let g:vista#renderer#icons = { "function": "",  "variable": "", }
+"
+
+" IndentLIne
+" disable by default
+let g:indentLine_enabled = 0

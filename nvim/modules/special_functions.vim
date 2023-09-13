@@ -52,6 +52,7 @@ inoremap {{ {<Esc>a
 inoremap [ []<Esc>i
 inoremap [[ [<Esc>a
 inoremap [. [...] <Esc>a<Esc>
+inoremap хю [...] <Esc>a<Esc>
 
 inoremap << <><Esc>i
 " inoremap << <<Esc>a

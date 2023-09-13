@@ -14,7 +14,7 @@ map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 map <leader>rm :!rm %<CR> :bd <CR>
 
 " open ranger client inside of current vim session
-map <leader>rr :Ranger<CR>
+map <leader>rr :Ranger <CR> :IndentLIneDisable <CR>
 
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h <bar> pwd <CR>
@@ -38,6 +38,7 @@ map <leader>fb <cmd>Telescope buffers<cr>
 " fzf-vim section
 " map <leader>ff :Files<cr>
 map <leader>bb :Buffers<cr>
+map <leader>ии :Buffers<cr>
 
 " GFiles for fzf in git repo
 map <leader>gf :GFiles<cr>
@@ -160,12 +161,12 @@ map <leader>hp :lua require("harpoon.ui").nav_prev()<CR>
 " By applying the mappings this way you can pass a count to your
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm" <CR> 
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 map <leader>st :ToggleTermSendVisualSelection<CR>
 
-" mappings for coclist------------------------------
+" mappings for coclist/coding things------------------------------
 
 " Show all diagnostics.
 nnoremap <silent><nowait><leader>di  :<C-u>CocList diagnostics<cr>
@@ -189,7 +190,7 @@ map <F6> :source ~/vim_session <cr>
 map <F9> :CocToggle <CR>
 
 " python experimental things
-map <leader>sbp :normal obreakpoint()<CR>
+map <leader>sbp :normal obreakpoint(<CR>
 
 " Pyflakes на f5
 map <F5> :w\|call Pyflakes()\|!python %<cr>
