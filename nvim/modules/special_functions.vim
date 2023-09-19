@@ -25,6 +25,7 @@ nnoremap <F10> :call Custom_airline_toggle()<CR>
 let s:hide_airline = 0
 function! Custom_airline_toggle()
 	if s:hide_airline == 0
+		let s:hide_airline = 1
 		normal :AirlineToggle 
 		set showtabline=0
 	else
@@ -33,28 +34,7 @@ function! Custom_airline_toggle()
 		set showtabline=2
 	endif
 endfunction
-	
  
-" au VimEnter * call ToggleHiddenAll()
-" let s:hidden_all = 0
-" function! ToggleHiddenAll()
-"     if s:hidden_all  == 0
-"         let s:hidden_all = 1
-"         set noshowmode
-"         set laststatus=0
-" 	set showtabline=0
-"         set noshowcmd
-" 	normal :AirlineToggle
-"     else
-"         let s:hidden_all = 0
-"         set showmode
-"         set laststatus=2
-" 	set showtabline=2
-"         set showcmd
-"     endif
-" endfunction
-" nnoremap <F10> :call ToggleHiddenAll()<CR>
-
 " quotes autocomplete
 inoremap (( (<Esc>a
 inoremap ( ()<Esc>i
