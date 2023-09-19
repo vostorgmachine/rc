@@ -14,7 +14,7 @@ map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 map <leader>rm :!rm %<CR> :bd <CR>
 
 " open ranger client inside of current vim session
-map <leader>rr :Ranger <CR> :IndentLIneDisable <CR>
+map <leader>rr :Ranger <CR> :IndentLIneToggle<CR>
 
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h <bar> pwd <CR>

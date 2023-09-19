@@ -40,10 +40,6 @@
 
 " --------------------------------------------------
 
-" GRUVBOX COLORSCHEME-------------------------------
- colorscheme gruvbox
- set bg=dark
-
 " VIM-TABLE-MODE SETTINGS---------------------------
 let g:table_mode_corner_corner='+'
 
@@ -78,19 +74,6 @@ let g:vimwiki_list = [{'path': '~/Documents/vimwiki/', 'syntax':'markdown', 'ext
 set nocompatible
 filetype plugin on
 syntax on
-
-" AIRLINE SETTINGS----------------------------------
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16_gruvbox_dark_hard'
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 
 " NERDTREE SETTINGS---------------------------------
 
@@ -147,6 +130,7 @@ let g:startify_bookmarks = [
 			\{ 'brc': '~/.bashrc'} ,
 			\{ 'vrc': '~/.config/nvim/init.vim'} ,
 			\{ 'mdl': '~/.config/nvim/modules'} ,
+			\{ 'pbo': '~/Documents/python_book/python_book.py'} ,
 			\{ 'opf': '~/sandbox/python/opf_meta_parser/main.py'} ,
 			\{ 'vwi': '~/Documents/vimwiki/index.md'} ,
 			\]

@@ -12,8 +12,14 @@ source $HOME/.config/nvim/modules/plugins.vim
 source $HOME/.config/nvim/modules/macros.vim
 source $HOME/.config/nvim/modules/scripts.vim
 source $HOME/.config/nvim/modules/commands.vim
+source $HOME/.config/nvim/modules/visual_settings.vim
 source $HOME/.config/nvim/nc.vim
 
+
+" TRANSPERENT BACKGROUND----------------------------
+hi Normal guibg=NONE ctermbg=NONE
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " main settings-------------------------------------
 set wildmenu     	    " display all matches when tab complete
@@ -31,19 +37,8 @@ set number relativenumber
 set nohls
 set lazyredraw
 
-" transperent background----------------------------
-hi Normal guibg=NONE ctermbg=NONE
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-
-
 " custom commands-----------------------------------
 :command W w
-:command Bdall %bd|e#|bd#
-:command Reloadconfig source ~/.config/nvim/init.vim
-:command Qrc :tabnew ~/.config/qtile/config.py
-:command Brc :tabnew ~/.bashrc
-:command Home :cd ~/
 
 " abs---------------------------------------------
 ab итд И т.д
