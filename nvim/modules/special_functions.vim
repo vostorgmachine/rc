@@ -18,8 +18,23 @@ function! HLNext (blinktime)
 	redraw
 endfunction
 
-" Disable airline at startup
+" airline toggle
 
+nnoremap <F10> :call Custom_airline_toggle()<CR>
+
+let s:hide_airline = 0
+function! Custom_airline_toggle()
+	if s:hide_airline == 0
+		normal :AirlineToggle 
+		set showtabline=0
+	else
+		let s:hide_airline = 0
+		normal :AirlineToggle 
+		set showtabline=2
+	endif
+endfunction
+	
+ 
 " au VimEnter * call ToggleHiddenAll()
 " let s:hidden_all = 0
 " function! ToggleHiddenAll()
