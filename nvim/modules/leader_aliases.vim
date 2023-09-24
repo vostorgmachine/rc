@@ -192,6 +192,8 @@ map <F9> :CocToggle <CR>
 " python experimental things
 map <leader>sbp :normal obreakpoint(<CR>
 
+
+" Switch to the ipython! see telegram.
 " Pyflakes на f5
 map <F5> :w\|call Pyflakes()\|!python %<cr>
 imap <F5> <Esc><F5>

@@ -163,7 +163,7 @@ func! Add_Author()
 	normal gg_
 	normal }j
 	normal 2o
-	normal iАвтор(ы):
+	normal iАвтор((ы):
 	normal gg_
 	/--------------------------------------------------
 	normal jjdap

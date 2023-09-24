@@ -23,14 +23,12 @@
  Plug 'ThePrimeagen/harpoon'
  Plug 'tpope/vim-markdown'
  Plug 'vimwiki/vimwiki'
- " Plug 'LnL7/vim-nix'
  Plug 'junegunn/fzf.vim'
  Plug 'junegunn/vim-easy-align'
  Plug 'junegunn/fzf'
  Plug 'dhruvasagar/vim-table-mode'
  Plug 'vim-python/python-syntax'
  Plug 'tpope/vim-repeat'
- Plug 'nvim-lua/plenary.nvim'
  Plug 'tpope/vim-commentary'
  Plug 'morhetz/gruvbox'
  Plug 'preservim/nerdtree'
@@ -131,6 +129,7 @@ let g:startify_bookmarks = [
 			\{ 'vrc': '~/.config/nvim/init.vim'} ,
 			\{ 'mdl': '~/.config/nvim/modules'} ,
 			\{ 'pbo': '~/Documents/python_book/python_book.py'} ,
+			\{ 'sfm': '~/sandbox/python/parser_research/simple_found_func_mass.py'} ,
 			\{ 'opf': '~/sandbox/python/opf_meta_parser/main.py'} ,
 			\{ 'vwi': '~/Documents/vimwiki/index.md'} ,
 			\]
@@ -160,6 +159,20 @@ let g:vista#renderer#enable_icon = 0
 " let g:vista#renderer#icons = { "function": "",  "variable": "", }
 "
 
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
 " IndentLIne
 " disable by default
 let g:indentLine_enabled = 0
+
+
