@@ -3,6 +3,11 @@
  set bg=dark
 
 " AIRLINE SETTINGS----------------------------------
+
+"hide right-side labels (x - filetype, y - encoding)
+let g:airline_section_x=''
+let g:airline_section_y=''
+
 let g:airline_statusline_ontop = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme='base16_gruvbox_dark_hard'

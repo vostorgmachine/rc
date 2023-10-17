@@ -13,7 +13,7 @@ source $HOME/.config/nvim/modules/macros.vim
 source $HOME/.config/nvim/modules/scripts.vim
 source $HOME/.config/nvim/modules/commands.vim
 source $HOME/.config/nvim/modules/visual_settings.vim
-source $HOME/.config/nvim/nc.vim
+" source $HOME/.config/nvim/nc.vim
 
 
 " TRANSPERENT BACKGROUND----------------------------

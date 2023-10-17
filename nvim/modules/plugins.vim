@@ -7,6 +7,7 @@
 
 " --------------------------------------------------
  call plug#begin()
+ Plug 'williamboman/mason.nvim'
  Plug 'mhinz/vim-startify'
  Plug 'junegunn/vim-easy-align'
  Plug 'christoomey/vim-tmux-navigator'
