@@ -7,34 +7,34 @@
 
 " --------------------------------------------------
  call plug#begin()
- Plug 'williamboman/mason.nvim'
- Plug 'mhinz/vim-startify'
- Plug 'junegunn/vim-easy-align'
- Plug 'christoomey/vim-tmux-navigator'
- Plug 'liuchengxu/vista.vim'
- Plug 'mfussenegger/nvim-dap'
- Plug 'Yggdroot/indentLine'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'ryanoasis/vim-devicons'
- Plug 'nvim-treesitter/nvim-treesitter'
- Plug 'francoiscabrol/ranger.vim'
- Plug 'nvim-lua/plenary.nvim'
- Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
- Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
- Plug 'ThePrimeagen/harpoon'
- Plug 'tpope/vim-markdown'
- Plug 'vimwiki/vimwiki'
- Plug 'junegunn/fzf.vim'
- Plug 'junegunn/vim-easy-align'
- Plug 'junegunn/fzf'
- Plug 'dhruvasagar/vim-table-mode'
- Plug 'vim-python/python-syntax'
- Plug 'tpope/vim-repeat'
- Plug 'tpope/vim-commentary'
- Plug 'morhetz/gruvbox'
- Plug 'preservim/nerdtree'
- Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
+Plug 'williamboman/mason.nvim'
+" Plug 'mhinz/vim-startify'
+Plug 'junegunn/vim-easy-align'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'liuchengxu/vista.vim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'Yggdroot/indentLine'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
+Plug 'ThePrimeagen/harpoon'
+Plug 'tpope/vim-markdown'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'vim-python/python-syntax'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
  call plug#end()
 
 " --------------------------------------------------

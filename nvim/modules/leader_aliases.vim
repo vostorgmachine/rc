@@ -75,7 +75,7 @@ map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
-nnoremap <leader>ms :split <bar> res 10 <cr>
+nnoremap <leader>ms :split <bar> res 10 <cr> `r <cr>
 nnoremap <leader>ьы :split <bar> res 10 <cr>
 
 " markdown things
@@ -100,16 +100,16 @@ map <leader>fl :call Find_line()<CR>
 map <leader>ад :call Find_line()<CR>
 map <leader>cs /\,<CR>
 map <leader>сы /\,<CR>
-map <leader>n yy}p<C-a>zz
-map <leader>sk / x
-map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
-map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" map <leader>n yy}p<C-a>zz
+" map <leader>sk / x
+" map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
+" map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги:<CR>zzA 
 map <leader>ефп /Теги:<CR>zzA 
 " map <leader>th /Тема:<CR>zzA 
-map <leader>ер /Тема:<CR>zzA 
+" map <leader>ер /Тема:<CR>zzA 
 
 " send current buffer to 'calibration' folder 
 
