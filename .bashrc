@@ -4,6 +4,7 @@
 # | |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /__/ /_/ / / / / __/ / /_/ /
 # |___/\____/____/\__/\____/_/   \__, /   \___/\____/_/ /_/_/ /_/\__, /
 #                               /____/                          /____/
+
 # --------------------------------------------------------------------------------
 
 # starship prompt enabling
@@ -16,11 +17,16 @@ set -o vi
 eval "$(zoxide init bash)"
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.bin/:$PATH"
+
 export PATH="/bin/vostorg-progs/:$PATH"
 # path to my programs/scripts
 export PATH="/repos/scripts/:$PATH"
 
+# doom emacs
+export PATH="/home/vostorg/.config/emacs/bin:$PATH"
+
 # system etc.---------------------------------------------------------------------
+
 alias k='pkill'
 alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
@@ -40,6 +46,7 @@ alias se='sudoedit'
 alias v='nvim '
 alias e='nvim '
 alias v.='nvim .'
+
 alias vls='nvim -c source ~/vim_session'
 alias vmd='nvim *.md'
 alias vpy='nvim *.py'
@@ -52,11 +59,21 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
-alias pf='pfetch'
+
+alias tru='trans :ru '
+alias ten='trans :en '
+alias tw='taskwarrior-tui'
+alias ta='task add '
+alias tl='task list '
+alias ws='python3 ~/sandbox/python/word_searcher/main.py'
+alias sbl='~/sandbox/python/separate_by_lines/separate_by_lines.py'
+alias opfit='python3 /home/vostorg/sandbox/python/opf_meta_parser/main.py '
+alias mof='python3 $HOME/sandbox/python/kabanchik/make_ou_folder/make_ou_folder.py'
+alias pf='clear && pfetch'
+alias nf='clear && neofetch'
 alias cpf='clear && pfetch'
 alias pi='ping ya.ru -c 3'
 alias sc='sc-im'
-alias vim='nvim'
 alias rhino='cd /mnt/c/Program\ Files/Rhino\ 6/System/ && ./Rhino.exe '
 # alias man='tldr'
 alias cce='calcurse'
@@ -85,11 +102,13 @@ alias c='clear'
 # fzf hidden files searching enabling
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
 
+
 # folder references---------------------------------------------------------------
 alias ou='cd ~/outwrite'
 alias mus='cd ~/Music'
 alias sf='nvim $(fzf --preview="bat --color=always --style=numbers {}")'
-alias fd="cd ~ && cd \$(find * -type d | fzf)"
+alias fdh="cd ~ && cd \$(find * -type d | fzf)"
+alias fd="cd \$(find * -type d | fzf)"
 alias mg='cd ~/Documents/git_projects/'
 alias nts='cd ~/Notes/'
 alias pic='cd ~/Pictures/'
@@ -106,7 +125,7 @@ alias win~='cd /mnt/c/Users/vostorg'
 alias winc='cd /mnt/c/'
 alias wind='cd /mnt/d/'
 alias windw='cd /mnt/d/Downloads/'
-
+ 
 # export--------------------------------------------------------------------------
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -114,6 +133,9 @@ export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
 # youtube download----------------------------------------------------------------
+alias yt-dlp-144="yt-dlp -f 'bestvideo[height<=144]+bestaudio/best[height<=144]'"
+alias yt-dlp-480="yt-dlp -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
+alias yt-dlp-720="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[height<=480]'"
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta-flac="yt-dlp --extract-audio --audio-format flac "
@@ -141,6 +163,7 @@ ex ()
       *.deb)       ar x $1      ;;
       *.tar.xz)    tar xf $1    ;;
       *.tar.zst)   tar xf $1    ;;
+
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
@@ -150,6 +173,7 @@ ex ()
 
 # --------------------------------------------------------------------------------
 # PS1='[\u@\h \W]\$ '
+
 PS1='\W > '
 
 # --------------------------------------------------------------------------------
@@ -185,6 +209,7 @@ figlet -f slant Vostorg machine | lolcat && date
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
+
 # fzf shortcuts enabling
 if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
@@ -197,3 +222,4 @@ source /usr/share/fzf/completion.bash
 
 # source of the starship config
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+

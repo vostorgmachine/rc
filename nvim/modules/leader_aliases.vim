@@ -14,7 +14,9 @@ map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 map <leader>rm :!rm %<CR> :bd <CR>
 
 " open ranger client inside of current vim session
-map <leader>rr :Ranger <CR> :IndentLIneToggle<CR>
+map <leader>rr :Ranger <CR> 
+
+":IndentLIneToggle<CR>
 
 "this changes directory to the currently open file
 map <leader>cd :cd %:p:h <bar> pwd <CR>
@@ -31,9 +33,9 @@ map <leader>aa :args *<CR>
 map <leader>s( ysiw(lxwhxbb 
 
 " telescope
-map <leader>ff <cmd>Telescope find_files<cr>
-map <leader>fg <cmd>Telescope live_grep<cr>
-map <leader>fb <cmd>Telescope buffers<cr>
+map <leader>ff <cmd>Telescope find_files theme=dropdown<cr>
+map <leader>fg <cmd>Telescope live_grep theme=dropdown<cr>
+map <leader>fb <cmd>Telescope buffers theme=dropdown<cr>
 
 " fzf-vim section
 " map <leader>ff :Files<cr>
@@ -54,9 +56,8 @@ map <leader>wa :wa<CR>
 map <leader>fd :e %:h<CR>
 
 " tabs
-map <leader>tn :tabnew<CR>
-map <leader>th :tabn<CR>
-map <leader>tl :tabp<CR>
+map <leader>tn :tabn<CR>
+map <leader>tp :tabp<CR>
 
 " buffers
 map <leader>bn :bn!<CR>
@@ -67,11 +68,11 @@ map <leader>bk :bd<CR>
 map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
 
-" file references
-map <leader>go :tabnew ~/goals.md<CR>
-map <leader>co :tabnew ~/code.py<CR>
-map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
-map <leader>brc :tabnew ~/.bashrc<CR>
+" " file references
+" map <leader>go :tabnew ~/goals.md<CR>
+" map <leader>co :tabnew ~/code.py<CR>
+" map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
+" map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
@@ -96,6 +97,8 @@ vnoremap <leader>* di*<ESC>pa*<ESC>
 vnoremap <leader>** di**<ESC>pa**<ESC>
 
 " outwrite special
+
+map <leader>cit :normal dap<ESC>2O```<ESC>o```<ESC>:normal kp<ESC>:normal }dd{2j<ESC>
 map <leader>fl :call Find_line()<CR>
 map <leader>ад :call Find_line()<CR>
 map <leader>cs /\,<CR>
@@ -105,7 +108,7 @@ map <leader>сы /\,<CR>
 " map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
 " map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 " map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-" map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги:<CR>zzA 
 map <leader>ефп /Теги:<CR>zzA 
 " map <leader>th /Тема:<CR>zzA 
@@ -113,9 +116,9 @@ map <leader>ефп /Теги:<CR>zzA
 
 " send current buffer to 'calibration' folder 
 
-map <leader>ce :call Insert_last_space() <CR>:!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+" map <leader>ce :call Insert_last_space() <CR>:!mv % ../calibration/ <CR> :bd <CR> :bn <CR> 
 
-map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
+" map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
 
 " this constructions allows to send abzac right to the resume section
 " map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>gqap`n
@@ -156,15 +159,6 @@ map <leader>hm :Telescope harpoon marks<CR>
 map <leader>hn :lua require("harpoon.ui").nav_next()<CR>
 map <leader>hp :lua require("harpoon.ui").nav_prev()<CR>
 
-" toggleterm
-" By applying the mappings this way you can pass a count to your
-" mapping to open a specific window.
-" For example: 2<C-t> will open terminal 2
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm" <CR> 
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
-
-map <leader>st :ToggleTermSendVisualSelection<CR>
-
 " mappings for coclist/coding things------------------------------
 
 " Show all diagnostics.
@@ -191,12 +185,5 @@ map <F9> :CocToggle <CR>
 " python experimental things
 map <leader>sbp :normal obreakpoint(<CR>
 
-
-" Switch to the ipython! see telegram.
-" Pyflakes на f5
-map <F5> :w\|call Pyflakes()\|!python %<cr>
-imap <F5> <Esc><F5>
-
-" Startify
-map <leader>ss :Startify<cr>
-
+" call vimux 
+map <F5> :SlimeSend<CR>

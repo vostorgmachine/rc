@@ -6,28 +6,29 @@
 "                               /____/                           /____/   
 
 " --------------------------------------------------
- call plug#begin()
+call plug#begin()
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+
+Plug 'jpalardy/vim-slime'
+Plug 'preservim/vimux'
 Plug 'williamboman/mason.nvim'
-" Plug 'mhinz/vim-startify'
-Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'liuchengxu/vista.vim'
-Plug 'mfussenegger/nvim-dap'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim' "this plug makes fine ranger closing
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-python/python-syntax'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -35,6 +36,13 @@ Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'mhinz/vim-startify'
+" Plug 'mfussenegger/nvim-dap'
+" Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+" Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
+" Plug 'dhruvasagar/vim-table-mode'
+"
  call plug#end()
 
 " --------------------------------------------------
@@ -105,55 +113,18 @@ autocmd TermEnter term://*toggleterm#*
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
+" RANGER
+
 " disable ranger default shortfut(leader + f)
 let g:ranger_map_keys = 0
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
 
 " easy-align binds
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" startify settings
-" let g:startify_custom_header = ["   Vostorg machine"]
-
-let g:startify_custom_header = [
-\ ' _    __           __                      __  ___           __    _          ',
-\ '| |  / /___  _____/ /_____  _________ _   /  |/  /___ ______/ /_  (_)___  ___ ',
-\ '| | / / __ \/ ___/ __/ __ \/ ___/ __ `/  / /|_/ / __ `/ ___/ __ \/ / __ \/ _ \',
-\ '| |/ / /_/ (__  ) /_/ /_/ / /  / /_/ /  / /  / / /_/ / /__/ / / / / / / /  __/',
-\ '|___/\____/____/\__/\____/_/   \__, /  /_/  /_/\__,_/\___/_/ /_/_/_/ /_/\___/ ',
-\ '                              /____/                                          ',
-\ ]
-
-let g:startify_bookmarks = [ 
-			\{ 'brc': '~/.bashrc'} ,
-			\{ 'vrc': '~/.config/nvim/init.vim'} ,
-			\{ 'mdl': '~/.config/nvim/modules'} ,
-			\{ 'pbo': '~/Documents/python_book/python_book.py'} ,
-			\{ 'sfm': '~/sandbox/python/parser_research/simple_found_func_mass.py'} ,
-			\{ 'opf': '~/sandbox/python/opf_meta_parser/main.py'} ,
-			\{ 'vwi': '~/Documents/vimwiki/index.md'} ,
-			\]
-
- 
-let g:startify_lists = [
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'files',     'header': ['   Files']            },
-          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ ]
-
-function! s:sy_add_bookmark(bookmark)
-  if !exists('g:startify_bookmarks')
-    let g:startify_bookmarks = []
-  endif
-  let g:startify_bookmarks += [ a:bookmark ]
-endfunction
-
-
-command! -nargs=1 StartifyAddBookmark call <sid>sy_add_bookmark(<q-args>)
-
-" vista things
+" VISTA THINGS
  
 " disable icons
 let g:vista#renderer#enable_icon = 0
@@ -176,4 +147,5 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 " disable by default
 let g:indentLine_enabled = 0
 
-
+" for all buffers
+let g:slime_target = "tmux"
