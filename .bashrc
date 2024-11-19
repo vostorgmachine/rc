@@ -32,8 +32,11 @@ alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
 alias rb='source ~/.bashrc'
 alias rbash='source ~/.bashrc'
+
 alias i='sudo pacman -S '
+alias rmdb="sudo rm /var/lib/pacman/db.lck"
 alias upd='sudo pacman -Suy --disable-download-timeout'
+
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias 3..='cd ../../..'
@@ -41,6 +44,7 @@ alias :q='exit'
 alias q='exit'
 
 # vim references------------------------------------------------------------------
+alias pas='nvim ~/.passes'
 alias tms='nvim ~/outwrite/materials/themes.md'
 alias se='sudoedit'
 alias v='nvim '
@@ -53,6 +57,7 @@ alias vpy='nvim *.py'
 alias termrc='nvim /mnt/c/Users/vostorg/AppData/Roaming/Alacritty/alacritty.yml'
 alias goals='nvim ~/Documents/vimwiki/goals.md'
 alias tmuxrc='nvim ~/.tmux.conf'
+alias i3rc='nvim ~/.config/i3/config'
 alias brc='nvim ~/.bashrc'
 alias bashrc='nvim ~/.bashrc'
 alias vimrc='nvim ~/.config/nvim/init.vim'
@@ -60,15 +65,33 @@ alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
 
+alias qb='qbittorrent'
+alias pgs='progress'
+alias compdir='for i in *.MP4; do ffmpeg -i "$i" -vcodec libx265 -crf 28 "${i%.MP4}_compressed.MP4"; done'
+alias compdir_webm='for i in *.webm; do ffmpeg -i "$i" -vcodec libvpx-vp9 -crf 28 -b:v 0 -acodec libopus -b:a 64k "${i%.webm}_compressed.webm"; done'
+alias make_timelapse='bash /home/vostorg/Documents/gpt_prompt_responses/code/make_timelapse.sh'
+alias compdir_pic='mogrify -resize 50% -quality 85% *.jpg'
+alias weather='curl wttr.in/Belgrade'
+alias tks='tmux kill-server'
+alias vtop='vtop -t seti'
+alias ka='killall '
 alias tru='trans :ru '
+alias tit='trans it:ru '
 alias ten='trans :en '
 alias tw='taskwarrior-tui'
 alias ta='task add '
 alias tl='task list '
-alias ws='python3 ~/sandbox/python/word_searcher/main.py'
+# alias hc='python3 /home/vostorg/sandbox/python/header_changer/main.py'
+# alias sit='python3 /home/vostorg/sandbox/python/gpt_separator/main.py'
+# alias cmdz=' python3 ~/sandbox/python/kabanchik/feedparser/bak/main_bak5.py'
+# alias kbn='python3 ~/sandbox/python/kabanchik/prototype/kaban_prototype.py'
+# alias ws='python3 ~/sandbox/python/word_searcher/main.py'
 alias sbl='~/sandbox/python/separate_by_lines/separate_by_lines.py'
 alias opfit='python3 /home/vostorg/sandbox/python/opf_meta_parser/main.py '
 alias mof='python3 $HOME/sandbox/python/kabanchik/make_ou_folder/make_ou_folder.py'
+alias get_all='get_tmt && get_meduza && cd ~/outwrite/dump && get_tmt && get_meduza && cd -'
+alias get_meduza='python3 /home/vostorg/sandbox/python/get_meduza/main.py'
+alias get_tmt='python3 /home/vostorg/sandbox/python/get_tmt/main.py'
 alias pf='clear && pfetch'
 alias nf='clear && neofetch'
 alias cpf='clear && pfetch'
@@ -133,9 +156,10 @@ export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
 # youtube download----------------------------------------------------------------
-alias yt-dlp-144="yt-dlp -f 'bestvideo[height<=144]+bestaudio/best[height<=144]'"
-alias yt-dlp-480="yt-dlp -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
-alias yt-dlp-720="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[height<=480]'"
+alias dit="yt-dlp"
+alias yt144="yt-dlp -f 'bestvideo[height<=144]+bestaudio/best[height<=144]'"
+alias yt480="yt-dlp -f 'bestvideo[height<=480]+bestaudio/best[height<=480]'"
+alias yt720="yt-dlp -f 'bestvideo[height<=720]+bestaudio/best[height<=480]'"
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta-flac="yt-dlp --extract-audio --audio-format flac "

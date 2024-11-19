@@ -1,0 +1,7 @@
+{
+	"python.analysis.typeCheckingMode": "off",  // "off", "basic", "strict"
+	"python.linting.pylintEnabled": true,
+	"pyright.inlayHints.variableTypes": false
+}
+
+

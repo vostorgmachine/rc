@@ -41,11 +41,18 @@ set lazyredraw
 :command W w
 
 " abs---------------------------------------------
+
+ab вопо Военная помощь
+ab куоб Курская область, ВСУ, Наступление
 ab итд И т.д
 ab arw --->
 ab etc etc...
 ab [. [...] 
 ab cmt ```
+ab меот Международные отношения
+ab кргр Крупные группы
+ab рфэк Россия, Экономика
+ab урв Россия, Украина, Война
 
 " spec-characters---------------------------------
 imap `e è
@@ -78,3 +85,4 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Автоматическое выравнивание сплитов
 autocmd VimResized * wincmd =
+

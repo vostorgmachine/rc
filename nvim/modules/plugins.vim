@@ -10,7 +10,6 @@ call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
-
 Plug 'jpalardy/vim-slime'
 Plug 'preservim/vimux'
 Plug 'williamboman/mason.nvim'
@@ -148,4 +147,24 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:indentLine_enabled = 0
 
 " for all buffers
+" let g:slime_target = "tmux"
+
 let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+
+
+" coc_snippets
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+

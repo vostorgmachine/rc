@@ -11,7 +11,8 @@ let mapleader = ' '
 map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 
 "remove current file
-map <leader>rm :!rm %<CR> :bd <CR>
+map <leader>rm : silent !rm %<CR> :bd <CR>
+map <leader>кь : silent !rm %<CR> :bd <CR>
 
 " open ranger client inside of current vim session
 map <leader>rr :Ranger <CR> 
@@ -35,12 +36,12 @@ map <leader>s( ysiw(lxwhxbb
 " telescope
 map <leader>ff <cmd>Telescope find_files theme=dropdown<cr>
 map <leader>fg <cmd>Telescope live_grep theme=dropdown<cr>
-map <leader>fb <cmd>Telescope buffers theme=dropdown<cr>
+" map <leader>fb <cmd>Telescope buffers " theme=dropdown<cr>
 
 " fzf-vim section
 " map <leader>ff :Files<cr>
 map <leader>bb :Buffers<cr>
-map <leader>ии :Buffers<cr>
+" map <leader>ии :Buffers<cr>
 
 " GFiles for fzf in git repo
 map <leader>gf :GFiles<cr>
@@ -71,7 +72,7 @@ map <leader>bl :bl!<CR>
 " " file references
 " map <leader>go :tabnew ~/goals.md<CR>
 " map <leader>co :tabnew ~/code.py<CR>
-" map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
+ map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
 " map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
@@ -82,37 +83,33 @@ nnoremap <leader>ьы :split <bar> res 10 <cr>
 " markdown things
 
 map <leader>si {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
-map <leader>h1 I# <ESC> 
-map <leader>h2 I## <ESC> 
-map <leader>h3 I### <ESC> 
-map <leader>h4 I#### <ESC> 
-
 map <leader>ыш {j<C-v>}kI  <ESC>r*<ESC>{jgqap{j
-map <leader>р1 I# <ESC> 
-map <leader>р2 I## <ESC> 
-map <leader>р3 I### <ESC> 
-map <leader>р4 I#### <ESC> 
 
 vnoremap <leader>* di*<ESC>pa*<ESC>
 vnoremap <leader>** di**<ESC>pa**<ESC>
 
 " outwrite special
 
+" Map <leader>b to surround selected text with ** for bold formatting
+function! SurroundWithBold()
+    let l:old_pos = getpos(".")
+    '<,'>s/\%V.*\%V/\=repeat('*', 2) . submatch(0) . repeat('*', 2)/g
+    call setpos('.', l:old_pos)
+endfunction
+
+vnoremap <leader>b :<C-u>call SurroundWithBold()<CR>
+
+" map <leader>cl :silent !mv % calibration/ <CR> :bd <CR>
+" map <leader>сд :silent !mv % calibration/ <CR> :bd <CR>
+ 
 map <leader>cit :normal dap<ESC>2O```<ESC>o```<ESC>:normal kp<ESC>:normal }dd{2j<ESC>
-map <leader>fl :call Find_line()<CR>
-map <leader>ад :call Find_line()<CR>
+" map <leader>fl :call Find_line()<CR>
+" map <leader>ад :call Find_line()<CR>
 map <leader>cs /\,<CR>
 map <leader>сы /\,<CR>
-" map <leader>n yy}p<C-a>zz
-" map <leader>sk / x
-" map <leader>hat v3}dggP<ESC><C-v>}kI   <ESC>R##<ESC>
-" map <leader>fa dap/Выдержки:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-" map <leader>te dap/Факты:<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги:<CR>zzA 
 map <leader>ефп /Теги:<CR>zzA 
-" map <leader>th /Тема:<CR>zzA 
-" map <leader>ер /Тема:<CR>zzA 
 
 " send current buffer to 'calibration' folder 
 
@@ -128,9 +125,9 @@ map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
 
 " visual mode
-vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
+" vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 " vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
 " vnoremap <leader>sr dmn?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{jmn
 
@@ -164,7 +161,7 @@ map <leader>hp :lua require("harpoon.ui").nav_prev()<CR>
 " Show all diagnostics.
 nnoremap <silent><nowait><leader>di  :<C-u>CocList diagnostics<cr>
 " Show commands.
-nnoremap <silent><nowait><leader><space>c  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait><leader><space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait><leader><space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.

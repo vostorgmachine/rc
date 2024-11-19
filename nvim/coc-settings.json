@@ -1,4 +1,15 @@
 {
-	"pyright.inlayHints.variableTypes": false
+  "python.jediEnabled": true,            // Использовать Jedi для анализа кода
+  "python.analysis.typeCheckingMode": "off", // Отключаем проверку типов
+  "python.analysis.diagnosticMode": "openFilesOnly", // Проверка только для открытых файлов
+  "python.analysis.autoSearchPaths": true, // Автоматический поиск путей
+  "python.analysis.useLibraryCodeForTypes": false, // Отключение типов для сторонних библиотек
+  "python.autoComplete.addBrackets": true,  // Включение автозаполнения скобок для функций
+  "python.autoComplete.extraPaths": [],     // Дополнительные пути для автокомплита
+  "python.formatting.provider": "black",    // Установите форматтер, если нужно
+  "python.formatting.blackPath": "black",   // Путь к black, если это необходимо
+  "python.linting.enabled": true,           // Включить линтер
+  "python.linting.pylintEnabled": false,    // Отключить pylint (если хотите)
+  "python.linting.flake8Enabled": true      // Включить flake8
 }
 
