@@ -10,6 +10,10 @@
   "python.formatting.blackPath": "black",   // Путь к black, если это необходимо
   "python.linting.enabled": true,           // Включить линтер
   "python.linting.pylintEnabled": false,    // Отключить pylint (если хотите)
-  "python.linting.flake8Enabled": true      // Включить flake8
+  "python.linting.flake8Enabled": true,
+  "snippets.ultisnips.pythonPrompt": false, // Включить flake8
+  "python.linting.flake8Args": [ //Игнор определённых ошибок
+    "--ignore=E501,E302"
+  ]
 }
 
