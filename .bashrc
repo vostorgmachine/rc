@@ -17,6 +17,8 @@ set -o vi
 eval "$(zoxide init bash)"
 # PATH adds-----------------------------------------------------------------------
 export PATH="$HOME/.bin/:$PATH"
+export PATH="$HOME/.bin/vostorg_scripts:$PATH"
+export PATH="$HOME/sandbox/deepl_cli/:$PATH"
 
 export PATH="/bin/vostorg-progs/:$PATH"
 # path to my programs/scripts
@@ -25,8 +27,13 @@ export PATH="/repos/scripts/:$PATH"
 # doom emacs
 export PATH="/home/vostorg/.config/emacs/bin:$PATH"
 
+# tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
+
 # system etc.---------------------------------------------------------------------
 
+alias me='sudo chmod +x '
 alias k='pkill'
 alias quit!="shutdown now"
 alias l='exa -lah --color=auto'
@@ -43,9 +50,19 @@ alias 3..='cd ../../..'
 alias :q='exit'
 alias q='exit'
 
+#>>> Доп zoxide мувы-----------------------------------
+
+# В дальнейшем можно поиграться с автоматизмом (когда add срабатывает по
+# скрипту)
+
+alias ze='zoxide edit'
+alias za='zoxide add . && echo dir has been added'
+alias zr='zoxide remove'
+
+
+
 # vim references------------------------------------------------------------------
 alias pas='nvim ~/.passes'
-alias tms='nvim ~/outwrite/materials/themes.md'
 alias se='sudoedit'
 alias v='nvim '
 alias e='nvim '
@@ -65,11 +82,12 @@ alias vw='nvim ~/Documents/vimwiki/index.md'
 
 # program shortcuts---------------------------------------------------------------
 
+alias t="tgpt"
+alias lo='libreoffice --nologo'
 alias qb='qbittorrent'
 alias pgs='progress'
 alias compdir='for i in *.MP4; do ffmpeg -i "$i" -vcodec libx265 -crf 28 "${i%.MP4}_compressed.MP4"; done'
 alias compdir_webm='for i in *.webm; do ffmpeg -i "$i" -vcodec libvpx-vp9 -crf 28 -b:v 0 -acodec libopus -b:a 64k "${i%.webm}_compressed.webm"; done'
-alias make_timelapse='bash /home/vostorg/Documents/gpt_prompt_responses/code/make_timelapse.sh'
 alias compdir_pic='mogrify -resize 50% -quality 85% *.jpg'
 alias weather='curl wttr.in/Belgrade'
 alias tks='tmux kill-server'
@@ -81,57 +99,45 @@ alias ten='trans :en '
 alias tw='taskwarrior-tui'
 alias ta='task add '
 alias tl='task list '
-# alias hc='python3 /home/vostorg/sandbox/python/header_changer/main.py'
-# alias sit='python3 /home/vostorg/sandbox/python/gpt_separator/main.py'
-# alias cmdz=' python3 ~/sandbox/python/kabanchik/feedparser/bak/main_bak5.py'
-# alias kbn='python3 ~/sandbox/python/kabanchik/prototype/kaban_prototype.py'
-# alias ws='python3 ~/sandbox/python/word_searcher/main.py'
-alias sbl='~/sandbox/python/separate_by_lines/separate_by_lines.py'
-alias opfit='python3 /home/vostorg/sandbox/python/opf_meta_parser/main.py '
-alias mof='python3 $HOME/sandbox/python/kabanchik/make_ou_folder/make_ou_folder.py'
-alias get_all='get_tmt && get_meduza && cd ~/outwrite/dump && get_tmt && get_meduza && cd -'
-alias get_meduza='python3 /home/vostorg/sandbox/python/get_meduza/main.py'
-alias get_tmt='python3 /home/vostorg/sandbox/python/get_tmt/main.py'
-alias pf='clear && pfetch'
 alias nf='clear && neofetch'
-alias cpf='clear && pfetch'
 alias pi='ping ya.ru -c 3'
 alias sc='sc-im'
-alias rhino='cd /mnt/c/Program\ Files/Rhino\ 6/System/ && ./Rhino.exe '
-# alias man='tldr'
-alias cce='calcurse'
 alias scr='scrcpy --encoder OMX.Intel.hw_ve.h264 -m 800'
-alias ok='okular'
 alias ipy='ipython'
-alias gp="git add . && git commit -m 'nothing special here' && git push"
 alias fdl='sudo fdisk -l'
-alias lo='libreoffice --nologo '
-alias myip='ifconfig | rg wlp -A1'
 alias docx='~/scripts/docx'
 alias bgen='python ~/scripts/bgen'
 alias rf='rm -rf '
 alias b='bri'
 alias tsf='telegram-send --file '
 alias ts='telegram-send '
-alias m='cmatrix -u9'
+alias matrix='cmatrix -u9'
 alias clock='tty-clock -cs'
-alias tg='telegram-cli'
 alias bp='bpython'
 alias r='ranger'
 alias cls='clear && figlet -f slant Vostorg machine | lolcat && date'
 alias claer='clear'
 alias c='clear'
+alias vol-10='pactl set-sink-volume @DEFAULT_SINK@ -10%'
+alias vol+10='pactl set-sink-volume @DEFAULT_SINK@ +10%'
 
-# fzf hidden files searching enabling
+# fzf enable hidden files search
 export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
+
+# fzm (bookmark manager)
+
+source /home/vostorg/fzf-marks/fzf-marks.plugin.bash
+alias m="mark"
+alias gm="fzm"
 
 
 # folder references---------------------------------------------------------------
-alias ou='cd ~/outwrite'
+alias ou='cd ~/outwrite/'
 alias mus='cd ~/Music'
 alias sf='nvim $(fzf --preview="bat --color=always --style=numbers {}")'
-alias fdh="cd ~ && cd \$(find * -type d | fzf)"
+alias sfh='nvim $(fzf --preview="bat --color=always --style=numbers {}" <(find ~ -type f))'
 alias fd="cd \$(find * -type d | fzf)"
+alias fdh="cd ~ && cd \$(find * -type d | fzf)"
 alias mg='cd ~/Documents/git_projects/'
 alias nts='cd ~/Notes/'
 alias pic='cd ~/Pictures/'
@@ -182,6 +188,7 @@ ex ()
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
       *.zip)       unzip $1     ;;
+      *.ZIP)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *.deb)       ar x $1      ;;
@@ -246,4 +253,8 @@ source /usr/share/fzf/completion.bash
 
 # source of the starship config
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+# Копирование файлов между буферами в tmux
+alias tcopy='echo $PWD > /tmp/target_dir'
+alias cpfrom='cp "$(realpath "$1")" "$(cat /tmp/target_dir)"'
 
