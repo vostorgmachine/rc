@@ -10,6 +10,12 @@ let mapleader = ' '
 " reload config
 map <leader><CR> :source ~/.config/nvim/init.vim<CR>
 
+" jump to next/prev func
+
+map <silent><nowait><leader>] :normal ]m<CR>
+map <silent><nowait><leader>[ :normal [m<CR>
+
+
 "remove current file
 map <leader>rm : silent !rm %<CR> :bd <CR>
 map <leader>кь : silent !rm %<CR> :bd <CR>
@@ -70,10 +76,7 @@ map <leader>bf :bf!<CR>
 map <leader>bl :bl!<CR>
 
 " " file references
-" map <leader>go :tabnew ~/goals.md<CR>
-" map <leader>co :tabnew ~/code.py<CR>
  map <leader>rc :tabnew ~/.config/nvim/init.vim<CR>
-" map <leader>brc :tabnew ~/.bashrc<CR>
 
 "Quick split + resize
 " Also this is a example of 'gluing' two commands together using <bar>.
@@ -99,38 +102,17 @@ endfunction
 
 vnoremap <leader>b :<C-u>call SurroundWithBold()<CR>
 
-" map <leader>cl :silent !mv % calibration/ <CR> :bd <CR>
-" map <leader>сд :silent !mv % calibration/ <CR> :bd <CR>
- 
-map <leader>cit :normal dap<ESC>2O```<ESC>o```<ESC>:normal kp<ESC>:normal }dd{2j<ESC>
-" map <leader>fl :call Find_line()<CR>
-" map <leader>ад :call Find_line()<CR>
+" Найти кириллицу в тексте
+map <leader>fc /[\u0400-\u04FF]<CR>
+
 map <leader>cs /\,<CR>
 map <leader>сы /\,<CR>
 map <leader>vi dap/---<CR>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
 map <leader>tag /Теги:<CR>zzA 
 map <leader>ефп /Теги:<CR>zzA 
 
-" send current buffer to 'calibration' folder 
-
-" map <leader>ce :call Insert_last_space() <CR>:!mv % ../calibration/ <CR> :bd <CR> :bn <CR> 
-
-" map <leader>су :!mv % calibration/ <CR> :bd <CR> :bn <CR> 
-
-" this constructions allows to send abzac right to the resume section
-" map <leader>sr dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>gqap`n
-" map <leader>ык dapmn?---<CR>kp{j<C-v>}kI  <ESC>r*<ESC>gqap`n
-
 map <leader>re /---<CR>kkA<CR><CR>
 map <leader>bc :call Blank_cleaner()<CR>
-
-" visual mode
-" vnoremap <leader>fa d/Выдержки:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-" vnoremap <leader>te d/Факты:<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-" vnoremap <leader>vi d/---<CR>O<ESC>O<ESC>P<C-v>}kI  <ESC>R*<ESC>gqap/---<CR>jjzz
-" vnoremap <leader>sr d?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j
-" vnoremap <leader>sr dmn?---<CR>k<CR>O<ESC>O<ESC>P{j<C-v>}kI  <ESC>r*<ESC>{jgqap{j2}j`ngqap{jmn
-
 
 " this allows to yank selected line(s) to he OS clipboard
 vnoremap <leader>y "+y
@@ -183,4 +165,12 @@ map <F9> :CocToggle <CR>
 map <leader>sbp :normal obreakpoint(<CR>
 
 " call vimux 
-map <F5> :SlimeSend<CR>
+map <silent><F5> :w<CR>:execute "SlimeSend1 run " . shellescape(expand("%"))<CR>
+
+" fun with vim-test
+
+nmap <silent> <leader>t :TestNearest -strategy=vimux<CR>
+nmap <silent> <leader>T :TestFile -strategy=vimux<CR>
+nmap <silent> <leader>a :TestSuite -strategy=vimux<CR>
+nmap <silent> <leader>l :TestLast -strategy=vimux<CR>
+nmap <silent> <leader>g :TestVisit -strategy=vimux<CR>

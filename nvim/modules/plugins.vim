@@ -8,6 +8,7 @@
 " --------------------------------------------------
 call plug#begin()
 
+Plug 'vim-test/vim-test'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 Plug 'jpalardy/vim-slime'
@@ -22,7 +23,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim' "this plug makes fine ranger closing
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ThePrimeagen/harpoon'
+" Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf.vim'
@@ -36,13 +37,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'mhinz/vim-startify'
-" Plug 'mfussenegger/nvim-dap'
-" Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-" Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
-" Plug 'dhruvasagar/vim-table-mode'
-"
- call plug#end()
+call plug#end()
 
 " --------------------------------------------------
 
@@ -146,11 +141,14 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 " disable by default
 let g:indentLine_enabled = 0
 
-" for all buffers
+" SLIME---------------------------------------------
+
 " let g:slime_target = "tmux"
+" let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
 
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
 
 
 " coc_snippets
@@ -167,4 +165,6 @@ function! CheckBackspace() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+
 

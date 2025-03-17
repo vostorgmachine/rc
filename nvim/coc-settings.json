@@ -1,19 +1,16 @@
 {
-  "python.jediEnabled": true,            // Использовать Jedi для анализа кода
-  "python.analysis.typeCheckingMode": "off", // Отключаем проверку типов
-  "python.analysis.diagnosticMode": "openFilesOnly", // Проверка только для открытых файлов
-  "python.analysis.autoSearchPaths": true, // Автоматический поиск путей
-  "python.analysis.useLibraryCodeForTypes": false, // Отключение типов для сторонних библиотек
-  "python.autoComplete.addBrackets": true,  // Включение автозаполнения скобок для функций
-  "python.autoComplete.extraPaths": [],     // Дополнительные пути для автокомплита
-  "python.formatting.provider": "black",    // Установите форматтер, если нужно
-  "python.formatting.blackPath": "black",   // Путь к black, если это необходимо
-  "python.linting.enabled": true,           // Включить линтер
-  "python.linting.pylintEnabled": false,    // Отключить pylint (если хотите)
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "python.jediEnabled": true,
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.useLibraryCodeForTypes": false,
+  "python.autoComplete.addBrackets": true,
+  "python.autoComplete.extraPaths": [],
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "snippets.ultisnips.pythonPrompt": false, // Включить flake8
-  "python.linting.flake8Args": [ //Игнор определённых ошибок
-    "--ignore=E501,E302"
-  ]
+  "snippets.ultisnips.pythonPrompt": false
 }
 

@@ -36,11 +36,18 @@ set encoding=utf-8
 set number relativenumber
 set nohls
 set lazyredraw
+set foldopen-=block " Фолды не открываются при скачках через параграф
 
 " custom commands-----------------------------------
 :command W w
 
 " abs---------------------------------------------
+
+ab tcc The Carnegie Centre
+ab rga Russia in global affairs
+ab nge Novaya Gazeta Europe
+ab tmt The Moscow Times
+ab nzg Nezavisimaya Gazeta
 
 ab вопо Военная помощь
 ab куоб Курская область, ВСУ, Наступление

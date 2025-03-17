@@ -1,0 +1,29 @@
+{
+  "print": {
+    "prefix": "splitprint",
+    "body": [
+      "print()",
+      "print(\"${1:some_text_here}\")",
+      "print()"
+    ],
+    "description": "Generate multiple print statements"
+  },
+
+  "main_print": {
+    "prefix": "printt",
+    "body": [
+      "print(${1:some_text_here})"
+    ],
+    "description": "just print"
+  },
+
+
+  "fbs": {
+    "prefix": "fffbs",
+    "body": [
+      "${1:var_name} = ${2:var_name}.find(\"${3:var_name}\", class_=\"${4:var_name}\")"
+    ],
+    "description": "BeautifulSoup .find "
+  }
+}
+
